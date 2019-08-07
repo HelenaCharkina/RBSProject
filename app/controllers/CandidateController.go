@@ -31,7 +31,7 @@ func (c *CandidateController) Put(candidate types.Candidate) revel.Result {
 	return c.RenderJSON(ID)
 }
 
-func (c *CandidateController) Delete(id int) revel.Result{
+func (c *CandidateController) Delete(id int) revel.Result {
 
 	err := providers.CandidateDelete(id)
 	if err != nil {
@@ -42,7 +42,7 @@ func (c *CandidateController) Delete(id int) revel.Result{
 	return c.RenderText("success")
 }
 
-func (c *CandidateController) Post(id int, candidate types.Candidate) revel.Result{
+func (c *CandidateController) Post(id int, candidate types.Candidate) revel.Result {
 
 	err := providers.CandidatePost(id, candidate)
 	if err != nil {
@@ -62,7 +62,7 @@ func (c *CandidateController) PutInAssess(candidate types.Candidate) revel.Resul
 	return c.RenderText("success")
 }
 
-func (c *CandidateController) Search(str types.Search) revel.Result{
+func (c *CandidateController) Search(str types.Search) revel.Result {
 
 	candidates := providers.CandidateSearch(str)
 	return c.RenderJSON(candidates)

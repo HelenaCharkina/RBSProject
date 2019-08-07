@@ -17,17 +17,17 @@ func CandidateGet() []*types.Candidate {
 		FROM db.public.candidate
 `)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
-	defer rows.Close()
+	//defer rows.Close()
 
 	var candidates []*types.Candidate
 	for rows.Next() {
 		c := types.Candidate{}
 		err := rows.Scan(&c.Id, &c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
 		}
 		//----------------АССЕССМЕНТЫ-----------------------
 
@@ -39,11 +39,11 @@ func CandidateGet() []*types.Candidate {
 		if err != nil {
 			log.Println(err)
 		}
-		defer rowAssessment.Close()
+		//defer rowAssessment.Close()
 
-		for rowAssessment.Next(){
+		for rowAssessment.Next() {
 			itemAssessment := types.Assessment{}
-			err := rowAssessment.Scan(&itemAssessment.Id,&itemAssessment.Date)
+			err := rowAssessment.Scan(&itemAssessment.Id, &itemAssessment.Date)
 			if err != nil {
 				log.Println(err)
 			}
@@ -72,16 +72,16 @@ func CandidateGetId(id int) *types.Candidate {
 		log.Println(err)
 	}
 	c := types.Candidate{}
-	err = row.Scan(&c.FirstName, &c.MiddleName, &c.LastName,  &c.Phone,  &c.Email)
+	err = row.Scan(&c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
 	if err != nil {
 		log.Println(err)
 	}
-	defer row.Close()
+	//defer row.Close()
 
 	return &c
 }
 
-func CandidatePut(candidate types.Candidate)(int64, error) {
+func CandidatePut(candidate types.Candidate) (int64, error) {
 
 	db := ttt.DatabaseConnect()
 
@@ -97,7 +97,7 @@ func CandidatePut(candidate types.Candidate)(int64, error) {
 	return ID, err
 }
 
-func CandidateDelete(id int) error{
+func CandidateDelete(id int) error {
 
 	db := ttt.DatabaseConnect()
 
@@ -110,7 +110,7 @@ func CandidateDelete(id int) error{
 	return err
 }
 
-func CandidatePost(id int, candidate types.Candidate) error{
+func CandidatePost(id int, candidate types.Candidate) error {
 
 	db := ttt.DatabaseConnect()
 
@@ -130,7 +130,7 @@ func CandidatePutInAssess(candidate types.Candidate) error {
 	var err error
 	for i := range candidate.ListOfAssessment {
 		_, err = db.Exec(`
-		insert into candidate_assessment(id_assessment, id_candidate) values($1, $2)`, candidate.ListOfAssessment[i].Id, candidate.Id)
+		insert into candidate_assessment(id_assessment, id_candidate, status, proof) values($1, $2, $3, $4)`, candidate.ListOfAssessment[i].Id, candidate.Id, "", "")
 		if err != nil {
 			log.Println(err)
 		}
@@ -146,7 +146,7 @@ func CandidateSearch(str types.Search) []*types.Candidate {
 
 	var candidates []*types.Candidate
 
-	for i := range masObjects{
+	for i := range masObjects {
 		rows, err := db.Query(`
 			SELECT *
 			FROM db.public.candidate 
@@ -167,17 +167,17 @@ func CandidateSearch(str types.Search) []*types.Candidate {
 				log.Fatal(err)
 			}
 			var flag = true
-			for i := range candidates{
+			for i := range candidates {
 
-				if candidates[i].Id == c.Id{
+				if candidates[i].Id == c.Id {
 					flag = false
 				}
 			}
-			if flag{
+			if flag {
 				candidates = append(candidates, &c)
 			}
 		}
 	}
 
- return candidates
+	return candidates
 }

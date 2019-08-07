@@ -21,7 +21,7 @@ func EmployeeGet() []*types.Employee {
 		log.Fatal(err)
 	}
 
-	defer rows.Close()
+	//defer rows.Close()
 
 	var employees []*types.Employee
 	for rows.Next() {
@@ -41,11 +41,11 @@ func EmployeeGet() []*types.Employee {
 		if err != nil {
 			log.Println(err)
 		}
-		defer rowAssessment.Close()
+		//defer rowAssessment.Close()
 
-		for rowAssessment.Next(){
+		for rowAssessment.Next() {
 			itemAssessment := types.Assessment{}
-			err := rowAssessment.Scan(&itemAssessment.Id,&itemAssessment.Date)
+			err := rowAssessment.Scan(&itemAssessment.Id, &itemAssessment.Date)
 			if err != nil {
 				log.Println(err)
 			}
@@ -69,7 +69,7 @@ func EmployeePut(employee types.Employee) (int64, error) {
 	db := ttt.DatabaseConnect()
 
 	var ID int64
-	 err := db.QueryRow(`
+	err := db.QueryRow(`
 		INSERT INTO employee (firstname, middlename, lastname, phone, email) 
 		VALUES ($1, $2, $3, $4, $5) returning id
 	`, employee.FirstName, employee.MiddleName, employee.LastName, 0, "").Scan(&ID)
@@ -80,7 +80,7 @@ func EmployeePut(employee types.Employee) (int64, error) {
 	return ID, err
 }
 
-func EmployeeDelete(id int) error{
+func EmployeeDelete(id int) error {
 
 	db := ttt.DatabaseConnect()
 
@@ -93,7 +93,7 @@ func EmployeeDelete(id int) error{
 	return err
 }
 
-func EmployeePost(id int, employee types.Employee) error{
+func EmployeePost(id int, employee types.Employee) error {
 
 	db := ttt.DatabaseConnect()
 
@@ -121,8 +121,6 @@ func EmployeePutInAssess(employee types.Employee) error {
 	return err
 }
 
-
-
 func EmployeeSearch(str types.Search) []*types.Employee {
 
 	db := ttt.DatabaseConnect()
@@ -131,7 +129,7 @@ func EmployeeSearch(str types.Search) []*types.Employee {
 
 	var employees []*types.Employee
 
-	for i := range masObjects{
+	for i := range masObjects {
 		rows, err := db.Query(`
 			SELECT *
 			FROM db.public.employee 
@@ -152,13 +150,13 @@ func EmployeeSearch(str types.Search) []*types.Employee {
 				log.Fatal(err)
 			}
 			var flag = true
-			for i := range employees{
+			for i := range employees {
 
-				if employees[i].Id == c.Id{
+				if employees[i].Id == c.Id {
 					flag = false
 				}
 			}
-			if flag{
+			if flag {
 				employees = append(employees, &c)
 			}
 		}

@@ -1,5 +1,5 @@
 package types
 
-type Search struct{
+type Search struct {
 	Str string
 }

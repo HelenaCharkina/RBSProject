@@ -1,13 +1,23 @@
-//GetStudent получение студентов из бд
-function getStudent() {
+function tabbarChangeCell() {
+    $$('tabbar').attachEvent("onItemClick", function () {
 
-    //$$('studentTable').clearAll()
+        $$('studentTable').clearSelection();
+        $$('assessmentTable').clearSelection();
+        $$('employeeTable').clearSelection()
+        selectITEM = null
+    });
+}
+
+//GetStudent получение кандидатов из бд
+function getCandidate() {
+
     fetch('/candidate', {method: 'GET'})
         .then(response => response.json())
         .then(items => {
-            for (const item of items) {
-                $$('studentTable').add(item);
-
+            if(items){
+                for (const item of items) {
+                    $$('studentTable').add(item);
+                }
             }
         })
 }
@@ -18,8 +28,10 @@ function getEmployee() {
     fetch('/employee', {method: 'GET'})
         .then(response => response.json())
         .then(items => {
-            for (const item of items) {
-                $$('employeeTable').add(item);
+            if(items) {
+                for (const item of items) {
+                    $$('employeeTable').add(item);
+                }
             }
         })
 }
@@ -30,33 +42,11 @@ function getAssessment() {
     fetch('/assessment', {method: 'GET'})
         .then(response => response.json())
         .then(items => {
-            for (const item of items) {
-                $$('assessmentTable').add(item);
+            if(items){
+                for (const item of items) {
+                    $$('assessmentTable').add(item);
+                }
             }
         })
 }
-// //getCandidateAsses не используется(перенесла в загрузку ассессментов)
-// function getCandidateAsses(id){
-//
-//     fetch(`/assessment/${id}`, {method: 'GET'})
-//         .then(response => response.json())
-//         .then(response => console.log((response)))
-//         .then(items => {
-//             for (const item of items) {
-//                 $$('assessmentTable').add(item);
-//             }
-//         })
-// }
-
-// //getDates ПОЛУЧЕНИЕ ВСЕХ СУЩЕСТВУЮЩИХ АССЕССМЕНТОВ
-//
-// function getDates(){
-//     fetch('/assessment', {method: 'GET'})
-//         .then(response => response.json())
-//         .then(response =>
-//             response.forEach(function(item){
-//                 masAsses.push(item);
-//             })
-//         )
-// }
 

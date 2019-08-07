@@ -26,7 +26,7 @@ func (c *EmployeeController) Put(employee types.Employee) revel.Result {
 	return c.RenderJSON(ID)
 }
 
-func (c *EmployeeController) Delete(id int) revel.Result{
+func (c *EmployeeController) Delete(id int) revel.Result {
 
 	err := providers.EmployeeDelete(id)
 	if err != nil {
@@ -36,7 +36,7 @@ func (c *EmployeeController) Delete(id int) revel.Result{
 	return c.RenderText("success")
 }
 
-func (c *EmployeeController) Post(id int, employee types.Employee) revel.Result{
+func (c *EmployeeController) Post(id int, employee types.Employee) revel.Result {
 
 	err := providers.EmployeePost(id, employee)
 	if err != nil {
@@ -55,7 +55,7 @@ func (c *EmployeeController) PutInAssess(employee types.Employee) revel.Result {
 	return c.RenderText("success")
 }
 
-func (c *EmployeeController) Search(str types.Search) revel.Result{
+func (c *EmployeeController) Search(str types.Search) revel.Result {
 
 	Employee := providers.EmployeeSearch(str)
 	return c.RenderJSON(Employee)

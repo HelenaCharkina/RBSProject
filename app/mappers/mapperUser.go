@@ -16,5 +16,5 @@ func UserPost(user types.User) (int64, error) {
 	if err != nil {
 		println(err)
 	}
-	return  ID, err
+	return ID, err
 }

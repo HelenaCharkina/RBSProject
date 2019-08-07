@@ -15,28 +15,55 @@
 </head>
 
 <body>
+
+
+
+<!-- Общее -->
 <script src="/public/js/LoginPopup.js"></script>
 <script src="/public/js/function_load.js"></script>
-
 <script src="/public/js/data.js"></script>
 
-<script src="/public/js/list_of_student.js"></script>
-<script src="/public/js/list_of_assessment.js"></script>
-<script src="/public/js/list_of_employee.js"></script>
-<script src="/public/js/AssessmentAddCandidatePopup.js"></script>
-<script src="/public/js/AssessmentAddEmployeePopup.js"></script>
-<script src="/public/js/addEmployeeInAssessment.js"></script>
-<script src="/public/js/addCandidateInAssessment.js"></script>
-{{/*<script src="/public/js/popup_delete_assessment.js"></script>*/}}
-{{/*<script src="/public/js/popup_delete_student.js"></script>*/}}
-{{/*<script src="/public/js/popup_delete_employee.js"></script>*/}}
-<script src="/public/js/popup_add_assessment.js"></script>
-<script src="/public/js/popup_add_student.js"></script>
-<script src="/public/js/popup_add_employee.js"></script>
-<script src="/public/js/function_edit.js"></script>
-<script src="/public/script.js"></script>
+<!-- Компоненты кандидата -->
+<script src="/public/js/components/candidate/AddCandidateInAssessmentPopup.js"></script>
+<script src="/public/js/components/candidate/AddCandidatePopup.js"></script>
+{{/*<script src="/public/js/components/candidate/CandidateFunction/CandidateEditFunction.js"></script>*/}}
+{{/*<script src="/public/js/components/candidate/CandidateFunction/CandidateLoadFunction.js"></script>*/}}
+<script src="/public/js/components/candidate/CandidatePage.js"></script>
 
-<script src="/public/js/search.js"></script>
+<!-- Компоненты сотрудника -->
+<script src="/public/js/components/employee/AddEmployeePopup.js"></script>
+<script src="/public/js/components/employee/AddEmployeeInAssessmentPopup.js"></script>
+{{/*<script src="/public/js/components/employee/EmployeeFunction/EmployeeEditFunction.js"></script>*/}}
+{{/*<script src="/public/js/components/employee/EmployeeFunction/EmployeeLoadFunction.js"></script>*/}}
+<script src="/public/js/components/employee/EmployeePage.js"></script>
+
+<!-- Компоненты ассессмента -->
+<script src="/public/js/components/assessment/AddAssessmentPopup.js"></script>
+
+{{/*<script src="/public/js/components/assessment/Candidate/CandidateCellInAssessment.js"></script>*/}}
+<script src="/public/js/components/assessment/Candidate/AssessmentAddCandidatePopup.js"></script>
+{{/*<script src="/public/js/components/assessment/Candidate/CandidateFunctionInAssessment/CandidateEditFunctionInAssessment.js"></script>*/}}
+{{/*<script src="/public/js/components/assessment/Candidate/CandidateFunctionInAssessment/CandidateLoadFunctionInAssessment.js"></script>*/}}
+
+{{/*<script src="/public/js/components/assessment/Employee/EmployeeCellInAssessment.js"></script>*/}}
+<script src="/public/js/components/assessment/Employee/AssessmentAddEmployeePopup.js"></script>
+{{/*<script src="/public/js/components/assessment/Employee/EmployeeFunctionInAssessment/EmployeeEditFunctionInAssessment.js"></script>*/}}
+{{/*<script src="/public/js/components/assessment/Employee/EmployeeFunctionInAssessment/EmployeeLoadFunctionInAssessment.js"></script>*/}}
+
+{{/*<script src="/public/js/components/assessment/AssessmentFunction/AssessmentLoadFunction.js"></script>*/}}
+{{/*<script src="/public/js/components/assessment/AssessmentFunction/AssessmentEditFunction.js"></script>*/}}
+
+<script src="/public/js/components/assessment/AssessmentPage.js"></script>
+<script src="/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js"></script>
+<script src="/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js"></script>
+
+<!-- Главные вкладки -->
+{{/*<script src="/public/js/components/candidate/CandidateCell.js"></script>*/}}
+{{/*<script src="/public/js/components/assessment/AssessmentCell.js"></script>*/}}
+{{/*<script src="/public/js/components/employee/EmployeeCell.js"></script>*/}}
+
+<!-- Главная страница -->
+<script src="/public/script.js"></script>
 
 </body>
 

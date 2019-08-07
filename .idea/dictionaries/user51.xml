@@ -3,10 +3,12 @@
     <words>
       <w>borderless</w>
       <w>dbname</w>
+      <w>fillspace</w>
       <w>firstname</w>
       <w>lastname</w>
       <w>middlename</w>
       <w>multicombo</w>
+      <w>multiselect</w>
       <w>multiview</w>
       <w>oaqcrick</w>
       <w>postgre</w>

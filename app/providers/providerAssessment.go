@@ -23,7 +23,7 @@ func AssessmentPutCandidate(assessment types.Assessment) error {
 func AssessmentDelete(id int) error {
 	return mappers.AssessmentDelete(id)
 }
-func AssessmentPost(id int, assessment types.Assessment)( types.Assessment, error) {
+func AssessmentPost(id int, assessment types.Assessment) (types.Assessment, error) {
 	return mappers.AssessmentPost(id, assessment)
 }
 

@@ -20,7 +20,7 @@ func EmployeePost(id int, employee types.Employee) error {
 	return mappers.EmployeePost(id, employee)
 }
 
-func EmployeePutInAssess(employee types.Employee)error {
+func EmployeePutInAssess(employee types.Employee) error {
 	return mappers.EmployeePutInAssess(employee)
 }
 

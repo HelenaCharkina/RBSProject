@@ -7,7 +7,6 @@ import (
 	"ttt/app/types"
 )
 
-
 type AssessmentController struct {
 	*revel.Controller
 }
@@ -43,7 +42,7 @@ func (c *AssessmentController) Put(assessment types.Assessment) revel.Result {
 	return c.RenderJSON(asses)
 }
 
-func (c *AssessmentController) Delete(id int) revel.Result{
+func (c *AssessmentController) Delete(id int) revel.Result {
 
 	err := providers.AssessmentDelete(id)
 	if err != nil {
@@ -53,7 +52,7 @@ func (c *AssessmentController) Delete(id int) revel.Result{
 	return c.RenderText("success")
 }
 
-func (c *AssessmentController) Post(id int, assessment types.Assessment) revel.Result{
+func (c *AssessmentController) Post(id int, assessment types.Assessment) revel.Result {
 
 	assess, err := providers.AssessmentPost(id, assessment)
 	if err != nil {
@@ -64,7 +63,7 @@ func (c *AssessmentController) Post(id int, assessment types.Assessment) revel.R
 	return c.RenderJSON(assess)
 }
 
-func (c *AssessmentController) Search(str types.Search) revel.Result{
+func (c *AssessmentController) Search(str types.Search) revel.Result {
 
 	assessments := providers.AssessmentSearch(str)
 	return c.RenderJSON(assessments)

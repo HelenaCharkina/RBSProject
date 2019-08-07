@@ -1,7 +1,7 @@
 package types
 
-type User struct{
-	Id int
+type User struct {
+	Id    int
 	Login string
-	Pass string
+	Pass  string
 }

@@ -20,10 +20,10 @@ func CandidateSearch(str types.Search) []*types.Candidate {
 func CandidateGetId(id int) *types.Candidate {
 	return mappers.CandidateGetId(id)
 }
-func CandidatePut(candidate types.Candidate)(int64, error) {
+func CandidatePut(candidate types.Candidate) (int64, error) {
 	return mappers.CandidatePut(candidate)
 }
-func CandidatePutInAssess(candidate types.Candidate)error {
+func CandidatePutInAssess(candidate types.Candidate) error {
 	return mappers.CandidatePutInAssess(candidate)
 }
 
@@ -34,8 +34,3 @@ func CandidateDelete(id int) error {
 func CandidatePost(id int, candidate types.Candidate) error {
 	return mappers.CandidatePost(id, candidate)
 }
-
-
-
-
-
