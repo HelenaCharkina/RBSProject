@@ -1,0 +1,53 @@
+# Routes Config
+#
+# This file defines all application routes (Higher priority routes first)
+#
+
+module:testrunner
+# module:jobs
+
+
+GET     /                                       App.Index
+
+GET     /candidate                             CandidateController.Get
+GET     /candidate/:id                         CandidateController.GetId
+DELETE  /candidate/:id                         CandidateController.Delete
+PUT    /candidate                              CandidateController.Put
+POST    /candidate/search                      CandidateController.Search
+POST    /candidate/:id                         CandidateController.Post
+PUT    /candidate/:id                          CandidateController.PutInAssess
+
+
+GET     /assessment                          AssessmentController.Get
+GET     /assessment/:id                           AssessmentController.GetMas
+PUT    /assessment                             AssessmentController.Put
+DELETE  /assessment/:id                       AssessmentController.Delete
+POST    /assessment/search                      AssessmentController.Search
+POST /assessment/:id                       AssessmentController.Post
+PUT /assessment/:id                        AssessmentController.PutCandidate
+
+GET     /employee                               EmployeeController.Get
+PUT    /employee                               EmployeeController.Put
+DELETE  /employee/:id                        EmployeeController.Delete
+POST    /employee/search                      EmployeeController.Search
+POST /employee/:id                        EmployeeController.Post
+PUT    /employee/:id                          EmployeeController.PutInAssess
+
+POST    /user                               UserController.Post
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/*filepath                       Static.Serve("public")
+
+# Catch all, this will route any request into the controller path
+#
+#                    **** WARNING ****
+# Enabling this exposes any controller and function to the web.
+# ** This is a serious security issue if used online **
+#
+# For rapid development uncomment the following to add new controller.action endpoints
+# without having to add them to the routes table.
+# *       /:controller/:action                    :controller.:action
