@@ -9,25 +9,37 @@ function EmployeeView() {
             view: 'toolbar',
             elements: [
                 {
-                    view: "search", placeholder: "Search..", width: 300, height: 50, id: "employeeSearch"
+                    view: "search", placeholder: "Поиск..", width: 300, height: 50, id: "employeeSearch"
                 },
                 {},
                 {
-                    view: "button", width: 150, value: 'Добавить', popup: "add_employee"
+                    view: "button",
+                    width: 150,
+                    value: 'Добавить',
+                    popup: "add_employee"
                 },
+                {
+                    view: "button",
+                    id: "SaveEmployee",
+                    value: "Сохранить",
+                },
+                {
+                    view: "button",
+                    id: "deleteEmployee",
+                    value: "Удалить",
+                }
             ]
         },
             {//списки
                 cols: [
                     {
-
+                        height: 500,
                         view: "datatable",
                         select: "row",
                         id: "employeeTable",
-                        height: 500,
+                        //autoheight:true,
                         autoConfig: true,
                         scrollX: false,
-                        fillspace : true,
                         columns: [
                             {
                                 fillspace: true,
@@ -76,16 +88,18 @@ function EmployeeView() {
                                 view: "text",
                                 label: "Телефон",
                                 labelWidth: 150,
-                                id: "infoPhoneEmployee"
+                                id: "infoPhoneEmployee",
+                                pattern:{ mask:"(###) ###-####", allow:/[0-9]/g }
                             },
                             {
                                 view: "text",
                                 labelWidth: 150,
                                 label: "Почта",
-                                id: "infoEmailEmployee"
+                                id: "infoEmailEmployee",
                             },
                             {
                                 view: "list",
+                                select: "row",
                                 id: "listOfAssessmentE",
                                 template:"#Date#",
                                 height: 200
@@ -95,20 +109,16 @@ function EmployeeView() {
                                 cols:[
                                     {
                                         view: "button",
-                                        id: "deleteEmployee",
-                                        value: "Удалить",
-                                    },
-                                    {
-                                        view: "button",
-                                        id: "SaveEmployee",
-                                        value: "Сохранить",
-                                    },
-                                    {
-                                        view: "button",
                                         popup: "addEmployeeInAssess",
                                         value :"Добавить в ассессмент",
                                         id: "infoAssesE",
-                                        height: 50
+                                        height: 40
+                                    },
+                                    {
+                                        view: "button",
+                                        value :"Удалить ассессмент",
+                                        id: "deleteEmployeeFromAssessment",
+                                        height: 40
                                     }]
                             }
 

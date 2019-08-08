@@ -2,7 +2,7 @@ webix.ready(function () {
     -webix.ui({
             rows: [
                 {//шапка
-                    view: "label", label: "login", width: 300, align: 'center', height: 50
+                    view: "label",  align: 'center', height: 50, id: "currentUserLabel", css: "webix_icon wxi-user"
                 },
                 {
                     borderless: true, view: "tabbar", id: "tabbar", multiview: true, options: [

@@ -5,7 +5,7 @@ import (
 	"ttt/app/types"
 )
 
-func UserPost(user types.User) (int64, error) {
+func UserPost(user types.User) (types.Employee, error) {
 	return mappers.UserPost(user)
 }
 

@@ -9,17 +9,20 @@ webix.ui({
                 view: "text",
                 label: "Имя",
                 width: 500,
-                id: "FirstNamePop"},
+                id: "FirstNamePop"
+            },
             {
                 view: "text",
                 label: "Отчество",
                 width: 500,
-                id: "MiddleNamePop"},
+                id: "MiddleNamePop"
+            },
             {
                 view: "text",
                 label: "Фамилия",
                 width: 500,
-                id: "LastNamePop"},
+                id: "LastNamePop"
+            },
             {
                 view: "button",
                 id: "addStudentButton",

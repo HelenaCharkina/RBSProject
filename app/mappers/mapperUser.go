@@ -5,7 +5,7 @@ import (
 	"ttt/app/types"
 )
 
-func UserPost(user types.User) (int64, error) {
+func UserPost(user types.User) (types.Employee, error) {
 
 	db := ttt.DatabaseConnect()
 
@@ -16,5 +16,12 @@ func UserPost(user types.User) (int64, error) {
 	if err != nil {
 		println(err)
 	}
-	return ID, err
+	employee := types.Employee {}
+	err = db.QueryRow(`
+		select id, firstname, middlename, lastname from db.public.employee where id = $1
+`, ID).Scan(&employee.Id, &employee.FirstName, &employee.MiddleName, &employee.LastName)
+	if err != nil {
+		println(err)
+	}
+	return employee, err
 }

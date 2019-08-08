@@ -27,6 +27,7 @@ webix.ui({
                     },
                     {
                         view: "text",
+                        type:"password",
                         label:"Пароль",
                         placeholder:"Пароль",
                         id: "loginPass",
@@ -61,9 +62,12 @@ $$('loginButton').attachEvent('onItemClick', () => {
         body: JSON.stringify(user)})
         .then(res => res.json())
         .then(res => {
-            if(res !== 0) {
+            if(res.Id !== 0) {
                 $$('loginPopup').hide()
                 webix.message("Вход произведен")
+                currentEmployee = res
+                let fio = currentEmployee.LastNameE + " " + currentEmployee.FirstNameE + " " + currentEmployee.MiddleNameE
+                $$('currentUserLabel').setValue(fio)
             }else{
                 webix.message("Неправильные данные")
             }

@@ -1,5 +1,5 @@
 function AssessmentView() {
-
+    webix.i18n.setLocale("ru-RU")
     return {
         id: "assessmentList",
         rows: [
@@ -8,7 +8,7 @@ function AssessmentView() {
                 elements: [
                     {
                         view: "datepicker",
-                        placeholder: "Search..",
+                        placeholder: "Поиск..",
                         width: 300,
                         height: 50,
                         id: "assessmentSearch",
@@ -77,8 +77,8 @@ function AssessmentView() {
                             },
                             {
                                 cells: [
-                                    EmployeeInAssessmentPage.config(),
                                     CandidateInAssessmentPage.config(),
+                                    EmployeeInAssessmentPage.config(),
                                 ]
                             },
 

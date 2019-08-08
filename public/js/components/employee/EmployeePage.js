@@ -97,6 +97,36 @@ const EmployeePage = {
                 })
         });
 
+        // удалить ассессмент сотрудника
+        $$('deleteEmployeeFromAssessment').attachEvent('onItemClick', () => {
+            if (selectITEM) {
+                if ($$('listOfAssessmentE').getSelectedItem()) {
+                    let deletedAssessment = $$('listOfAssessmentE').getSelectedItem()
+
+                    $$('listOfAssessmentE').remove($$('listOfAssessmentE').getSelectedId());
+                    let asses = {
+                        Id: deletedAssessment.Id,
+                        Date: deletedAssessment.Date,
+                        Employees: [],
+                    }
+                    let employee = {
+                        Id: selectITEM.Id
+                    }
+                    asses.Employees.push(employee);
+
+                    AssessmentModel.putInside(asses.Id, asses);
+
+                    // assessment update
+                    let idx = ($$('assessmentTable').find(el => el.Id === deletedAssessment.Id))[0].id;
+                    let editAssessment = $$('assessmentTable').getItem(idx);
+                    let idxEmployee = editAssessment.Employees.findIndex(el => el.Id === selectITEM.Id);
+                    editAssessment.Employees.splice(idxEmployee, 1);
+                    ($$('assessmentTable').updateItem(editAssessment.id, editAssessment))
+
+                }
+            }
+        });
+
         // ДОБАВИТЬ СОТРУДНИКА В АССЕССМЕНТ:ЗАПОЛНЕНИЕ ТАБЛИЦЫ ВО ВСПЛЫВАЮЩЕМ ОКНЕ
         $$('infoAssesE').attachEvent('onItemClick', () => {
             if (selectITEM) {

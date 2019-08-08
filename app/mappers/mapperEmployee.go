@@ -43,7 +43,7 @@ func EmployeeGet() ([]*types.Employee, error) {
 			log.Println(err)
 			return employees, err
 		}
-		rowAssessment.Close()
+		defer rowAssessment.Close()
 
 		for rowAssessment.Next() {
 			itemAssessment := types.Assessment{}

@@ -7,23 +7,36 @@ function CandidateView() {
             view: 'toolbar',
             elements: [
                 {
-                    view: "search", placeholder: "Search..", width: 300, height: 50, id: "candidateSearch"
+                    view: "search", placeholder: "Поиск..", width: 300, height: 50, id: "candidateSearch"
 
                 },
                 {},
                 {
-                    view: "button", width: 150, value: 'Добавить', popup: "add_student"
+                    view: "button",
+                    width: 150,
+                    value: 'Добавить',
+                    popup: "add_student"
                 },
+                {
+                    view: "button",
+                    id: "SaveStudent",
+                    value: "Сохранить",
+                },
+                {
+                    view: "button",
+                    id: "deleteStudent",
+                    value: "Удалить",
+                }
             ]
         },
             {//списки
                 cols: [
                     {
-                        autoheight:true,
+                        //autoheight:true,
                         view: "datatable",
                         select: "row",
                         id: "studentTable",
-                        //height: 500,
+                        height: 500,
                         autoConfig: true,
                         columns: [
 
@@ -72,16 +85,18 @@ function CandidateView() {
                                 view: "text",
                                 label: "Телефон",
                                 labelWidth: 150,
-                                id: "infoPhone"
+                                id: "infoPhone",
+                                pattern:{ mask:"(###) ###-####", allow:/[0-9]/g }
                             },
                             {
                                 view: "text",
                                 labelWidth: 150,
                                 label: "Почта",
-                                id: "infoEmail"
+                                id: "infoEmail",
                             },
                             {
                                 view: "list",
+                                select: "row",
                                 id: "listOfAssessment",
                                 template:"#Date#",
                                 height: 200
@@ -91,21 +106,18 @@ function CandidateView() {
                                 cols:[
                                     {
                                         view: "button",
-                                        id: "deleteStudent",
-                                        value: "Удалить",
-                                    },
-                                    {
-                                        view: "button",
-                                        id: "SaveStudent",
-                                        value: "Сохранить",
-                                    },
-                                    {
-                                        view: "button",
                                         popup: "addCandidateInAssess",
                                         value :"Добавить в ассессмент",
                                         id: "infoAsses",
-                                        height: 50
-                                    },]
+                                        height: 40
+                                    },
+                                    {
+                                        view: "button",
+                                        value :"Удалить ассессмент",
+                                        id: "deleteCandidateFromAssessment",
+                                        height: 40
+                                    }
+                                    ]
                             }
                         ]
                     }

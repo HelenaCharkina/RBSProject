@@ -48,7 +48,7 @@ const CandidatePage = {
                 $$('infoLastName').setValue("");
                 $$('infoPhone').setValue("");
                 $$('infoEmail').setValue("");
-                $$('infoAsses').setValue("");
+                //$$('infoAsses').setValue("");
 
                 CandidateModel.delete(selectITEM.Id)
 
@@ -95,6 +95,36 @@ const CandidatePage = {
                         webix.message("Кандидаты не найдены")
                     }
                 })
+        });
+
+        // удалить ассессмент кандидата
+        $$('deleteCandidateFromAssessment').attachEvent('onItemClick', () => {
+            if (selectITEM) {
+                if ($$('listOfAssessment').getSelectedItem()) {
+                    let deletedAssessment = $$('listOfAssessment').getSelectedItem()
+
+                    $$('listOfAssessment').remove($$('listOfAssessment').getSelectedId());
+                    let asses = {
+                        Id: deletedAssessment.Id,
+                        Date: deletedAssessment.Date,
+                        Candidates: [],
+                    }
+                    let candidate = {
+                        Id: selectITEM.Id
+                    }
+                    asses.Candidates.push(candidate);
+
+                    AssessmentModel.putInside(asses.Id, asses);
+
+                    // assessment update
+                    let idx = ($$('assessmentTable').find(el => el.Id === deletedAssessment.Id))[0].id;
+                    let editAssessment = $$('assessmentTable').getItem(idx);
+                    let idxCandidate = editAssessment.Candidates.findIndex(el => el.Id === selectITEM.Id);
+                    editAssessment.Candidates.splice(idxCandidate, 1);
+                    ($$('assessmentTable').updateItem(editAssessment.id, editAssessment))
+
+                }
+            }
         });
 
         // ДОБАВИТЬ КАНДИДАТА В АССЕССМЕНТ:ЗАПОЛНЕНИЕ ТАБЛИЦЫ ВО ВСПЛЫВАЮЩЕМ ОКНЕ
