@@ -12,7 +12,11 @@ type AssessmentController struct {
 }
 
 func (c *AssessmentController) Get() revel.Result {
-	assessments := providers.AssessmentGet()
+	assessments, err := providers.AssessmentGet()
+	if err != nil {
+		log.Println(err)
+		return c.RenderError(err)
+	}
 	return c.RenderJSON(assessments)
 }
 

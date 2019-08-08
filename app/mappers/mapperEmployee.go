@@ -8,27 +8,28 @@ import (
 	"ttt/app/types"
 )
 
-func EmployeeGet() []*types.Employee {
+func EmployeeGet() ([]*types.Employee, error) {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
+
+	var employees []*types.Employee
 	rows, err := db.Query(`
 		SELECT * 
 		FROM db.public.employee
 `)
-
 	if err != nil {
 		log.Fatal(err)
+		return employees, err
 	}
-
-	//defer rows.Close()
-
-	var employees []*types.Employee
+	defer rows.Close()
 	for rows.Next() {
 		c := types.Employee{}
 		err := rows.Scan(&c.Id, &c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
 		if err != nil {
 			log.Fatal(err)
+			return employees, err
 		}
 
 		//----------------АССЕССМЕНТЫ-----------------------
@@ -40,14 +41,16 @@ func EmployeeGet() []*types.Employee {
 		where e.id = $1`, &c.Id)
 		if err != nil {
 			log.Println(err)
+			return employees, err
 		}
-		//defer rowAssessment.Close()
+		rowAssessment.Close()
 
 		for rowAssessment.Next() {
 			itemAssessment := types.Assessment{}
 			err := rowAssessment.Scan(&itemAssessment.Id, &itemAssessment.Date)
 			if err != nil {
 				log.Println(err)
+				return employees, err
 			}
 			c.ListOfAssessment = append(c.ListOfAssessment, itemAssessment)
 		}
@@ -61,12 +64,13 @@ func EmployeeGet() []*types.Employee {
 		log.Fatal(err)
 	}
 
-	return employees
+	return employees, err
 }
 
 func EmployeePut(employee types.Employee) (int64, error) {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	var ID int64
 	err := db.QueryRow(`
@@ -83,6 +87,7 @@ func EmployeePut(employee types.Employee) (int64, error) {
 func EmployeeDelete(id int) error {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	_, err := db.Exec(`
 		delete from employee 
@@ -96,6 +101,7 @@ func EmployeeDelete(id int) error {
 func EmployeePost(id int, employee types.Employee) error {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	_, err := db.Exec(`
 		update employee set firstname = $2, middlename = $3, lastname = $4, phone = $5, email = $6 
@@ -109,6 +115,7 @@ func EmployeePost(id int, employee types.Employee) error {
 func EmployeePutInAssess(employee types.Employee) error {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	var err error
 	for i := range employee.ListOfAssessment {
@@ -124,6 +131,7 @@ func EmployeePutInAssess(employee types.Employee) error {
 func EmployeeSearch(str types.Search) []*types.Employee {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	var masObjects = strings.Split(str.Str, " ")
 

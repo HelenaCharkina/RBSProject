@@ -9,7 +9,7 @@ func UserPost(user types.User) (int64, error) {
 	return mappers.UserPost(user)
 }
 
-func CandidateGet() []*types.Candidate {
+func CandidateGet() ([]*types.Candidate, error) {
 	return mappers.CandidateGet()
 }
 

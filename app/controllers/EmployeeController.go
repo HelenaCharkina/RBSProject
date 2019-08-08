@@ -13,7 +13,11 @@ type EmployeeController struct {
 }
 
 func (c *EmployeeController) Get() revel.Result {
-	employees := providers.EmployeeGet()
+	employees, err := providers.EmployeeGet()
+	if err != nil{
+		log.Println(err)
+		return c.RenderError(err)
+	}
 	return c.RenderJSON(employees)
 }
 

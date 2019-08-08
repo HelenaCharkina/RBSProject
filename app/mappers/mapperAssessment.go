@@ -7,25 +7,28 @@ import (
 	"ttt/app/types"
 )
 
-func AssessmentGet() []*types.Assessment {
+func AssessmentGet() ([]*types.Assessment, error) {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
+	var assessments []*types.Assessment
 	rows, err := db.Query(`
 		SELECT *
 		FROM db.public.assessment
 `)
 	if err != nil {
 		log.Println(err)
+		return assessments, err
 	}
 	defer rows.Close()
 
-	var assessments []*types.Assessment
 	for rows.Next() {
 		c := types.Assessment{}
 		err := rows.Scan(&c.Id, &c.Date)
 		if err != nil {
 			log.Println(err)
+			return assessments, err
 		}
 		/*------------Кандидаты-------------*/
 
@@ -36,14 +39,16 @@ func AssessmentGet() []*types.Assessment {
 		where a.id = $1`, &c.Id)
 		if err != nil {
 			log.Println(err)
+			return assessments, err
 		}
-		//defer rowCandidate.Close()
+		defer rowCandidate.Close()
 
 		for rowCandidate.Next() {
 			itemCandidate := types.Candidate{}
 			err := rowCandidate.Scan(&itemCandidate.Id, &itemCandidate.FirstName, &itemCandidate.MiddleName, &itemCandidate.LastName, &itemCandidate.S, &itemCandidate.P, &itemCandidate.Id)
 			if err != nil {
 				log.Println(err)
+				return assessments, err
 			}
 			c.Candidates = append(c.Candidates, itemCandidate)
 		}
@@ -58,14 +63,16 @@ func AssessmentGet() []*types.Assessment {
 		where a.id = $1`, &c.Id)
 		if err != nil {
 			log.Println(err)
+			return assessments, err
 		}
-		//defer rowEmployee.Close()
+		defer rowEmployee.Close()
 
 		for rowEmployee.Next() {
 			itemEmployee := types.Employee{}
 			err := rowEmployee.Scan(&itemEmployee.Id, &itemEmployee.FirstName, &itemEmployee.MiddleName, &itemEmployee.LastName)
 			if err != nil {
 				log.Println(err)
+				return assessments, err
 			}
 			c.Employees = append(c.Employees, itemEmployee)
 		}
@@ -76,12 +83,13 @@ func AssessmentGet() []*types.Assessment {
 	if err = rows.Err(); err != nil {
 		log.Fatal(err)
 	}
-	return assessments
+	return assessments, err
 }
 
 func AssessmentPut(assessment types.Assessment) (int64, error) {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	var ID int64
 	err := db.QueryRow(`
@@ -97,6 +105,7 @@ func AssessmentPut(assessment types.Assessment) (int64, error) {
 func AssessmentDelete(id int) error {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	_, err := db.Exec(`
 		delete from assessment 
@@ -110,6 +119,7 @@ func AssessmentDelete(id int) error {
 func AssessmentPost(id int, assessment types.Assessment) (types.Assessment, error) {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	_, err := db.Exec(`
 		update assessment set date = $2
@@ -147,7 +157,7 @@ func AssessmentPost(id int, assessment types.Assessment) (types.Assessment, erro
 	if err != nil {
 		log.Println(err)
 	}
-	//defer rowCandidate.Close()
+	defer rowCandidate.Close()
 
 	for rowCandidate.Next() {
 		itemCandidate := types.Candidate{}
@@ -169,7 +179,7 @@ func AssessmentPost(id int, assessment types.Assessment) (types.Assessment, erro
 	if err != nil {
 		log.Println(err)
 	}
-	//defer rowEmployee.Close()
+	defer rowEmployee.Close()
 
 	for rowEmployee.Next() {
 		itemEmployee := types.Employee{}
@@ -188,6 +198,7 @@ func AssessmentPost(id int, assessment types.Assessment) (types.Assessment, erro
 func AssessmentGetMas(id int) *types.Assessment {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	rows, err := db.Query(`
 		select firstname, middlename, lastname, ca.status, ca.proof, c.id from assessment a
@@ -197,7 +208,7 @@ func AssessmentGetMas(id int) *types.Assessment {
 	if err != nil {
 		log.Println(err)
 	}
-	//defer rows.Close()
+	defer rows.Close()
 
 	c := types.Assessment{}
 	for rows.Next() {
@@ -217,6 +228,8 @@ func AssessmentGetMas(id int) *types.Assessment {
 func AssessmentPutCandidate(assessment types.Assessment) error {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
+
 	var err error
 	for i := range assessment.Candidates {
 		_, err = db.Exec(`
@@ -246,6 +259,7 @@ func AssessmentPutCandidate(assessment types.Assessment) error {
 func AssessmentSearch(str types.Search) []*types.Assessment {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	var assessments []*types.Assessment
 
@@ -274,7 +288,7 @@ func AssessmentSearch(str types.Search) []*types.Assessment {
 		if err != nil {
 			log.Println(err)
 		}
-		//defer rowCandidate.Close()
+		defer rowCandidate.Close()
 
 		for rowCandidate.Next() {
 			itemCandidate := types.Candidate{}
@@ -296,7 +310,7 @@ func AssessmentSearch(str types.Search) []*types.Assessment {
 		if err != nil {
 			log.Println(err)
 		}
-		//defer rowEmployee.Close()
+		defer rowEmployee.Close()
 
 		for rowEmployee.Next() {
 			itemEmployee := types.Employee{}

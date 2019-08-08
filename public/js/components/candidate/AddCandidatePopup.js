@@ -1,3 +1,4 @@
+
 webix.ui({
     view: "popup",
     id: "add_student",

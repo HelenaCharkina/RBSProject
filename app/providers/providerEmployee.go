@@ -5,7 +5,7 @@ import (
 	"ttt/app/types"
 )
 
-func EmployeeGet() []*types.Employee {
+func EmployeeGet() ([]*types.Employee, error) {
 	return mappers.EmployeeGet()
 }
 

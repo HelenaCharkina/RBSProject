@@ -2,1253 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd989979-d9cb-4c08-b463-d15d243126dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/components/assessment/Candidate/AssessmentAddCandidatePopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/components/assessment/Employee/AssessmentAddEmployeePopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/components/candidate/AddCandidateInAssessmentPopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/components/employee/AddEmployeeInAssessmentPopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/components/employee/EmployeePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/user51.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/user51.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/components/assessment/Candidate/views/CandidateInAssessmentView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/components/assessment/Employee/views/EmployeeInAssessmentView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/components/assessment/views/AssessmentView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/components/candidate/models/CandidateModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/components/candidate/views/CandidateView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/components/employee/views/EmployeeView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB_CONNECTION.go" beforeDir="false" afterPath="$PROJECT_DIR$/DB_CONNECTION.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/AsessmentController.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AsessmentController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/CandidateController.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/CandidateController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/EmployeeController.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/EmployeeController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/mappers/mapperAssessment.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/mappers/mapperAssessment.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/mappers/mapperCandidate.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/mappers/mapperCandidate.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/mappers/mapperEmployee.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/mappers/mapperEmployee.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mappers/mapperUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/mappers/mapperUser.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/providers/providerAssessment.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/providers/providerAssessment.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/providers/providerCandidate.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/providers/providerCandidate.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/providers/providerEmployee.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/providers/providerEmployee.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/types/Assessment.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/Assessment.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/types/Candidate.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/Candidate.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/types/Employee.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/Employee.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/types/Search.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/Search.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/types/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/User.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/App/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/App/Index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/AssessmentAddCandidatePopup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/AssessmentAddEmployeePopup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/addCandidateInAssessment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/addEmployeeInAssessment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap-3.3.6.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/components/assessment/AssessmentCell.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/components/candidate/CandidateCell.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/components/employee/EmployeeCell.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/function_edit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/function_load.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/function_load.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery-2.2.4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/popup_add_assessment.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/assessment/AddAssessmentPopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/popup_add_employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/employee/AddEmployeePopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/popup_add_student.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/popup_delete_assessment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/popup_delete_employee.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/popup_delete_student.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/01_resizer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/02_resize_limit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/03_header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/04_header_vertical.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/05_header_complex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/06_header_resize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/07_header_all.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/08_min_size.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/09_header_dark.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/10_performance.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/11_responsive.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/12_responsive_hidden.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/13_reconfiguration.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/14_flex_top.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/15_flex_inner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/16_flex_dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/17_align.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/01_layout/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/02_tabbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/03_tabview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/04_toolbar_align.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/05_toolbar_lines.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/06_toolbar_button.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/07_toolbar_image_button.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/08_toolbar_topimage_button.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/09_toolbar_image_button_box.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/10_toolbar_topimage_button_box.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/11_toolbar_icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/12_styled_buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/13_search_field.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/14_batches.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/14_toolbar_toggle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/15_common_config.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/15_toolbar_topimage_toggle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/16_toolbar_image_button_toggle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/17_toolbar_topimage_button_toggle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/18_toolbar_toggle_icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/19_tabs_on_the_go.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/20_richselect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/21_toolbar_badges.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/22_toolbar_dark.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/02_toolbar/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/01_menubar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/02_menubar_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/03_in_layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/04_context.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/05_context_content.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/06_context_for_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/07_context_ui.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/07_menu_toolbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/09_disable_item.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/10_hide_item.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/11_menu_open_click.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/12_submenu_config.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/13_hrefs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/14_vertical_menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/15_menu_spacer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/16_badges.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/17_submenu_autowidth.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/images/html4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/images/html5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/03_menu/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/04_template/02_autoheight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/04_template/03_ui_inside.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/04_template/10_scrollview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/04_template/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/01_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/02_list_layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/03_group_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/04_list_grouping.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/05_editable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/06_validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/07_empty_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/08_xlist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/09_copypaste.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/10_filtering.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/11_unitlist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/12_paging.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/13_ycount.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/14_custom_handlers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/15_active_content.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/16_unitlist_pager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/17_advanced_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/data/empty.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/05_list/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/01_initialization/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/01_initialization/02_url_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/01_initialization/03_fixed_sizing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/01_initialization/04_content_sizing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/01_initialization/05_type_sizing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/01_initialization/06_autoheight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/01_initialization/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/02_templates/01_jshtml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/02_templates/02_js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/02_templates/03_html.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/02_templates/04_external.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/02_templates/05_named.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/02_templates/06_tooltip.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/02_templates/07_tiles.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/02_templates/dataview_styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/02_templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/02_templates/template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/03_loading/01_xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/03_loading/02_json.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/03_loading/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/03_loading/movies.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/03_loading/movies.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/04_manipulations/01_adding.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/04_manipulations/02_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/04_manipulations/03_edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/04_manipulations/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/05_edit/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/05_edit/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/16_dyn_loading/01_big_dateset_static.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/16_dyn_loading/02_big_dataset_dynamic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/16_dyn_loading/03_datafetch.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/16_dyn_loading/04_datathrottle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/16_dyn_loading/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/19_paging/01_static_paging.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/19_paging/02_dynamic_paging.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/19_paging/03_paging_custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/19_paging/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/22_dnd/01_basic_dnd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/22_dnd/02_in_out.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/22_dnd/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/06_dataview/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/07_property/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/07_property/02_custom_checkbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/07_property/03_colorpicker.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/07_property/04_complex_values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/07_property/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/01_initialization/01_load_xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/01_initialization/02_load_json.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/01_initialization/03_load_csv.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/01_initialization/04_load_jsarray.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/01_initialization/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/02_color/01_custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/02_color/02_function.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/02_color/03_gradient.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/02_color/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/03_api/01_group.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/03_api/02_export_png.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/03_api/03_export_pdf.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/03_api/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/04_pie_chart/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/04_pie_chart/02_3d_chart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/04_pie_chart/03_legend.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/04_pie_chart/04_donut.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/04_pie_chart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/05_line_chart/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/05_line_chart/02_style.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/05_line_chart/03_scale.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/05_line_chart/04_spline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/05_line_chart/05_series.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/05_line_chart/06_style_presets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/05_line_chart/07_legend.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/05_line_chart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/02_text.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/03_scales.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/04_styles.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/05_stacked_chart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/06_series.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/07_horizonal_bars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/08_horizonal_stacked_bars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/09_origin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/10_style_presets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/11_bar_width.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/12_diff_charts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/13_custom_axis.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/06_bar_chart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/07_area_chart/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/07_area_chart/02_scale.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/07_area_chart/03_series.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/07_area_chart/04_stacked_area.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/07_area_chart/05_diff_charts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/07_area_chart/06_custom_axis.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/07_area_chart/07_spline_area.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/07_area_chart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/08_dynamic/01_add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/08_dynamic/02_events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/08_dynamic/03_sorting.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/08_dynamic/04_filtering.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/08_dynamic/05_dynamic_line.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/08_dynamic/06_dynamic_spline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/08_dynamic/07_dynamic_area.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/08_dynamic/08_dynamic_splinearea.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/08_dynamic/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/09_radar_chart/01_radar_points.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/09_radar_chart/02_radar_area.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/09_radar_chart/03_radar_lines.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/09_radar_chart/04_style_presets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/09_radar_chart/05_scale.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/09_radar_chart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/10_scatter_chart/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/10_scatter_chart/02_templates.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/10_scatter_chart/03_style_presets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/10_scatter_chart/04_series.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/10_scatter_chart/05_points.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/10_scatter_chart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/11_scale/01_y_intervals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/11_scale/02_custom_x_axis.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/11_scale/03_origin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/11_scale/04_logarithmic_y.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/11_scale/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/08_chart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/02_start_date.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/03_timepicker.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/04_custom_holidays.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/05_fullscreen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/06_datepicker.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/07_calendar_localized.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/08_disabled_dates.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/09_day_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/10_icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/11_disabled_time.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/12_month_year.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/13_multiselect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/09_calendar/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/02_popup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/03_alert.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/04_confirm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/05_popup_menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/06_component_inside.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/07_center.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/08_position.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/09_icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/10_modal_box.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/11_scrollview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/12_fullscreen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/13_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/14_datatable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/15_resize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/16_modal_box_container.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/10_window/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/11_htmlform/01_htmlform_body.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/11_htmlform/02_htmlform_layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/11_htmlform/03_htmlform_validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/11_htmlform/04_htmlform_http.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/11_htmlform/05_htmlform_binding.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/11_htmlform/data/book.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/11_htmlform/data/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/11_htmlform/data/myform.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/11_htmlform/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/01_text.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/02_select.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/03_textarea.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/04_radio.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/05_counter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/06_checkbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/07_segmented.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/08_tabbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/09_combo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/10_buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/10_buttons_autowidth.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/10_buttons_image.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/11_combo_advanced.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/11_richselect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/12_colorpicker.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/13_datepicker.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/14_toggle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/14_toggle_images.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/15_suggest_position.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/15_suggest_server.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/15_suggest_text.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/16_combo_css.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/17_search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/18_sections.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/19_required.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/20_all.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/21_validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/22_description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/23_richtext.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/24_forminput.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/25_dbllist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/26_dbllist_buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/27_number_format.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/28_switch.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/01_controls/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/02_attributes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/03_label_position.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/04_input_align.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/05_add_view.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/06_form_in_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/07_onchange_event.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/08_common_config.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/09_hidden_inputs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/10_binding.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/11_dynamic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/12_hotkey.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/13_tabs_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/14_complex_values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/02_api/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/02_complex_rule.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/03_common_rule.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/04_message_complex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/05_message_complex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/06_validation_rules.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/07_custom_rules.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/08_confirmation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/09_auto_validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/10_html5_validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/11_per_item_validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/12_validation_message.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/04_validation/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/05_extras/01_fieldset.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/05_extras/02_multiple_fieldsets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/05_extras/03_slider.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/05_extras/04_slider_step.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/05_extras/05_slider_title.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/05_extras/06_slider_negative.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/05_extras/08_slider_vertical.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/05_extras/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/13_form/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/01_datatable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/02_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/03_dataview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/04_tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/05_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/06_datastore.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/08_custom_urls.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/09_datatable_waitsave.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/10_datatable_pessimistic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/data/dummy.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/14_dataprocessor/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/01_inline_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/02_url_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/03_db_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/04_html.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/05_load_message.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/06_nodata_message.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/09_config_xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/10_custom_configuration_format.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/11_aggregation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/12_custom_xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/data/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/data/configdata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/data/custom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/data/data-config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/data/data-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/data/data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/data/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/data/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/data/data.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/data/empty.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/01_loading/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/02_sorting/01_builtin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/02_sorting/02_custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/02_sorting/03_sort_api.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/02_sorting/04_by_text.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/02_sorting/05_server.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/02_sorting/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/01_builtin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/02_and.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/03_or.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/04_one_for_all.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/04_one_for_all_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/05_custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/06_custom_built.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/07_rules.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/08_case_sensitive.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/09_numeric.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/10_date.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/11_find_api.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/12_options_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/13_options_customizing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/03_filtering/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/02_tab_support.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/03_multiple_editors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/04_select.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/05_multiple_editors_select.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/06_select_id.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/07_checkbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/08_custom_checkbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/09_inline_editors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/10_dates.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/11_colorpicker.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/12_text_popup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/13_bind_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/14_autosuggest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/15_combo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/16_master_checkbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/17_xss_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/18_richselect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/19_live_editor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/20_select_server.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/21_advanced_combo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/28_scroll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/29_numbers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/data/options.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/04_editing/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/01_cell_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/02_row_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/03_column_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/04_multi_cell_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/05_multi_row_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/06_multi_column_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/07_map_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/08_block_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/09_navigation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/10_navigation_wide.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/11_navigation_long.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/12_hover.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/13_block_selection_custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/05_selection/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/01_cell_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/02_row_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/03_column_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/04_paste_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/05_two_grids.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/06_block_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/07_paste_repeat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/08_csv_parser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/09_paste_custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/10_template_copy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/06_clipboard/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/01_column_resize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/02_row_resize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/03_all_resize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/04_column_resize_auto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/05_row_resize_auto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/06_all_resize_auto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/07_custom_size.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/08_custom_size_auto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/09_custom_size_align.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/10_row_auto_height.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/11_header_only.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/12_resize_area.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/07_resize/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/08_math/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/08_math/02_cell_values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/08_math/03_column_math.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/08_math/04_treetable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/08_math/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/01_size_by_content.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/02_autosize_column.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/03_scrolls.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/04_add_column.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/05_index_column.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/06_rating_column.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/07_stars_column.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/08_tooltips.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/09_tooltips_advanced.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/09_columns/stars.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/01_excel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/02_png.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/03_excel_multisheet.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/04_excel_style.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/05_excel_document.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/06_pdf.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/07_pdf_config.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/08_pdf_style.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/09_export_filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/10_export_format.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/11_export_scheme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/12_pdf_multiple.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/10_export/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/11_sizing/01_size_to_div.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/11_sizing/02_resize_node.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/11_sizing/03_resize_win.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/11_sizing/04_fixed_size.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/11_sizing/05_auto_size.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/11_sizing/06_resize_layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/11_sizing/07_resize_window.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/11_sizing/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/02_configuration.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/03_multiline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/04_content.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/05_filters.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/06_counter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/07_sorting.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/08_header_element.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/09_colspan.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/10_actions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/11_custom_content.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/12_lineheight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/13_autoheight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/14_multiline_collapse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/12_header_footer/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/13_frozen_columns/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/13_frozen_columns/02_v_scroll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/13_frozen_columns/04_block_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/13_frozen_columns/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/14_events/01_log_all_events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/14_events/02_click_css.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/14_events/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/01_map_cell.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/02_link_grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/03_custom_class.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/04_hide_column.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/05_hide_split.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/06_aggregation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/07_lines.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/08_aggregation_line.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/09_initially_hidden.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/11_column_batches.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/12_hide_column_span.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/15_api/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/16_dyn_loading/01_db_dyn_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/16_dyn_loading/02_db_dyn_start.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/16_dyn_loading/03_db_dyn_throttle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/16_dyn_loading/04_db_dyn_loadahead.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/16_dyn_loading/05_load_next_add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/16_dyn_loading/06_load_next_replace.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/16_dyn_loading/07_dyn_proxy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/16_dyn_loading/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/19_paging/01_static.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/19_paging/02_db_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/19_paging/03_db_data_dyn.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/19_paging/04_many_pagers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/19_paging/05_templates.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/19_paging/06_custom_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/19_paging/07_localization.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/19_paging/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/01_string.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/02_images.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/03_links.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/04_numbers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/05_dates.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/06_dates_string.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/07_pre_processing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/08_locales.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/imgs/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/imgs/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/imgs/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/imgs/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/imgs/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/imgs/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/20_templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/21_styling/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/21_styling/02_column_styling.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/21_styling/03_cell_styling.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/21_styling/04_rows_styling.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/21_styling/05_header_styling.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/21_styling/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/22_dnd/01_basic_dnd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/22_dnd/02_in_out.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/22_dnd/03_events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/22_dnd/04_dnd_modes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/22_dnd/05_handle_dnd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/22_dnd/06_columns.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/22_dnd/07_columns_order.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/22_dnd/08_columns_handle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/22_dnd/handle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/22_dnd/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/23_html_only/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/23_html_only/02_clipboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/23_html_only/03_sortable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/23_html_only/04_access_by_id.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/23_html_only/05_size_to_content.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/23_html_only/06_auto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/23_html_only/07_header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/23_html_only/08_footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/23_html_only/09_paging.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/23_html_only/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/25_validation/01_existing_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/25_validation/02_complex_rule.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/25_validation/03_common_rule.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/25_validation/04_message.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/25_validation/05_message_complex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/25_validation/06_per_cell_marks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/25_validation/07_edit_validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/25_validation/08_live_validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/25_validation/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/02_dyn_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/03_big_datatree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/04_filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/05_filter_custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/06_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/08_edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/09_item_checkbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/10_item_checkbox_3st.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/12_export.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/13_copypaste.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/14_colspan.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/15_paging.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/16_huge_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/30_treetable/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/31_treedrag/01_basic_dnd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/31_treedrag/02_dnd_modes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/31_treedrag/03_multidrag.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/31_treedrag/04_drop_as_child.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/31_treedrag/05_drop_next.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/31_treedrag/06_drop_allow.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/31_treedrag/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/32_grouping/01_static.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/32_grouping/02_dynamic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/32_grouping/03_aggregation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/32_grouping/04_custom_aggregation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/32_grouping/05_grouping_event.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/32_grouping/06_extra_lines.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/32_grouping/07_missed_items.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/32_grouping/08_multiple_grouping.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/32_grouping/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/80_docs/11_minimal_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/80_docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/01_empty_values_math.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/01_html_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/02_ui_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/02a_configuration.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/02b_configuration.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/03_html_autoheight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/03a_multiline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/04_fixed_size.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/04_ui_autoheight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/05_header_styling.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/05_html_autowidth.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/06_counter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/06_ui_autowidth.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/07_checkbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/07_html_auto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/08_ui_auto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/09_full_html.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/10_full_ui.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/11_resize_html.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/12_resize_ui.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/21_init_in_table_ie.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/21_math.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/22_v_scroll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/23_math_footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/91_tests/testdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/common/bigtestdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/common/imdb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/common/logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/common/mathdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/common/options.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/common/samples.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/common/testdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/15_datatable/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/16_skins/01_material.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/16_skins/02_mini.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/16_skins/03_flat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/16_skins/04_compact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/16_skins/05_contrast.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/16_skins/06_icons_cheatsheet.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/16_skins/07_icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/16_skins/08_icons_fontawesome5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/16_skins/09_icons_fontawesome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/16_skins/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/01_loading/01_json_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/01_loading/02_xml_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/01_loading/03_big_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/01_loading/07_load_group.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/01_loading/data/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/01_loading/data/data.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/01_loading/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/02_checkbox/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/02_checkbox/02_three_state.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/02_checkbox/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/01_treelines.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/02_treelines_dnd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/03_icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/04_without_icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/05_custom_icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/06_custom_select.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/07_custom_folders.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/08_styled_items.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/09_custom_type.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/icons/file.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/icons/folder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/icons/folder_open.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/icons/home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/icons/pre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/icons/puzzle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/icons/rss.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/03_styles/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/04_api/01_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/04_api/02_sort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/04_api/03_filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/04_api/04_multi_select.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/04_api/05_sort_custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/04_api/06_add_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/04_api/07_sync.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/04_api/08_bind.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/04_api/09_subdata.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/04_api/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/05_edit/01_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/05_edit/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/16_dyn_loading/01_dyn_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/16_dyn_loading/02_load_branch.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/16_dyn_loading/03_on_data_request.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/16_dyn_loading/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/19_copypaste/01_copy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/19_copypaste/02_paste_modify.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/19_copypaste/03_paste_insert.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/19_copypaste/04_paste_custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/19_copypaste/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/22_dnd/01_basic_dnd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/22_dnd/02_in_out.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/22_dnd/03_multidrag.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/22_dnd/04_drop_as_child.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/22_dnd/05_drop_next.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/22_dnd/06_custom_marker.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/22_dnd/07_order_mode.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/22_dnd/08_move_mode.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/22_dnd/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/90_tests/01_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/90_tests/02_api.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/90_tests/03_checked.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/90_tests/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/common/samples.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/common/treedata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/17_datatree/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/19_api/01_disable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/19_api/02_hide_show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/19_api/04_progress_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/19_api/05_progress_app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/19_api/06_export_excel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/19_api/07_export_png.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/19_api/08_undo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/19_api/09_export_csv.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/19_api/10_shadows.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/19_api/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/02_navigation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/03_nested_multiviews.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/04_tabbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/05_tabbar_with_icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/06_carousel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/07_no_animation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/08_tabview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/09_fit_biggest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/10_many_tabs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/11_close_button.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/12_view_recreating.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/13_tabview_dynamic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/14_hide_options.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/data/charts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/20_multiview/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/01_init_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/02_init_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/03_manual_send.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/04_prefill_with_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/05_attachment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/06_integration.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/06_progress_bar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/07_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/08_single_upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/09_integration_to_element.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/10_accept.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/11_directory_upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/21_upload/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/22_dnd/01_basic_dnd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/22_dnd/02_dnd_modes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/22_dnd/03_drag_handle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/22_dnd/04_html_dnd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/22_dnd/05_html_dnd_in.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/22_dnd/06_native_dnd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/22_dnd/handle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/22_dnd/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/02_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/03_datatable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/04_by_ajax.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/05_accordion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/06_tabbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/07_fieldset.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/08_layouts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/09_window.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/10_chart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/11_pager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/12_menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/data/book.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/data/chart.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/data/config.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/data/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/01_html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/02_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/03_datatable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/04_by_ajax.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/05_accordion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/06_tabbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/07_fieldset.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/08_layouts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/09_window.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/data/book.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/data/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/data/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/02_xhtml/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/01_custom_namespace.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/02_without_namespace.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/03_multi_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/04_init_events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/05_tabbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/06_tree_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/data/complex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/data/events.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/data/tabbar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/data/tree.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/03_xml/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/23_markup/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/24_colorpicker/01_initialization.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/24_colorpicker/02_custom_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/24_colorpicker/03_custom_colors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/24_colorpicker/04_in_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/24_colorpicker/05_proprty_sheet.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/24_colorpicker/06_datatable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/24_colorpicker/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/01_visible.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/02_apionly.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/03_layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/04_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/05_twoareas.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/06_twoareas_layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/07_animate.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/08_animate_types.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/09_animate_types_datatable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/10_size_to_page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/11_page_to_size.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/12_standalone_pager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/25_pager/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/02_types.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/03_outer_navigation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/04_dark.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/imgs/image001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/imgs/image002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/imgs/image003.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/imgs/image004.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/imgs/image005.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/imgs/image006.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/26_carousel/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/27_video/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/27_video/02_autoplay.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/27_video/03_api.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/27_video/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/28_sidemenu/02_left.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/28_sidemenu/03_top.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/28_sidemenu/04_bottom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/28_sidemenu/05_right.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/28_sidemenu/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/29_sidebar/01_sidebar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/29_sidebar/02_right_position.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/29_sidebar/03_multi_level.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/29_sidebar/04_multi_level_right.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/29_sidebar/05_inverted.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/29_sidebar/06_inverted_multi_level.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/29_sidebar/data/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/29_sidebar/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/02_load_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/03_load_users.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/04_locale.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/05_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/06_statuses.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/07_no_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/08_no_users.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/09_window.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/10_send_actions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/11_more_comments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/12_mentioned_users.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/common/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/common/imgs/corvo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/common/imgs/daisy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/common/imgs/glenn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/common/imgs/leia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/common/imgs/tomek.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/30_comments/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/31_tooltip/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/31_tooltip/02_datatable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/31_tooltip/03_sparklines.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/31_tooltip/04_controls.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/31_tooltip/05_options.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/31_tooltip/06_html.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/31_tooltip/07_html_areas.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/31_tooltip/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/02_nicedit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/03_tinymce.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/04_scheduler.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/05_sigma.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/06_d3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/07_raphael.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/08_codemirror.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/10_here_map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/11_yandex_map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/12_open_map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/15_ckeditor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/data/chart.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/data/flare.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/data/image001.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/data/image002.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/data/image003.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/data/image004.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/data/image005.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/data/image006.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/data/les_miserables.gexf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/32_thirdparty/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/34_googlemap/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/34_googlemap/02_markers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/34_googlemap/03_markers_info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/34_googlemap/04_markers_draggable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/34_googlemap/05_heatmap.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/34_googlemap/data/heatmap.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/34_googlemap/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/01_layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/02_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/03_scrollview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/04_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/05_list_x.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/06_dataview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/07_wide_dataview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/08_tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/09_chart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/10_datatable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/11_wide_datatable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/12_header_footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/13_fullpage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/35_print/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/01_geochart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/02_geochart_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/03_geochart_columns.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/04_geochart_crud.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/05_geochart_events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/06_geochart_modes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/07_geochart_tooltip.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/08_geochart_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/data/countries.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/data/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/36_geochart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/37_fullscreen/01_window.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/37_fullscreen/02_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/37_fullscreen/03_view_in_layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/37_fullscreen/04_view_in_window.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/37_fullscreen/05_view_in_accordion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/37_fullscreen/06_html_elements.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/37_fullscreen/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/01_datatable_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/02_datatable_saving.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/03_datatable_reordering.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/04_datatree_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/05_datatree_saving.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/06_form_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/07_form_saving.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/08_datastore.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/09_datastore_dynamic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/10_datatable_update.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/11_datatable_sort_filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/datatable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/datatable_order.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/datatable_save.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/datatable_save_order.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/datatable_update.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/datatree.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/datatree_save.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/dump.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/form.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/form_save.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/01_php/server/testdata.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/01_datatable_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/02_datatable_saving.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/03_datatable_reordering.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/04_datatree_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/05_datatree_saving.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/06_form_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/07_form_saving.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/08_datastore.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/09_datastore_dynamic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/10_datatable_update.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/11_datatable_sort_filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/02_nodejs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/03_custom/01_load_proxy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/03_custom/02_save_proxy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/03_custom/03_dyn_filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/03_custom/04_dyn_treetable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/03_custom/05_save_all.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/03_custom/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/04_websockets/01_websockets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/04_websockets/02_faye.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/04_websockets/common/imgs/corvo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/04_websockets/common/imgs/daisy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/04_websockets/common/imgs/glenn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/04_websockets/common/imgs/leia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/04_websockets/common/imgs/tomek.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/04_websockets/common/ws_proxy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/04_websockets/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/05_indexeddb/01_datatable_loading.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/05_indexeddb/02_datatable_saving.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/05_indexeddb/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/06_other/01_graphql.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/06_other/02_graphql_dp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/06_other/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/40_serverside/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/01_colspans/01_colspans.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/01_colspans/02_colspans_big.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/01_colspans/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/02_headermenu/03_header_menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/02_headermenu/04_header_menu_extended.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/02_headermenu/05_header_menu_icon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/02_headermenu/06_header_menu_spans.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/02_headermenu/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/03_filters/04_filter_daterange.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/03_filters/05_select_filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/03_filters/06_filter_multiselect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/03_filters/07_filter_daterange.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/03_filters/08_filter_multicombo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/03_filters/09_multiselect_values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/03_filters/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/04_editors/08_editor_multiselect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/04_editors/09_grid_editor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/04_editors/10_data_editor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/04_editors/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/05_state/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/05_state/02_filtering.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/05_state/03_session_state.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/05_state/04_get_state.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/05_state/05_treetable_state.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/05_state/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/06_api/10_header_rotate_autoheight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/06_api/11_rotate_header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/06_api/12_group_columns.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/06_api/14_area_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/06_api/15_excel_styles.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/06_api/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/07_sub/01_sub_rows.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/07_sub/02_sub_autoheight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/07_sub/03_sub_api.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/07_sub/04_sub_grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/07_sub/05_sub_grid_data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/07_sub/06_sub_grid_url.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/07_sub/07_sub_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/07_sub/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/02_area.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/03_bars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/04_spline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/05_splinearea.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/06_pie.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/07_tooltips.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/08_colors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/09_outside.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/10_settings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/08_sparklines/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/09_frozen_rows/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/09_frozen_rows/02_sort_filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/09_frozen_rows/03_api.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/09_frozen_rows/04_selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/09_frozen_rows/05_lines.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/09_frozen_rows/data/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/09_frozen_rows/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/01_datatable/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/01_multitext.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/02_multiselect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/03_grid_select.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/04_data_select.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/05_grid_multiselect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/06_multicombo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/07_multicombo_tag.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/08_multicombo_new_values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/09_formatted_input.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/10_formatted_inputs_validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/11_daterangepicker.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/12_rangeslider.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/13_rangeslider_vertical.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/data/image0001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/data/image0002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/data/image0003.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/data/image0004.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/data/image0005.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/data/image0006.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/data/names.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/02_form/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/03_api/01_customscroll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/03_api/02_state.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/03_api/03_customscrol_mixed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/03_api/04_customscroll_tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/03_api/05_customscroll_styling.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/03_api/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/04_property/01_editors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/04_property/02_grid_editor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/04_property/03_data_editor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/04_property/04_suggest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/04_property/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/06_tree/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/06_tree/03_session_state.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/06_tree/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/02_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/03_autoheight.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/04_autowidth.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/05_style.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/06_events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/07_templates.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/08_list_blocks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/09_list_nested.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/common/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/common/photo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/07_organogram/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/08_barcode/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/08_barcode/02_types.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/08_barcode/03_custom_type.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/08_barcode/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/01_portlet_replace.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/02_portlet_move.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/03_portlet_drag_header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/04_drag_component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/05_one_direction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/06_grid_layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/07_grid_layout_api.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/08_dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/09_dashboard_state.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/10_dashboard_menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/11_portlet_save_state.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/12_dashboard_shadows.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/09_portlet/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/01_pdf.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/02_excel_viewer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/03_excel_upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/04_excel_proxy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/05_pdf_upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/06_pdf_load.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/07_pdf_load_protected.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/files/WebixDocs-protected.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/files/WebixDocs.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/files/data.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/10_viewers/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/11_treemap/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/11_treemap/02_colors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/11_treemap/03_one_level.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/11_treemap/04_events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/11_treemap/05_header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/11_treemap/data/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/11_treemap/data/data_colors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/11_treemap/data/data_path.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/11_treemap/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/12_rangechart/01_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/12_rangechart/02_series.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/12_rangechart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/01_abslayout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/02_datalayout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/03_datalayout_repeater.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/04_datalayout_crud.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/05_datalayout_complex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/06_flex_datalayout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/07_abslayout_mixed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/08_datalayout_save.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/data/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/data/year.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/13_layout/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/14_daterange/01_daterange.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/14_daterange/02_daterange_icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/14_daterange/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/15_gage/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/15_gage/02_color.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/15_gage/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/16_bulletgraph/01_init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/16_bulletgraph/02_colors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/16_bulletgraph/03_ticks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/16_bulletgraph/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/common/samples.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/common/testdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/60_pro/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/chartdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/companies.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/docs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/18/copy.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/18/cut.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/18/new.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/18/open.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/18/paste.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/18/print.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/18/redo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/18/save.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/18/undo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/24/copy.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/24/cut.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/24/open.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/24/paste.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/24/save.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/32/copy.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/32/cut.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/32/new.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/32/open.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/32/paste.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/32/print.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/32/redo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/32/save.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/32/undo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/48/copy.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/48/cut.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/48/new.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/48/open.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/48/paste.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/48/redo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/48/save.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/imgs/48/undo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/samples.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/testdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/common/treedata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/samples/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/employee/EmployeePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/employee/EmployeePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1314,79 +92,89 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js">
+        <entry file="file://$PROJECT_DIR$/public/js/components/candidate/views/CandidateView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1360">
-              <caret line="79" column="74" selection-start-line="79" selection-start-column="74" selection-end-line="79" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/AssessmentAddEmployeePopup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+            <state relative-caret-position="107">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/mappers/mapperCandidate.go">
+        <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
-              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+            <state relative-caret-position="1547">
+              <caret line="112" column="53" lean-forward="true" selection-start-line="112" selection-start-column="53" selection-end-line="112" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/CandidateController.go">
+        <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+            <state relative-caret-position="51">
+              <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AsessmentController.go">
+        <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/views/CandidateInAssessmentView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+            <state relative-caret-position="68">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/providers/providerAssessment.go">
+        <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/AssessmentAddCandidatePopup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding>
-                <element signature="e#19#65#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-816" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/function_load.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/mappers/mapperEmployee.go">
+        <entry file="file://$PROJECT_DIR$/public/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+            <state relative-caret-position="413">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/mappers/mapperAssessment.go">
+        <entry file="file://$PROJECT_DIR$/public/js/LoginPopup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-312">
-              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-              <folding>
-                <element signature="e#17#81#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/components/candidate/AddCandidateInAssessmentPopup.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="70" column="42" lean-forward="true" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -1420,20 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/app/controllers/AsessmentController.go" />
-        <option value="$PROJECT_DIR$/app/providers/provider.go" />
-        <option value="$PROJECT_DIR$/app/providers/providerAssessment.go" />
-        <option value="$PROJECT_DIR$/app/providers/providerCandidate.go" />
-        <option value="$PROJECT_DIR$/app/providers/providerEmployee.go" />
-        <option value="$PROJECT_DIR$/public/js/data.js" />
-        <option value="$PROJECT_DIR$/public/js/function_edit.js" />
-        <option value="$PROJECT_DIR$/public/js/addCandidateInAssessment.js" />
-        <option value="$PROJECT_DIR$/public/js/addEmployeeInAssessment.js" />
-        <option value="$PROJECT_DIR$/public/js/AssessmentAddCandidatePopup.js" />
-        <option value="$PROJECT_DIR$/public/js/popup_add_assessment.js" />
-        <option value="$PROJECT_DIR$/public/js/popup_add_employee.js" />
-        <option value="$PROJECT_DIR$/public/js/popup_add_student.js" />
         <option value="$PROJECT_DIR$/public/js/AssessmentAddEmployeePopup.js" />
         <option value="$PROJECT_DIR$/public/js/list_of_assessment.js" />
         <option value="$PROJECT_DIR$/app/types/Candidate.go" />
@@ -1459,18 +233,32 @@
         <option value="$PROJECT_DIR$/public/js/components/employee/AddEmployeeInAssessmentPopup.js" />
         <option value="$PROJECT_DIR$/public/js/function_load.js" />
         <option value="$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeCellInAssessment.js" />
-        <option value="$PROJECT_DIR$/app/views/App/Index.html" />
-        <option value="$PROJECT_DIR$/public/script.js" />
-        <option value="$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js" />
-        <option value="$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js" />
-        <option value="$PROJECT_DIR$/public/js/components/employee/EmployeePage.js" />
-        <option value="$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js" />
-        <option value="$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js" />
-        <option value="$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js" />
         <option value="$PROJECT_DIR$/public/js/components/assessment/Employee/AssessmentAddEmployeePopup.js" />
+        <option value="$PROJECT_DIR$/app/providers/providerAssessment.go" />
+        <option value="$PROJECT_DIR$/app/providers/providerEmployee.go" />
+        <option value="$PROJECT_DIR$/app/providers/providerCandidate.go" />
+        <option value="$PROJECT_DIR$/public/js/components/candidate/view/CandidateView.js" />
+        <option value="$PROJECT_DIR$/public/js/components/employee/views/EmployeeView.js" />
+        <option value="$PROJECT_DIR$/public/js/components/assessment/view/AssessmentView.js" />
+        <option value="$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js" />
+        <option value="$PROJECT_DIR$/public/js/components/employee/EmployeePage.js" />
+        <option value="$PROJECT_DIR$/public/js/components/assessment/Candidate/views/CandidateInAssessmentView.js" />
+        <option value="$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js" />
+        <option value="$PROJECT_DIR$/public/js/components/assessment/Employee/views/EmployeeInAssessmentView.js" />
+        <option value="$PROJECT_DIR$/app/views/App/Index.html" />
+        <option value="$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js" />
+        <option value="$PROJECT_DIR$/public/js/components/candidate/models/CandidateModel.js" />
+        <option value="$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js" />
+        <option value="$PROJECT_DIR$/app/controllers/CandidateController.go" />
+        <option value="$PROJECT_DIR$/app/controllers/AsessmentController.go" />
+        <option value="$PROJECT_DIR$/app/controllers/EmployeeController.go" />
+        <option value="$PROJECT_DIR$/DB_CONNECTION.go" />
         <option value="$PROJECT_DIR$/app/mappers/mapperEmployee.go" />
         <option value="$PROJECT_DIR$/app/mappers/mapperAssessment.go" />
         <option value="$PROJECT_DIR$/app/mappers/mapperCandidate.go" />
+        <option value="$PROJECT_DIR$/public/script.js" />
+        <option value="$PROJECT_DIR$/public/js/data.js" />
+        <option value="$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js" />
       </list>
     </option>
   </component>
@@ -1573,7 +361,17 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="assessment" type="462c0819:PsiDirectoryNode" />
-              <item name="Employee" type="462c0819:PsiDirectoryNode" />
+              <item name="Candidate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ttt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ttt" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="assessment" type="462c0819:PsiDirectoryNode" />
+              <item name="Candidate" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ttt" type="b2602c69:ProjectViewProjectNode" />
@@ -1589,7 +387,17 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="employee" type="462c0819:PsiDirectoryNode" />
+              <item name="candidate" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ttt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ttt" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="candidate" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1688,8 +496,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19591528" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21860817" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1702,7 +511,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" weight="0.3297546" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49621785" visible="true" weight="0.4754601" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49621785" visible="true" weight="0.21472393" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50378215" side_tool="true" weight="0.25920245" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32668713" />
       <window_info anchor="bottom" id="SQL Generator" order="13" weight="0.3297546" />
@@ -1710,7 +519,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.14145234" />
+      <window_info anchor="right" id="Database" order="3" weight="0.20045386" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20347957" />
@@ -1741,238 +550,21 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/popup_delete_student.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/types/Candidate.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/types/Assessment.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateCell.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/function_edit.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://b82782d8-2c2f-4e8a-a77b-d44576b1cb8d/database/db/schema/public/table/employee">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7c6d1483-a069-4f6d-a6df-7086e10d75a7">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/types/Employee.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/AssessmentAddCandidatePopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="94" column="80" lean-forward="true" selection-start-line="88" selection-start-column="15" selection-end-line="94" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/AddCandidateInAssessmentPopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="70" column="42" lean-forward="true" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/employee/AddEmployeeInAssessmentPopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="73" column="53" selection-start-line="73" selection-start-column="53" selection-end-line="73" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeeCell.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeeFunction/EmployeeEditFunction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="77" column="6" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidateCell.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidateFunction/CandidateEditFunction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="79" column="6" lean-forward="true" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidateFunction/CandidateLoadFunction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeeFunction/EmployeeLoadFunction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentCell.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="73" column="40" lean-forward="true" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentFunction/AssessmentEditFunction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="93" column="9" lean-forward="true" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentFunction/AssessmentLoadFunction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="40" column="6" lean-forward="true" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateCellInAssessment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="52" column="21" lean-forward="true" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateFunctionInAssessment/CandidateLoadFunctionInAssessment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateFunctionInAssessment/CandidateEditFunctionInAssessment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeCellInAssessment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeFunctionInAssessment/EmployeeLoadFunctionInAssessment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeFunctionInAssessment/EmployeeEditFunctionInAssessment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/function_load.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/LoginPopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-261">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/App/Index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="57" column="82" selection-start-line="57" selection-start-column="82" selection-end-line="57" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="250" column="5" selection-start-line="250" selection-start-column="5" selection-end-line="250" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeeCell.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeeFunction/EmployeeEditFunction.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidateCell.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidateFunction/CandidateEditFunction.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidateFunction/CandidateLoadFunction.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeeFunction/EmployeeLoadFunction.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentCell.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentFunction/AssessmentEditFunction.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentFunction/AssessmentLoadFunction.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateCellInAssessment.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateFunctionInAssessment/CandidateLoadFunctionInAssessment.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateFunctionInAssessment/CandidateEditFunctionInAssessment.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeCellInAssessment.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeFunctionInAssessment/EmployeeLoadFunctionInAssessment.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeFunctionInAssessment/EmployeeEditFunctionInAssessment.js" />
     <entry file="file://$PROJECT_DIR$/public/js/components/employee/AddEmployeePopup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -1980,48 +572,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1972">
-          <caret line="116" column="6" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/старые файлы/CandidateFunctionInAssessment/CandidateEditFunctionInAssessment.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AddAssessmentPopup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1360">
-          <caret line="79" column="74" selection-start-line="79" selection-start-column="74" selection-end-line="79" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -2032,34 +589,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mappers/mapperEmployee.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AsessmentController.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/providers/providerAssessment.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding>
-            <element signature="e#19#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB_CONNECTION.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+    <entry file="das://b82782d8-2c2f-4e8a-a77b-d44576b1cb8d/database/db/schema/public/table/assessment_employee">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7c6d1483-a069-4f6d-a6df-7086e10d75a7">
+          <filtering>
+            <filter text="" />
+          </filtering>
         </state>
       </provider>
     </entry>
@@ -2072,17 +607,135 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/providers/providerAssessment.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding>
+            <element signature="e#19#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/providers/providerCandidate.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b82782d8-2c2f-4e8a-a77b-d44576b1cb8d/database/db/schema/public/table/assessment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="b7ef7287-c9c2-495b-a4ce-fcc7dcbcd822">
+          <filtering />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/employee/views/EmployeeView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/views/AssessmentView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/App/Index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="43" column="97" selection-start-line="43" selection-start-column="97" selection-end-line="43" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/views/EmployeeInAssessmentView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CandidateController.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        <state relative-caret-position="221">
+          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AsessmentController.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/EmployeeController.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/providers/providerEmployee.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB_CONNECTION.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="e#13#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mappers/mapperEmployee.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-444">
+          <caret line="133" column="20" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mappers/mapperAssessment.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-312">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state relative-caret-position="-886">
+          <caret line="261" column="20" selection-start-line="261" selection-start-column="20" selection-end-line="261" selection-end-column="20" />
           <folding>
             <element signature="e#17#81#0" expanded="true" />
           </folding>
@@ -2091,8 +744,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mappers/mapperCandidate.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        <state relative-caret-position="187">
+          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/models/CandidateModel.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/views/CandidateView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/LoginPopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/AddCandidateInAssessmentPopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="70" column="42" lean-forward="true" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/views/CandidateInAssessmentView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/AssessmentAddCandidatePopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-816" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/function_load.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="112" column="53" lean-forward="true" selection-start-line="112" selection-start-column="53" selection-end-line="112" selection-end-column="53" />
         </state>
       </provider>
     </entry>

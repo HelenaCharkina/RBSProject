@@ -13,7 +13,11 @@ type CandidateController struct {
 }
 
 func (c *CandidateController) Get() revel.Result {
-	candidates := providers.CandidateGet()
+	candidates, err := providers.CandidateGet()
+	if err != nil {
+		log.Println(err)
+		return c.RenderError(err)
+	}
 	return c.RenderJSON(candidates)
 }
 

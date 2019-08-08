@@ -8,26 +8,28 @@ import (
 	"ttt/app/types"
 )
 
-func CandidateGet() []*types.Candidate {
+func CandidateGet() ([]*types.Candidate, error) {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
+	var candidates []*types.Candidate
 	rows, err := db.Query(`
 		SELECT *
 		FROM db.public.candidate
 `)
 	if err != nil {
 		log.Println(err)
+		return candidates, err
 	}
 
-	//defer rows.Close()
-
-	var candidates []*types.Candidate
+	defer rows.Close()
 	for rows.Next() {
 		c := types.Candidate{}
 		err := rows.Scan(&c.Id, &c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
 		if err != nil {
 			log.Println(err)
+			return candidates, err
 		}
 		//----------------АССЕССМЕНТЫ-----------------------
 
@@ -38,14 +40,16 @@ func CandidateGet() []*types.Candidate {
 		where c.id = $1`, &c.Id)
 		if err != nil {
 			log.Println(err)
+			return candidates, err
 		}
-		//defer rowAssessment.Close()
+		defer rowAssessment.Close()
 
 		for rowAssessment.Next() {
 			itemAssessment := types.Assessment{}
 			err := rowAssessment.Scan(&itemAssessment.Id, &itemAssessment.Date)
 			if err != nil {
 				log.Println(err)
+				return candidates, err
 			}
 			c.ListOfAssessment = append(c.ListOfAssessment, itemAssessment)
 		}
@@ -56,12 +60,14 @@ func CandidateGet() []*types.Candidate {
 	if err = rows.Err(); err != nil {
 		log.Fatal(err)
 	}
-	return candidates
+	return candidates, err
 }
 
 func CandidateGetId(id int) *types.Candidate {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
+
 
 	row, err := db.Query(`
 		SELECT firstName, middleName, lastName , phone, email
@@ -76,7 +82,7 @@ func CandidateGetId(id int) *types.Candidate {
 	if err != nil {
 		log.Println(err)
 	}
-	//defer row.Close()
+	defer row.Close()
 
 	return &c
 }
@@ -84,6 +90,7 @@ func CandidateGetId(id int) *types.Candidate {
 func CandidatePut(candidate types.Candidate) (int64, error) {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	var ID int64
 	err := db.QueryRow(`
@@ -100,6 +107,7 @@ func CandidatePut(candidate types.Candidate) (int64, error) {
 func CandidateDelete(id int) error {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	_, err := db.Exec(`
 		delete from candidate 
@@ -113,6 +121,7 @@ func CandidateDelete(id int) error {
 func CandidatePost(id int, candidate types.Candidate) error {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	_, err := db.Exec(`
 		update candidate set Firstname = $2, Middlename = $3, Lastname = $4, Phone = $5, Email = $6
@@ -126,6 +135,7 @@ func CandidatePost(id int, candidate types.Candidate) error {
 func CandidatePutInAssess(candidate types.Candidate) error {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	var err error
 	for i := range candidate.ListOfAssessment {
@@ -141,6 +151,7 @@ func CandidatePutInAssess(candidate types.Candidate) error {
 func CandidateSearch(str types.Search) []*types.Candidate {
 
 	db := ttt.DatabaseConnect()
+	defer db.Close()
 
 	var masObjects = strings.Split(str.Str, " ")
 

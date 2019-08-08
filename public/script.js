@@ -31,25 +31,5 @@ webix.ready(function () {
     getAssessment();
     getEmployee();
 
-    // searchCandidate();
-    // openInfoCandidate();
-    // deleteCandidate();
-    // editCandidate();
-    // addCandidateInAssessmentLoadTable();
-
-    // searchEmployee();
-    // openInfoEmployee();
-    // deleteEmployee();
-    // editEmployee();
-    // addEmployeeInAssessmentLoadTable();
-
-    // searchAssessment();
-    // openInfoAssessment();
-    // deleteAssessment();
-    // editAssessment();
-    // assessmentTableLoadCandidate();
-    // assessmentTableDeleteCandidate();
-    // assessmentTableLoadEmployee();
-    // assessmentTableDeleteEmployee();
 
 });

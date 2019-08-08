@@ -5,7 +5,7 @@ import (
 	"ttt/app/types"
 )
 
-func AssessmentGet() []*types.Assessment {
+func AssessmentGet() ([]*types.Assessment, error) {
 	return mappers.AssessmentGet()
 }
 func AssessmentGetMas(id int) *types.Assessment {
