@@ -2,9 +2,20 @@ const CandidatePage = {
     config: () => {
         return CandidateView()
     },
+
     init: () => {
 
-        //окно подробной инфы
+        // загрузка всех кандидатов
+        CandidateModel.getAll().then(items => {
+            if (items) {
+                for (const item of items) {
+                    $$('studentTable').add(item);
+                }
+            }
+        });
+
+
+        // окно подробной инфы
         $$('studentTable').attachEvent("onItemClick", function (id) {
 
             let item = this.getItem(id);
@@ -25,7 +36,7 @@ const CandidatePage = {
             }
         });
 
-        //удаление
+        // удаление
         $$('deleteStudent').attachEvent("onItemClick", function () {
 
             if (selectITEM) {
@@ -39,13 +50,11 @@ const CandidatePage = {
                 $$('infoEmail').setValue("");
                 $$('infoAsses').setValue("");
 
-                fetch(`/candidate/${selectITEM.Id}`, {
-                    method: 'DELETE',
-                })
-                    .then(text => console.log(text));
+                CandidateModel.delete(selectITEM.Id)
+
                 webix.message("Кандидат удален");
 
-                //assessment update
+                // assessment update
                 ($$('assessmentTable').serialize()).forEach(function (assessment) {
                     if (assessment.Candidates) {
                         let index = assessment.Candidates.findIndex(el => el.Id === selectITEM.Id);
@@ -55,7 +64,7 @@ const CandidatePage = {
             }
         });
 
-        //редактирование
+        // редактирование
         $$('SaveStudent').attachEvent("onItemClick", function () {
             if (selectITEM) {
                 let item = {
@@ -66,35 +75,17 @@ const CandidatePage = {
                     Email: $$('infoEmail').getValue(),
 
                 };
-                fetch(`/candidate/${selectITEM.Id}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(item)
-                })
-                    .then(res => res.text())
-                    .then(text => console.log(text))
-                    .then($$('studentTable').updateItem(selectITEM.id, item));
+                CandidateModel.update(selectITEM.Id, item).then($$('studentTable').updateItem(selectITEM.id, item));
                 webix.message("Изменения сохранены");
             }
-        })
+        });
 
-        //поиск
+        // поиск
         $$("candidateSearch").attachEvent("onEnter", function () {
 
             let str = this.getValue();
-            fetch(`/candidate/search`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    str: str
-                })
-            })
-                .then(res => res.json())
-                .then(res => {
+
+            CandidateModel.search(str).then(res => {
                     if (res) {
                         $$('studentTable').clearAll();
                         res.forEach(function (item) {
@@ -106,13 +97,12 @@ const CandidatePage = {
                 })
         });
 
-        //ДОБАВИТЬ КАНДИДАТА В АССЕССМЕНТ:ЗАПОЛНЕНИЕ ТАБЛИЦЫ ВО ВСПЛЫВАЮЩЕМ ОКНЕ
+        // ДОБАВИТЬ КАНДИДАТА В АССЕССМЕНТ:ЗАПОЛНЕНИЕ ТАБЛИЦЫ ВО ВСПЛЫВАЮЩЕМ ОКНЕ
         $$('infoAsses').attachEvent('onItemClick', () => {
             if (selectITEM) {
                 $$('tableAddCandidateInAssess').clearAll();
-                fetch('/assessment', {method: 'GET'})
-                    .then(response => response.json())
-                    .then(response => {
+
+                AssessmentModel.getAll().then(response => {
                             response.forEach(function (item) {
                                 let x = true;
                                 if (selectITEM.ListOfAssessment == null) {
@@ -133,4 +123,4 @@ const CandidatePage = {
         });
 
     }
-}
+};

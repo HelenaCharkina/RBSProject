@@ -6,14 +6,12 @@ const CandidateInAssessmentPage = {
 
     init: () => {
 
-        //ТАБЛИЦА АССЕССМЕНТОВ ЗАГРУЗКА КАНДИДАТОВ
+        // ТАБЛИЦА АССЕССМЕНТОВ ЗАГРУЗКА КАНДИДАТОВ
         $$('addCandidate').attachEvent('onItemClick', () => {
 
             if (selectITEM) {
                 $$('tableAssessAddCandidate').clearAll();
-                fetch('/candidate', {method: 'GET'})
-                    .then(response => response.json())
-                    .then(response => {
+                CandidateModel.getAll().then(response => {
                             response.forEach(function (item) {
                                 let x = true;
                                 if (selectITEM.Candidates == null) {
@@ -50,15 +48,8 @@ const CandidateInAssessmentPage = {
                         Id: candidate.Id
                     }
                 });
-                fetch(`/assessment/${selectITEM.Id}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(item)
-                })
-                    .then(res => res.text())
-                    .then(text => console.log(text));
+
+                AssessmentModel.putInside(selectITEM.Id, item)
 
                 $$('studentTableAsses').remove($$('studentTableAsses').getSelectedId());
                 $$('AssessAddCandidate').hide();

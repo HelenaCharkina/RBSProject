@@ -6,7 +6,16 @@ const EmployeePage = {
 
     init: () => {
 
-        //окно подробной инфы
+        // загрузка всех сотрудников
+        EmployeeModel.getAll().then(items => {
+            if(items) {
+                for (const item of items) {
+                    $$('employeeTable').add(item);
+                }
+            }
+        })
+
+        // окно подробной инфы
         $$('employeeTable').attachEvent("onItemClick", function (id) {
 
             let item = this.getItem(id);
@@ -27,7 +36,7 @@ const EmployeePage = {
             }
         });
 
-        //удаление
+        // удаление
         $$('deleteEmployee').attachEvent("onItemClick", function () {
 
             if (selectITEM) {
@@ -40,9 +49,8 @@ const EmployeePage = {
                 $$('infoPhoneEmployee').setValue("");
                 $$('infoEmailEmployee').setValue("");
 
-                fetch(`/employee/${selectITEM.Id}`, {
-                    method: 'DELETE',
-                }).then(text => console.log(text));
+                EmployeeModel.delete(selectITEM.Id)
+
                 webix.message("Сотрудник удален");
 
                 //assessment update
@@ -55,7 +63,7 @@ const EmployeePage = {
             }
         });
 
-        //редактирование
+        // редактирование
         $$('SaveEmployee').attachEvent("onItemClick", function () {
             if (selectITEM) {
                 let item = {
@@ -65,36 +73,19 @@ const EmployeePage = {
                     PhoneE: $$('infoPhoneEmployee').getValue(),
                     EmailE: $$('infoEmailEmployee').getValue(),
                 };
-                fetch(`/employee/${selectITEM.Id}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(item)
-                })
-                    .then(res => res.text())
-                    .then(text => console.log(text))
-                    .then($$('employeeTable').updateItem(selectITEM.id, item));
+
+                EmployeeModel.update(selectITEM.Id, item).then($$('employeeTable').updateItem(selectITEM.id, item));
+
                 webix.message("Изменения сохранены")
             }
         })
 
-        //поиск
+        // поиск
         $$("employeeSearch").attachEvent("onEnter", function () {
 
             let str = this.getValue();
 
-            fetch(`/employee/search`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    str: str
-                })
-            })
-                .then(res => res.json())
-                .then(res => {
+            EmployeeModel.search(str).then(res => {
                     if (res) {
                         $$('employeeTable').clearAll();
                         res.forEach(function (item) {
@@ -106,13 +97,12 @@ const EmployeePage = {
                 })
         });
 
-        //ДОБАВИТЬ СОТРУДНИКА В АССЕССМЕНТ:ЗАПОЛНЕНИЕ ТАБЛИЦЫ ВО ВСПЛЫВАЮЩЕМ ОКНЕ
+        // ДОБАВИТЬ СОТРУДНИКА В АССЕССМЕНТ:ЗАПОЛНЕНИЕ ТАБЛИЦЫ ВО ВСПЛЫВАЮЩЕМ ОКНЕ
         $$('infoAssesE').attachEvent('onItemClick', () => {
             if (selectITEM) {
                 $$('tableAddEmployeeInAssess').clearAll();
-                fetch('/assessment', {method: 'GET'})
-                    .then(response => response.json())
-                    .then(response => {
+
+                AssessmentModel.getAll().then(response => {
                             response.forEach(function (item) {
                                 let x = true;
                                 if (selectITEM.ListOfAssessment == null) {

@@ -8,7 +8,15 @@ const AssessmentPage = {
         EmployeeInAssessmentPage.init();
         CandidateInAssessmentPage.init();
 
-        //окно подробной инфы
+        // загрузка всех ассессментов
+        AssessmentModel.getAll().then(items => {
+            if(items){
+               for (const item of items) {
+                    $$('assessmentTable').add(item);                }
+             }
+         })
+
+        // окно подробной инфы
         $$('assessmentTable').attachEvent("onItemClick", function (id) {
             let item = this.getItem(id);
             selectITEM = item;
@@ -38,17 +46,15 @@ const AssessmentPage = {
         });
 
 
-        //удаление
+        // удаление
         $$('deleteAsses').attachEvent("onItemClick", function () {
             if (selectITEM) {
                 let table = $$('assessmentTable');
                 table.remove(table.getSelectedId());
                 $$('infoAssesDate').setValue("");
 
-                fetch(`/assessment/${selectITEM.Id}`, {
-                    method: 'DELETE',
-                })
-                    .then(text => console.log(text));
+                AssessmentModel.delete(selectITEM.Id)
+
                 webix.message("Ассессмент удален");
 
                 //candidate update
@@ -69,7 +75,7 @@ const AssessmentPage = {
         });
 
 
-        //редактирование
+        // редактирование
         $$('SaveAsses').attachEvent("onItemClick", function () {
             if (selectITEM) {
                 let item = {
@@ -88,35 +94,19 @@ const AssessmentPage = {
                     };
                     item.Candidates.push(newC);
                 });
-                fetch(`/assessment/${selectITEM.Id}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(item)
-                })
-                    .then(res => res.json())
-                    .then(res => $$('assessmentTable').updateItem(selectITEM.id, res));
+
+                AssessmentModel.update(selectITEM.Id, item).then(res => $$('assessmentTable').updateItem(selectITEM.id, res));
+
                 webix.message("Изменения сохранены")
             }
         });
 
-        //поиск
+        // поиск
         $$("assessmentSearch").attachEvent("onChange", function () {
 
             let str = this.getText();
 
-            fetch(`/assessment/search`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    str: str
-                })
-            })
-                .then(res => res.json())
-                .then(res => {
+            AssessmentModel.search(str).then(res => {
                     if (res) {
                         $$('assessmentTable').clearAll();
                         res.forEach(function (item) {

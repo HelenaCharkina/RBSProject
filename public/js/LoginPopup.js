@@ -2,7 +2,7 @@ webix.ui({
     view: "window",
     id: "loginPopup",
     modal: true,
-    //fullscreen: true,
+    fullscreen: true,
     position:"center",
     width:400,
     height:300,
@@ -45,7 +45,7 @@ webix.ui({
             {}
         ]
     }
-}).hide();
+}).show();
 
 $$('loginButton').attachEvent('onItemClick', () => {
     let user = {

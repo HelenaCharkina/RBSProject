@@ -60,15 +60,7 @@ webix.ui({
                 }
             })
 
-            fetch(`/assessment/${selectITEM.Id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(item)
-            })
-                .then(res => res.text())
-                .then(text => console.log(text))
+            AssessmentModel.putInside(selectITEM.Id, item)
 
             let newAssess = selectITEM
             if (newAssess.Employees == null) {

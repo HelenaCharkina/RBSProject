@@ -47,15 +47,7 @@ $$('buttonAddEmployeeInAssess').attachEvent("onItemClick", function (id) {
             }
         })
 
-        fetch(`/employee/${selectITEM.Id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(item)
-        })
-            .then(res => res.text())
-            .then(text => console.log(text))
+        EmployeeModel.putInAssessment(selectITEM.Id, item)
 
         let newEmployee = selectITEM
         if (newEmployee.ListOfAssessment == null) {

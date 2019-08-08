@@ -1,4 +1,3 @@
-
 webix.ui({
     view: "popup",
     id: "add_student",
@@ -38,15 +37,7 @@ $$('addStudentButton').attachEvent('onItemClick', () => {
         MiddleName: $$('MiddleNamePop').getValue(),
         LastName: $$('LastNamePop').getValue(),
     };
-    fetch('/candidate', {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(candidate)
-    })
-        .then(res => res.json())
-        .then(data => {
+    CandidateModel.put(candidate).then(data => {
             candidate.Id = data;
             $$('studentTable').add(candidate)
             webix.message("Кандидат добавлен");

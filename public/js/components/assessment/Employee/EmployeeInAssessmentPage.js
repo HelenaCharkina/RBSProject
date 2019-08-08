@@ -11,9 +11,7 @@ const EmployeeInAssessmentPage = {
 
             if (selectITEM) {
                 $$('tableAssessAddEmployee').clearAll();
-                fetch('/employee', {method: 'GET'})
-                    .then(response => response.json())
-                    .then(response => {
+                EmployeeModel.getAll().then(response => {
                             response.forEach(function (item) {
                                 let x = true;
                                 if (selectITEM.Employees == null) {
@@ -51,15 +49,8 @@ const EmployeeInAssessmentPage = {
                         Id: employee.Id
                     }
                 });
-                fetch(`/assessment/${selectITEM.Id}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(item)
-                })
-                    .then(res => res.text())
-                    .then(text => console.log(text));
+
+                AssessmentModel.putInside(selectITEM.Id, item)
 
                 $$('employeeTableAsses').remove($$('employeeTableAsses').getSelectedId());
                 $$('AssessAddEmployee').hide();

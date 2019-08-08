@@ -16,14 +16,7 @@ $$('addAssesButton').attachEvent('onItemClick', () => {
         Date: $$('date_asses').getValue(),
     }
 
-    fetch('/assessment', {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(asses)})
-        .then(res => res.json())
-        .then(res => {
+    AssessmentModel.put(asses).then(res => {
             asses.Id = res
             $$('assessmentTable').add(asses);
             webix.message("Ассессмент добавлен")

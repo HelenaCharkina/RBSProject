@@ -27,14 +27,7 @@ $$('addEmployeeButton').attachEvent('onItemClick', () => {
         LastNameE: $$('last_name_employee').getValue(),
     }
 
-    fetch('/employee', {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(employee)})
-        .then(res => res.json())
-        .then(text => {
+    EmployeeModel.put(employee).then(text => {
             employee.Id = text
             $$('employeeTable').add(employee)
             webix.message("Сотрудник добавлен")

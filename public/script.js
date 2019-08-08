@@ -27,9 +27,7 @@ webix.ready(function () {
     EmployeePage.init();
 
     tabbarChangeCell();
-    getCandidate();
-    getAssessment();
-    getEmployee();
+   
 
 
 });

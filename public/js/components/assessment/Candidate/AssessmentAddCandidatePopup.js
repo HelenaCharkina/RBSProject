@@ -59,15 +59,8 @@ webix.ui({
                 }
             })
 
-            fetch(`/assessment/${selectITEM.Id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(item)
-            })
-                .then(res => res.text())
-                .then(text => console.log(text))
+            AssessmentModel.putInside(selectITEM.Id, item)
+
             let newAssess = selectITEM
             if (newAssess.Candidates == null) {
                 newAssess.Candidates = []
@@ -85,7 +78,7 @@ webix.ui({
                 newAssess.Candidates.push(candidate)
                 $$('AssessAddCandidate').hide();
 
-                //candidate update
+                // candidate update
                 let idx = ($$('studentTable').find(el => el.Id === item.Id))[0].id
                 let editCandidate = $$('studentTable').getItem(idx)
                 if (!editCandidate.ListOfAssessment) {
