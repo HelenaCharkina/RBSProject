@@ -1,4 +1,4 @@
-package ttt
+package util
 
 import (
 	"database/sql"
@@ -14,5 +14,6 @@ func DatabaseConnect() *sql.DB {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	return db
 }

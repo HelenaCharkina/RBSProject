@@ -6,6 +6,13 @@ const CandidateInAssessmentPage = {
 
     init: () => {
 
+        $$('studentTableAsses').attachEvent('onItemClick', () => {
+            if($$('studentTableAsses').getSelectedItem()) {
+                $$('deleteCandidate').enable();
+            }else{
+                $$('deleteCandidate').disable();
+            }
+        })
         // ТАБЛИЦА АССЕССМЕНТОВ ЗАГРУЗКА КАНДИДАТОВ
         $$('addCandidate').attachEvent('onItemClick', () => {
 

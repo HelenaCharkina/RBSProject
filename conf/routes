@@ -9,29 +9,27 @@ module:testrunner
 
 GET     /                                       App.Index
 
-GET     /candidate                             CandidateController.Get
-GET     /candidate/:id                         CandidateController.GetId
+GET     /candidate                             CandidateController.GetAll
 DELETE  /candidate/:id                         CandidateController.Delete
-PUT    /candidate                              CandidateController.Put
+PUT    /candidate                              CandidateController.Create
 POST    /candidate/search                      CandidateController.Search
-POST    /candidate/:id                         CandidateController.Post
-PUT    /candidate/:id                          CandidateController.PutInAssess
+POST    /candidate/:id                         CandidateController.Update
+PUT    /candidate/:id                          CandidateController.AddInAssess
 
 
-GET     /assessment                          AssessmentController.Get
-GET     /assessment/:id                           AssessmentController.GetMas
-PUT    /assessment                             AssessmentController.Put
+GET     /assessment                          AssessmentController.GetAll
+PUT    /assessment                             AssessmentController.Create
 DELETE  /assessment/:id                       AssessmentController.Delete
 POST    /assessment/search                      AssessmentController.Search
-POST /assessment/:id                       AssessmentController.Post
-PUT /assessment/:id                        AssessmentController.PutCandidate
+POST /assessment/:id                       AssessmentController.Update
+PUT /assessment/:id                        AssessmentController.UpdateUsers
 
-GET     /employee                               EmployeeController.Get
-PUT    /employee                               EmployeeController.Put
+GET     /employee                               EmployeeController.GetAll
+PUT    /employee                               EmployeeController.Create
 DELETE  /employee/:id                        EmployeeController.Delete
 POST    /employee/search                      EmployeeController.Search
-POST /employee/:id                        EmployeeController.Post
-PUT    /employee/:id                          EmployeeController.PutInAssess
+POST /employee/:id                        EmployeeController.Update
+PUT    /employee/:id                          EmployeeController.AddInAssess
 
 POST    /user                               UserController.Post
 

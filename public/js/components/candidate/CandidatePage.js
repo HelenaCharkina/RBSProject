@@ -5,6 +5,8 @@ const CandidatePage = {
 
     init: () => {
 
+        $$("formInfoCandidate").validate()
+
         // загрузка всех кандидатов
         CandidateModel.getAll().then(items => {
             if (items) {
@@ -14,9 +16,19 @@ const CandidatePage = {
             }
         });
 
+        //список ассессментов
+        $$('listOfAssessment').attachEvent("onItemClick", function () {
+
+                $$("deleteCandidateFromAssessment").enable();
+        })
 
         // окно подробной инфы
         $$('studentTable').attachEvent("onItemClick", function (id) {
+
+            $$("SaveStudent").enable();
+            $$("deleteStudent").enable();
+            $$("infoAsses").enable();
+            $$("deleteCandidateFromAssessment").disable();
 
             let item = this.getItem(id);
             selectITEM = item;

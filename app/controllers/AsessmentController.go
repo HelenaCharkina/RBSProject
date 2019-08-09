@@ -11,8 +11,8 @@ type AssessmentController struct {
 	*revel.Controller
 }
 
-func (c *AssessmentController) Get() revel.Result {
-	assessments, err := providers.AssessmentGet()
+func (c *AssessmentController) GetAll() revel.Result {
+	assessments, err := providers.AssessmentGetAll()
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)
@@ -20,15 +20,10 @@ func (c *AssessmentController) Get() revel.Result {
 	return c.RenderJSON(assessments)
 }
 
-func (c *AssessmentController) GetMas(id int) revel.Result {
 
-	assessment := providers.AssessmentGetMas(id)
-	return c.RenderJSON(assessment)
-}
+func (c *AssessmentController) UpdateUsers(assessment types.Assessment) revel.Result {
 
-func (c *AssessmentController) PutCandidate(assessment types.Assessment) revel.Result {
-
-	err := providers.AssessmentPutCandidate(assessment)
+	err := providers.AssessmentUpdateUsers(assessment)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)
@@ -37,8 +32,8 @@ func (c *AssessmentController) PutCandidate(assessment types.Assessment) revel.R
 	return c.RenderText("success")
 }
 
-func (c *AssessmentController) Put(assessment types.Assessment) revel.Result {
-	asses, err := providers.AssessmentPut(assessment)
+func (c *AssessmentController) Create(assessment types.Assessment) revel.Result {
+	asses, err := providers.AssessmentCreate(assessment)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)
@@ -56,9 +51,9 @@ func (c *AssessmentController) Delete(id int) revel.Result {
 	return c.RenderText("success")
 }
 
-func (c *AssessmentController) Post(id int, assessment types.Assessment) revel.Result {
+func (c *AssessmentController) Update(id int, assessment types.Assessment) revel.Result {
 
-	assess, err := providers.AssessmentPost(id, assessment)
+	assess, err := providers.AssessmentUpdate(id, assessment)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)

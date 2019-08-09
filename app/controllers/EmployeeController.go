@@ -12,8 +12,8 @@ type EmployeeController struct {
 	*revel.Controller
 }
 
-func (c *EmployeeController) Get() revel.Result {
-	employees, err := providers.EmployeeGet()
+func (c *EmployeeController) GetAll() revel.Result {
+	employees, err := providers.EmployeeGetAll()
 	if err != nil{
 		log.Println(err)
 		return c.RenderError(err)
@@ -21,8 +21,8 @@ func (c *EmployeeController) Get() revel.Result {
 	return c.RenderJSON(employees)
 }
 
-func (c *EmployeeController) Put(employee types.Employee) revel.Result {
-	ID, err := providers.EmployeePut(employee)
+func (c *EmployeeController) Create(employee types.Employee) revel.Result {
+	ID, err := providers.EmployeeCreate(employee)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)
@@ -40,9 +40,9 @@ func (c *EmployeeController) Delete(id int) revel.Result {
 	return c.RenderText("success")
 }
 
-func (c *EmployeeController) Post(id int, employee types.Employee) revel.Result {
+func (c *EmployeeController) Update(id int, employee types.Employee) revel.Result {
 
-	err := providers.EmployeePost(id, employee)
+	err := providers.EmployeeUpdate(id, employee)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)
@@ -50,8 +50,8 @@ func (c *EmployeeController) Post(id int, employee types.Employee) revel.Result 
 	return c.RenderText("success")
 }
 
-func (c *EmployeeController) PutInAssess(employee types.Employee) revel.Result {
-	err := providers.EmployeePutInAssess(employee)
+func (c *EmployeeController) AddInAssess(employee types.Employee) revel.Result {
+	err := providers.EmployeeAddInAssess(employee)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)

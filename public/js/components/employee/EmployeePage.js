@@ -6,6 +6,7 @@ const EmployeePage = {
 
     init: () => {
 
+
         // загрузка всех сотрудников
         EmployeeModel.getAll().then(items => {
             if(items) {
@@ -15,8 +16,19 @@ const EmployeePage = {
             }
         })
 
+        //список ассессментов
+        $$('listOfAssessmentE').attachEvent("onItemClick", function () {
+
+            $$("deleteEmployeeFromAssessment").enable();
+        })
+
         // окно подробной инфы
         $$('employeeTable').attachEvent("onItemClick", function (id) {
+
+            $$("SaveEmployee").enable();
+            $$("deleteEmployee").enable();
+            $$("infoAssesE").enable();
+            $$("deleteEmployeeFromAssessment").disable();
 
             let item = this.getItem(id);
             selectITEM = item;

@@ -3,13 +3,13 @@ package mappers
 import (
 	_ "github.com/lib/pq"
 	"log"
-	"ttt"
 	"ttt/app/types"
+	"ttt/app/util"
 )
 
-func AssessmentGet() ([]*types.Assessment, error) {
+func AssessmentGetAll() ([]*types.Assessment, error) {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var assessments []*types.Assessment
@@ -86,9 +86,9 @@ func AssessmentGet() ([]*types.Assessment, error) {
 	return assessments, err
 }
 
-func AssessmentPut(assessment types.Assessment) (int64, error) {
+func AssessmentCreate(assessment types.Assessment) (int64, error) {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var ID int64
@@ -104,7 +104,7 @@ func AssessmentPut(assessment types.Assessment) (int64, error) {
 
 func AssessmentDelete(id int) error {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
@@ -116,9 +116,9 @@ func AssessmentDelete(id int) error {
 	return err
 }
 
-func AssessmentPost(id int, assessment types.Assessment) (types.Assessment, error) {
+func AssessmentUpdate(id int, assessment types.Assessment) (types.Assessment, error) {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
@@ -195,39 +195,10 @@ func AssessmentPost(id int, assessment types.Assessment) (types.Assessment, erro
 	return c, err
 }
 
-func AssessmentGetMas(id int) *types.Assessment {
 
-	db := ttt.DatabaseConnect()
-	defer db.Close()
+func AssessmentUpdateUsers(assessment types.Assessment) error {
 
-	rows, err := db.Query(`
-		select firstname, middlename, lastname, ca.status, ca.proof, c.id from assessment a
-		join candidate_assessment ca on a.id = ca.id_assessment
-		join candidate c on ca.id_candidate = c.id
-		where a.id = $1`, id)
-	if err != nil {
-		log.Println(err)
-	}
-	defer rows.Close()
-
-	c := types.Assessment{}
-	for rows.Next() {
-		item := types.Candidate{}
-		err := rows.Scan(&item.FirstName, &item.MiddleName, &item.LastName, &item.S, &item.P, &item.Id)
-		if err != nil {
-			log.Println(err)
-		}
-		c.Candidates = append(c.Candidates, item)
-	}
-	if err = rows.Err(); err != nil {
-		log.Fatal(err)
-	}
-	return &c
-}
-
-func AssessmentPutCandidate(assessment types.Assessment) error {
-
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var err error
@@ -258,7 +229,7 @@ func AssessmentPutCandidate(assessment types.Assessment) error {
 
 func AssessmentSearch(str types.Search) []*types.Assessment {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var assessments []*types.Assessment

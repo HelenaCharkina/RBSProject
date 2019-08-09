@@ -4,13 +4,13 @@ import (
 	_ "github.com/lib/pq"
 	"log"
 	"strings"
-	"ttt"
 	"ttt/app/types"
+	"ttt/app/util"
 )
 
-func CandidateGet() ([]*types.Candidate, error) {
+func CandidateGetAll() ([]*types.Candidate, error) {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var candidates []*types.Candidate
@@ -63,33 +63,9 @@ func CandidateGet() ([]*types.Candidate, error) {
 	return candidates, err
 }
 
-func CandidateGetId(id int) *types.Candidate {
+func CandidateCreate(candidate types.Candidate) (int64, error) {
 
-	db := ttt.DatabaseConnect()
-	defer db.Close()
-
-
-	row, err := db.Query(`
-		SELECT firstName, middleName, lastName , phone, email
-		FROM db.public.candidate
-		WHERE Id = $1`, id)
-
-	if err != nil {
-		log.Println(err)
-	}
-	c := types.Candidate{}
-	err = row.Scan(&c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
-	if err != nil {
-		log.Println(err)
-	}
-	defer row.Close()
-
-	return &c
-}
-
-func CandidatePut(candidate types.Candidate) (int64, error) {
-
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var ID int64
@@ -106,7 +82,7 @@ func CandidatePut(candidate types.Candidate) (int64, error) {
 
 func CandidateDelete(id int) error {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
@@ -118,9 +94,9 @@ func CandidateDelete(id int) error {
 	return err
 }
 
-func CandidatePost(id int, candidate types.Candidate) error {
+func CandidateUpdate(id int, candidate types.Candidate) error {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
@@ -132,9 +108,9 @@ func CandidatePost(id int, candidate types.Candidate) error {
 	return err
 }
 
-func CandidatePutInAssess(candidate types.Candidate) error {
+func CandidateAddInAssess(candidate types.Candidate) error {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var err error
@@ -150,7 +126,7 @@ func CandidatePutInAssess(candidate types.Candidate) error {
 
 func CandidateSearch(str types.Search) []*types.Candidate {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var masObjects = strings.Split(str.Str, " ")

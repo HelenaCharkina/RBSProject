@@ -1,6 +1,5 @@
 function CandidateView() {
     return {
-
         id: "studentList",
         rows: [{
             //меню поиска
@@ -13,19 +12,23 @@ function CandidateView() {
                 {},
                 {
                     view: "button",
-                    width: 150,
+                    width: 100,
                     value: 'Добавить',
                     popup: "add_student"
                 },
                 {
                     view: "button",
                     id: "SaveStudent",
+                    width: 100,
                     value: "Сохранить",
+                    disabled:true
                 },
                 {
                     view: "button",
                     id: "deleteStudent",
+                    width: 100,
                     value: "Удалить",
+                    disabled:true
                 }
             ]
         },
@@ -36,6 +39,7 @@ function CandidateView() {
                         view: "datatable",
                         select: "row",
                         id: "studentTable",
+                        scroll: "y",
                         height: 500,
                         autoConfig: true,
                         columns: [
@@ -61,45 +65,82 @@ function CandidateView() {
                         ]
                     },
                     {
+                        view: "form",
+                        id: "formInfoCandidate",
                         padding: 20,
-                        rows: [
+                        elements: [
                             {
                                 view: "text",
                                 labelWidth: 150,
                                 label: "Имя",
-                                id: "infoFirstName"
+                                id: "infoFirstName",
+                                invalidMessage: "Введите имя",
+                                validate: webix.rules.isNotEmpty,
+                                name: "fn",
+                                on:{
+                                    "onChange":function(){
+                                        this.validate();
+                                    }},
                             },
                             {
                                 view: "text",
                                 labelWidth: 150,
                                 label: "Отчество",
-                                id: "infoMiddleName"
+                                id: "infoMiddleName",
+                                name: "mn",
+                                invalidMessage: "Введите отчество",
+                                validate: webix.rules.isNotEmpty,
+                                on:{
+                                    "onChange":function(){
+                                        this.validate();
+                                    }},
+
                             },
                             {
                                 view: "text",
                                 label: "Фамилия",
                                 labelWidth: 150,
-                                id: "infoLastName"
+                                id: "infoLastName",
+                                invalidMessage: "Введите фамилию",
+                                validate: webix.rules.isNotEmpty,
+                                name:"ln",
+                                on:{
+                                    "onChange":function(){
+                                        this.validate();
+                                    }},
                             },
                             {
                                 view: "text",
                                 label: "Телефон",
                                 labelWidth: 150,
                                 id: "infoPhone",
-                                pattern:{ mask:"(###) ###-####", allow:/[0-9]/g }
+                                pattern:{ mask:"(###) ###-##-##", allow:/[0-9]/g },
+                                name:"ph",
+                                invalidMessage: "Некорректный номер",
+                                on:{
+                                    "onChange":function(){
+                                        this.validate();
+                                    }}
                             },
                             {
                                 view: "text",
                                 labelWidth: 150,
                                 label: "Почта",
                                 id: "infoEmail",
+                                invalidMessage: "Некорректный email",
+                                name:"em",
+                                validate: webix.rules.isEmail,
+                                on:{
+                                    "onChange":function(){
+                                        this.validate();
+                                    }}
                             },
                             {
                                 view: "list",
                                 select: "row",
                                 id: "listOfAssessment",
                                 template:"#Date#",
-                                height: 200
+                                height: 200,
                             },
                             {},
                             {
@@ -109,17 +150,20 @@ function CandidateView() {
                                         popup: "addCandidateInAssess",
                                         value :"Добавить в ассессмент",
                                         id: "infoAsses",
-                                        height: 40
+                                        height: 40,
+                                        disabled:true
                                     },
                                     {
                                         view: "button",
                                         value :"Удалить ассессмент",
                                         id: "deleteCandidateFromAssessment",
-                                        height: 40
+                                        height: 40,
+                                        disabled:true
                                     }
                                     ]
                             }
-                        ]
+                        ],
+
                     }
                 ]
             }

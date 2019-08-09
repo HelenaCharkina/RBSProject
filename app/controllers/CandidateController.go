@@ -12,8 +12,8 @@ type CandidateController struct {
 	*revel.Controller
 }
 
-func (c *CandidateController) Get() revel.Result {
-	candidates, err := providers.CandidateGet()
+func (c *CandidateController) GetAll() revel.Result {
+	candidates, err := providers.CandidateGetAll()
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)
@@ -21,13 +21,8 @@ func (c *CandidateController) Get() revel.Result {
 	return c.RenderJSON(candidates)
 }
 
-func (c *CandidateController) GetId(id int) revel.Result {
-	candidates := providers.CandidateGetId(id)
-	return c.RenderJSON(candidates)
-}
-
-func (c *CandidateController) Put(candidate types.Candidate) revel.Result {
-	ID, err := providers.CandidatePut(candidate)
+func (c *CandidateController) Create(candidate types.Candidate) revel.Result {
+	ID, err := providers.CandidateCreate(candidate)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)
@@ -46,9 +41,9 @@ func (c *CandidateController) Delete(id int) revel.Result {
 	return c.RenderText("success")
 }
 
-func (c *CandidateController) Post(id int, candidate types.Candidate) revel.Result {
+func (c *CandidateController) Update(id int, candidate types.Candidate) revel.Result {
 
-	err := providers.CandidatePost(id, candidate)
+	err := providers.CandidateUpdate(id, candidate)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)
@@ -57,8 +52,8 @@ func (c *CandidateController) Post(id int, candidate types.Candidate) revel.Resu
 	return c.RenderText("success")
 }
 
-func (c *CandidateController) PutInAssess(candidate types.Candidate) revel.Result {
-	err := providers.CandidatePutInAssess(candidate)
+func (c *CandidateController) AddInAssess(candidate types.Candidate) revel.Result {
+	err := providers.CandidateAddInAssess(candidate)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)

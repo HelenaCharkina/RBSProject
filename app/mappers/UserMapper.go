@@ -1,13 +1,13 @@
 package mappers
 
 import (
-	"ttt"
 	"ttt/app/types"
+	"ttt/app/util"
 )
 
 func UserPost(user types.User) (types.Employee, error) {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 
 	var ID int64
 	err := db.QueryRow(`

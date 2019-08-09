@@ -6,6 +6,14 @@ const EmployeeInAssessmentPage = {
 
     init: () => {
 
+        $$('employeeTableAsses').attachEvent('onItemClick', () => {
+            if($$('employeeTableAsses').getSelectedItem()) {
+                $$('deleteEmployeeFromA').enable();
+            }else{
+                $$('deleteEmployeeFromA').disable();
+            }
+        })
+
         //ТАБЛИЦА АССЕССМЕНТОВ ЗАГРУЗКА СОТРУДНИКОВ
         $$('addEmployeeInA').attachEvent('onItemClick', () => {
 

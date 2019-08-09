@@ -14,17 +14,19 @@ function EmployeeView() {
                 {},
                 {
                     view: "button",
-                    width: 150,
+                    width: 100,
                     value: 'Добавить',
                     popup: "add_employee"
                 },
                 {
                     view: "button",
+                    width: 100,
                     id: "SaveEmployee",
                     value: "Сохранить",
                 },
                 {
                     view: "button",
+                    width: 100,
                     id: "deleteEmployee",
                     value: "Удалить",
                 }
@@ -63,25 +65,48 @@ function EmployeeView() {
                         ]
                     },
                     {
+                        view:"form",
+                        id: "formInfoEmployee",
                         padding: 20,
                         rows: [
                             {
                                 view: "text",
                                 labelWidth: 150,
                                 label: "Имя",
-                                id: "infoFirstNameEmployee"
+                                id: "infoFirstNameEmployee",
+                                invalidMessage: "Введите имя",
+                                validate: webix.rules.isNotEmpty,
+                                name: "fn",
+                                on:{
+                                    "onChange":function(){
+                                        this.validate();
+                                    }},
                             },
                             {
                                 view: "text",
                                 labelWidth: 150,
                                 label: "Отчество",
-                                id: "infoMiddleNameEmployee"
+                                id: "infoMiddleNameEmployee",
+                                name: "mn",
+                                invalidMessage: "Введите отчество",
+                                validate: webix.rules.isNotEmpty,
+                                on:{
+                                    "onChange":function(){
+                                        this.validate();
+                                    }},
                             },
                             {
                                 view: "text",
                                 label: "Фамилия",
                                 labelWidth: 150,
-                                id: "infoLastNameEmployee"
+                                id: "infoLastNameEmployee",
+                                invalidMessage: "Введите фамилию",
+                                validate: webix.rules.isNotEmpty,
+                                name:"ln",
+                                on:{
+                                    "onChange":function(){
+                                        this.validate();
+                                    }},
                             },
 
                             {
@@ -89,13 +114,26 @@ function EmployeeView() {
                                 label: "Телефон",
                                 labelWidth: 150,
                                 id: "infoPhoneEmployee",
-                                pattern:{ mask:"(###) ###-####", allow:/[0-9]/g }
+                                pattern:{ mask:"(###) ###-##-##", allow:/[0-9]/g },
+                                name:"ph",
+                                invalidMessage: "Некорректный номер",
+                                on:{
+                                    "onChange":function(){
+                                        this.validate();
+                                    }}
                             },
                             {
                                 view: "text",
                                 labelWidth: 150,
                                 label: "Почта",
                                 id: "infoEmailEmployee",
+                                name:"em",
+                                invalidMessage: "Некорректный email",
+                                validate: webix.rules.isEmail,
+                                on:{
+                                    "onChange":function(){
+                                        this.validate();
+                                    }}
                             },
                             {
                                 view: "list",

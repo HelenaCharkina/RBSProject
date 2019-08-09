@@ -4,13 +4,13 @@ import (
 	_ "github.com/lib/pq"
 	"log"
 	"strings"
-	"ttt"
 	"ttt/app/types"
+	"ttt/app/util"
 )
 
-func EmployeeGet() ([]*types.Employee, error) {
+func EmployeeGetAll() ([]*types.Employee, error) {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 
@@ -67,9 +67,9 @@ func EmployeeGet() ([]*types.Employee, error) {
 	return employees, err
 }
 
-func EmployeePut(employee types.Employee) (int64, error) {
+func EmployeeCreate(employee types.Employee) (int64, error) {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var ID int64
@@ -86,7 +86,7 @@ func EmployeePut(employee types.Employee) (int64, error) {
 
 func EmployeeDelete(id int) error {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
@@ -98,9 +98,9 @@ func EmployeeDelete(id int) error {
 	return err
 }
 
-func EmployeePost(id int, employee types.Employee) error {
+func EmployeeUpdate(id int, employee types.Employee) error {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
@@ -112,9 +112,9 @@ func EmployeePost(id int, employee types.Employee) error {
 	return err
 }
 
-func EmployeePutInAssess(employee types.Employee) error {
+func EmployeeAddInAssess(employee types.Employee) error {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var err error
@@ -130,7 +130,7 @@ func EmployeePutInAssess(employee types.Employee) error {
 
 func EmployeeSearch(str types.Search) []*types.Employee {
 
-	db := ttt.DatabaseConnect()
+	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var masObjects = strings.Split(str.Str, " ")

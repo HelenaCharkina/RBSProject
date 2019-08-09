@@ -18,6 +18,14 @@ const AssessmentPage = {
 
         // окно подробной инфы
         $$('assessmentTable').attachEvent("onItemClick", function (id) {
+
+            $$("SaveAsses").enable();
+            $$("deleteAsses").enable();
+            $$('addCandidate').enable();
+            $$('deleteCandidate').disable();
+            $$('addEmployeeInA').enable();
+            $$('deleteEmployeeFromA').disable();
+
             let item = this.getItem(id);
             selectITEM = item;
 

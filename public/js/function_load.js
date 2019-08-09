@@ -5,47 +5,39 @@ function tabbarChangeCell() {
         $$('assessmentTable').clearSelection();
         $$('employeeTable').clearSelection()
         selectITEM = null
+
+        $$('formInfoCandidate').clear()
+        $$('listOfAssessment').clearAll()
+
+        $$('formInfoEmployee').clear()
+        $$('listOfAssessmentE').clearAll()
+
+        //candidate
+        $$("SaveStudent").disable();
+        $$("deleteStudent").disable();
+        $$("infoAsses").disable();
+        $$("deleteCandidateFromAssessment").disable();
+
+        //employee
+        $$("SaveEmployee").disable();
+        $$("deleteEmployee").disable();
+        $$("infoAssesE").disable();
+        $$("deleteEmployeeFromAssessment").disable();
+
+        //assessment
+        $$("SaveAsses").disable();
+        $$("deleteAsses").disable();
+
+        $$("addCandidate").disable();
+        $$("deleteCandidate").disable();
+
+        $$("addEmployeeInA").disable();
+        $$("deleteEmployeeFromA").disable();
+
+        //assessmentPage
+
+        $$('studentTableAsses').clearAll()
+        $$('employeeTableAsses').clearAll()
     });
 }
-
-// //GetStudent получение кандидатов из бд
-// function getCandidate() {
-//     fetch('/candidate', {method: 'GET'})
-//         .then(response => response.json())
-//         .then(items => {
-//             if(items){
-//                 for (const item of items) {
-//                     $$('studentTable').add(item);
-//                 }
-//             }
-//         })
-// }
-//
-// //GetEmployee получение сотрудников из бд
-// function getEmployee() {
-//
-//     fetch('/employee', {method: 'GET'})
-//         .then(response => response.json())
-//         .then(items => {
-//             if(items) {
-//                 for (const item of items) {
-//                     $$('employeeTable').add(item);
-//                 }
-//             }
-//         })
-// }
-
-//GetAssessment получение ассессментов из бд
-// function getAssessment() {
-//
-//     fetch('/assessment', {method: 'GET'})
-//         .then(response => response.json())
-//         .then(items => {
-//             if(items){
-//                 for (const item of items) {
-//                     $$('assessmentTable').add(item);
-//                 }
-//             }
-//         })
-// }
 

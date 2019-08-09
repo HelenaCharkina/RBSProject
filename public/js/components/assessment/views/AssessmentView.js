@@ -17,18 +17,20 @@ function AssessmentView() {
                     }, {},
                     {
                         view: "button",
-                        width: 150,
+                        width: 100,
                         value: 'Создать',
                         popup: "add_asses",
                         height: 50
                     },
                     {
                         view: "button",
+                        width: 100,
                         id: "deleteAsses",
                         value: "Удалить",
                     },
                     {
                         view: "button",
+                        width: 100,
                         id: "SaveAsses",
                         value: "Сохранить",
                     }
