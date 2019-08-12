@@ -26,7 +26,7 @@ const EmployeeInAssessmentPage = {
                                     $$('tableAssessAddEmployee').add(item)
                                 } else {
                                     selectITEM.Employees.forEach(function (employee) {
-                                        if (employee.IdE === item.Id)
+                                        if (employee.Id === item.Id)
                                             x = false
                                     });
                                     if (x) {

@@ -144,7 +144,6 @@ const EmployeePage = {
         $$('infoAssesE').attachEvent('onItemClick', () => {
             if (selectITEM) {
                 $$('tableAddEmployeeInAssess').clearAll();
-
                 AssessmentModel.getAll().then(response => {
                             response.forEach(function (item) {
                                 let x = true;
