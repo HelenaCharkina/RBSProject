@@ -1,13 +1,13 @@
 package mappers
 
 import (
+	"database/sql"
 	"ttt/app/types"
-	"ttt/app/util"
 )
 
-func UserPost(user types.User) (types.Employee, error) {
+func UserPost(db *sql.DB, user types.User) (types.Employee, error) {
 
-	db := util.DatabaseConnect()
+	defer db.Close()
 
 	var ID int64
 	err := db.QueryRow(`

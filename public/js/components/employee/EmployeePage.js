@@ -79,6 +79,7 @@ const EmployeePage = {
         $$('SaveEmployee').attachEvent("onItemClick", function () {
             if (selectITEM) {
                 let item = {
+                    Id: selectITEM.Id,
                     FirstNameE: $$('infoFirstNameEmployee').getValue(),
                     MiddleNameE: $$('infoMiddleNameEmployee').getValue(),
                     LastNameE: $$('infoLastNameEmployee').getValue(),
@@ -86,7 +87,7 @@ const EmployeePage = {
                     EmailE: $$('infoEmailEmployee').getValue(),
                 };
 
-                EmployeeModel.update(selectITEM.Id, item).then($$('employeeTable').updateItem(selectITEM.id, item));
+                EmployeeModel.update(item).then($$('employeeTable').updateItem(selectITEM.id, item));
 
                 webix.message("Изменения сохранены")
             }

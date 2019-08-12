@@ -20,6 +20,7 @@ webix.ui({
     }
 }).hide();
 
+// создание нового сотрудника
 $$('addEmployeeButton').attachEvent('onItemClick', () => {
     let employee = {
         FirstNameE: $$('first_name_employee').getValue(),
@@ -27,7 +28,7 @@ $$('addEmployeeButton').attachEvent('onItemClick', () => {
         LastNameE: $$('last_name_employee').getValue(),
     }
 
-    EmployeeModel.put(employee).then(text => {
+    EmployeeModel.create(employee).then(text => {
             employee.Id = text
             $$('employeeTable').add(employee)
             webix.message("Сотрудник добавлен")

@@ -6,14 +6,14 @@ import (
 	"log"
 )
 
-func DatabaseConnect() *sql.DB {
+func DatabaseConnect() (*sql.DB, error) {
 
 	connectionStr := "user=postgres password=oaqcrick8n dbname=db sslmode=disable"
 
 	db, err := sql.Open("postgres", connectionStr)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
-	return db
+	return db, err
 }

@@ -1,29 +1,55 @@
 package providers
 
 import (
+	"log"
 	"ttt/app/mappers"
 	"ttt/app/types"
+	"ttt/app/util"
 )
 
 func AssessmentGetAll() ([]*types.Assessment, error) {
-	return mappers.AssessmentGetAll()
+	db, err := util.DatabaseConnect()
+	if err != nil {
+		log.Println(err)
+	}
+	return mappers.AssessmentGetAll(db)
 }
 
 func AssessmentCreate(assessment types.Assessment) (int64, error) {
-	return mappers.AssessmentCreate(assessment)
+	db, err := util.DatabaseConnect()
+	if err != nil {
+		log.Println(err)
+	}
+	return mappers.AssessmentCreate(db, assessment)
 }
 
 func AssessmentUpdateUsers(assessment types.Assessment) error {
-	return mappers.AssessmentUpdateUsers(assessment)
+	db, err := util.DatabaseConnect()
+	if err != nil {
+		log.Println(err)
+	}
+	return mappers.AssessmentUpdateUsers(db, assessment)
 }
 
 func AssessmentDelete(id int) error {
-	return mappers.AssessmentDelete(id)
+	db, err := util.DatabaseConnect()
+	if err != nil {
+		log.Println(err)
+	}
+	return mappers.AssessmentDelete(db, id)
 }
-func AssessmentUpdate(id int, assessment types.Assessment) (types.Assessment, error) {
-	return mappers.AssessmentUpdate(id, assessment)
+func AssessmentUpdate(assessment types.Assessment) (types.Assessment, error) {
+	db, err := util.DatabaseConnect()
+	if err != nil {
+		log.Println(err)
+	}
+	return mappers.AssessmentUpdate(db, assessment)
 }
 
 func AssessmentSearch(str types.Search) []*types.Assessment {
-	return mappers.AssessmentSearch(str)
+	db, err := util.DatabaseConnect()
+	if err != nil {
+		log.Println(err)
+	}
+	return mappers.AssessmentSearch(db, str)
 }

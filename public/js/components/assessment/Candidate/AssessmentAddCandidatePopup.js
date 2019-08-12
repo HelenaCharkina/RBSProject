@@ -38,9 +38,8 @@ webix.ui({
     }
 }).hide();
 
-//ДОБАВЛЕНИЕ СПИСКА КАДИДАТОВ В АССЕССМЕНТ
-
-    $$('selectCandidate').attachEvent("onItemClick", function (id) {
+//ДОБАВЛЕНИЕ СПИСКА КАДИДАТОВ В АССЕССМЕНТ на странице ассессмента
+    $$('selectCandidate').attachEvent("onItemClick", function () {
 
         if(selectITEM) {
             let masIdA = [];
@@ -59,7 +58,7 @@ webix.ui({
                 }
             })
 
-            AssessmentModel.putInside(selectITEM.Id, item)
+            AssessmentModel.addInside(selectITEM.Id, item)
 
             let newAssess = selectITEM
             if (newAssess.Candidates == null) {

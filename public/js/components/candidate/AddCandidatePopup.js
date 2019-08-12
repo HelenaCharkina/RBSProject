@@ -34,13 +34,14 @@ webix.ui({
     }
 }).hide();
 
+// создание нового кандидата
 $$('addStudentButton').attachEvent('onItemClick', () => {
     let candidate = {
         FirstName: $$('FirstNamePop').getValue(),
         MiddleName: $$('MiddleNamePop').getValue(),
         LastName: $$('LastNamePop').getValue(),
     };
-    CandidateModel.put(candidate).then(data => {
+    CandidateModel.create(candidate).then(data => {
             candidate.Id = data;
             $$('studentTable').add(candidate)
             webix.message("Кандидат добавлен");

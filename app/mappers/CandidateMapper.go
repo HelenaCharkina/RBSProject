@@ -1,19 +1,20 @@
 package mappers
 
 import (
+	"database/sql"
 	_ "github.com/lib/pq"
 	"log"
 	"strings"
 	"ttt/app/types"
-	"ttt/app/util"
 )
 
-func CandidateGetAll() ([]*types.Candidate, error) {
+// получение списка кандидатов
+func CandidateGetAll(db *sql.DB) ([]*types.Candidate, error) {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var candidates []*types.Candidate
+
 	rows, err := db.Query(`
 		SELECT *
 		FROM db.public.candidate
@@ -58,14 +59,14 @@ func CandidateGetAll() ([]*types.Candidate, error) {
 		candidates = append(candidates, &c)
 	}
 	if err = rows.Err(); err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	return candidates, err
 }
 
-func CandidateCreate(candidate types.Candidate) (int64, error) {
+// создание нового кандидата
+func CandidateCreate(db *sql.DB, candidate types.Candidate) (int64, error) {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var ID int64
@@ -80,9 +81,9 @@ func CandidateCreate(candidate types.Candidate) (int64, error) {
 	return ID, err
 }
 
-func CandidateDelete(id int) error {
+// удаление кандидата
+func CandidateDelete(db *sql.DB, id int) error {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
@@ -94,23 +95,23 @@ func CandidateDelete(id int) error {
 	return err
 }
 
-func CandidateUpdate(id int, candidate types.Candidate) error {
+// обновление кандидата
+func CandidateUpdate(db *sql.DB, candidate types.Candidate) error {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
 		update candidate set Firstname = $2, Middlename = $3, Lastname = $4, Phone = $5, Email = $6
-		where id = $1 `, id, candidate.FirstName, candidate.MiddleName, candidate.LastName, candidate.Phone, candidate.Email)
+		where id = $1 `, candidate.Id, candidate.FirstName, candidate.MiddleName, candidate.LastName, candidate.Phone, candidate.Email)
 	if err != nil {
 		log.Println(err)
 	}
 	return err
 }
 
-func CandidateAddInAssess(candidate types.Candidate) error {
+// добавление ассессментов кандидата
+func CandidateAddInAssess(db *sql.DB, candidate types.Candidate) error {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var err error
@@ -124,9 +125,9 @@ func CandidateAddInAssess(candidate types.Candidate) error {
 	return err
 }
 
-func CandidateSearch(str types.Search) []*types.Candidate {
+// поиск кандидата
+func CandidateSearch(db *sql.DB, str types.Search) []*types.Candidate {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var masObjects = strings.Split(str.Str, " ")

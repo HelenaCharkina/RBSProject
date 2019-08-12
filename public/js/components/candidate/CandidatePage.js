@@ -80,6 +80,7 @@ const CandidatePage = {
         $$('SaveStudent').attachEvent("onItemClick", function () {
             if (selectITEM) {
                 let item = {
+                    Id: selectITEM.Id,
                     FirstName: $$('infoFirstName').getValue(),
                     MiddleName: $$('infoMiddleName').getValue(),
                     LastName: $$('infoLastName').getValue(),
@@ -87,7 +88,7 @@ const CandidatePage = {
                     Email: $$('infoEmail').getValue(),
 
                 };
-                CandidateModel.update(selectITEM.Id, item).then($$('studentTable').updateItem(selectITEM.id, item));
+                CandidateModel.update(item).then($$('studentTable').updateItem(selectITEM.id, item));
                 webix.message("Изменения сохранены");
             }
         });

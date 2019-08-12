@@ -38,9 +38,8 @@ webix.ui({
     }
 }).hide();
 
-//ДОБАВЛЕНИЕ СПИСКА СОТРУДНИКОВ В АССЕССМЕНТ
-
-    $$('selectEmployee').attachEvent("onItemClick", function (id) {
+//ДОБАВЛЕНИЕ СПИСКА СОТРУДНИКОВ В АССЕССМЕНТ на странице ассессмента
+    $$('selectEmployee').attachEvent("onItemClick", function () {
 
         if(selectITEM) {
             let masIdEA = [];
@@ -60,7 +59,7 @@ webix.ui({
                 }
             })
 
-            AssessmentModel.putInside(selectITEM.Id, item)
+            AssessmentModel.addInside(selectITEM.Id, item)
 
             let newAssess = selectITEM
             if (newAssess.Employees == null) {

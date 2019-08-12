@@ -40,9 +40,9 @@ func (c *EmployeeController) Delete(id int) revel.Result {
 	return c.RenderText("success")
 }
 
-func (c *EmployeeController) Update(id int, employee types.Employee) revel.Result {
+func (c *EmployeeController) Update(employee types.Employee) revel.Result {
 
-	err := providers.EmployeeUpdate(id, employee)
+	err := providers.EmployeeUpdate(employee)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)

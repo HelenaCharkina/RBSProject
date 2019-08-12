@@ -51,9 +51,9 @@ func (c *AssessmentController) Delete(id int) revel.Result {
 	return c.RenderText("success")
 }
 
-func (c *AssessmentController) Update(id int, assessment types.Assessment) revel.Result {
+func (c *AssessmentController) Update(assessment types.Assessment) revel.Result {
 
-	assess, err := providers.AssessmentUpdate(id, assessment)
+	assess, err := providers.AssessmentUpdate(assessment)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)

@@ -1,15 +1,15 @@
 package mappers
 
 import (
+	"database/sql"
 	_ "github.com/lib/pq"
 	"log"
 	"ttt/app/types"
-	"ttt/app/util"
 )
 
-func AssessmentGetAll() ([]*types.Assessment, error) {
+// получение всех ассессментов
+func AssessmentGetAll(db *sql.DB) ([]*types.Assessment, error) {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var assessments []*types.Assessment
@@ -81,14 +81,14 @@ func AssessmentGetAll() ([]*types.Assessment, error) {
 		assessments = append(assessments, &c)
 	}
 	if err = rows.Err(); err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	return assessments, err
 }
 
-func AssessmentCreate(assessment types.Assessment) (int64, error) {
+// создание нового ассессмента
+func AssessmentCreate(db *sql.DB, assessment types.Assessment) (int64, error) {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var ID int64
@@ -102,9 +102,9 @@ func AssessmentCreate(assessment types.Assessment) (int64, error) {
 	return ID, err
 }
 
-func AssessmentDelete(id int) error {
+// удаление ассессмента
+func AssessmentDelete(db *sql.DB, id int) error {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
@@ -116,34 +116,35 @@ func AssessmentDelete(id int) error {
 	return err
 }
 
-func AssessmentUpdate(id int, assessment types.Assessment) (types.Assessment, error) {
+// обновление ассессмента
+func AssessmentUpdate(db *sql.DB, assessment types.Assessment) (types.Assessment, error) {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
 		update assessment set date = $2
-		where id = $1 `, id, assessment.Date)
+		where id = $1 `, assessment.Id, assessment.Date)
 	if err != nil {
 		log.Println(err)
 	}
 
+	// обновление статуса и подтверждения кандидатов в данном ассессменте
 	for i := range assessment.Candidates {
 		_, err = db.Exec(`
 		update candidate_assessment set status = $2, proof = $3
-		where id_assessment = $1 and id_candidate = $4 `, id, assessment.Candidates[i].S, assessment.Candidates[i].P, assessment.Candidates[i].Id)
+		where id_assessment = $1 and id_candidate = $4 `,assessment.Id, assessment.Candidates[i].S, assessment.Candidates[i].P, assessment.Candidates[i].Id)
 		if err != nil {
 			log.Println(err)
 		}
 	}
 
-	//вернуть обновленный ассессмент
+	/*----------Вернуть обновленный ассессмент-------------*/
 	c := types.Assessment{}
 	err = db.QueryRow(`
 		SELECT id, date
 		FROM db.public.assessment
 		where id = $1
-`, id).Scan(&c.Id, &c.Date)
+`, assessment.Id).Scan(&c.Id, &c.Date)
 	if err != nil {
 		log.Println(err)
 	}
@@ -191,14 +192,14 @@ func AssessmentUpdate(id int, assessment types.Assessment) (types.Assessment, er
 	}
 
 	/*----------------------------------------*/
+	/*-------------------------------------------------*/
 
 	return c, err
 }
 
+// Добавление/удаление из асссессмента кандидатов/сотрудников
+func AssessmentUpdateUsers(db *sql.DB, assessment types.Assessment) error {
 
-func AssessmentUpdateUsers(assessment types.Assessment) error {
-
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var err error
@@ -227,9 +228,9 @@ func AssessmentUpdateUsers(assessment types.Assessment) error {
 	return err
 }
 
-func AssessmentSearch(str types.Search) []*types.Assessment {
+// поиск ассессмента
+func AssessmentSearch(db *sql.DB, str types.Search) []*types.Assessment {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var assessments []*types.Assessment

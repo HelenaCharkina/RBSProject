@@ -11,12 +11,13 @@ webix.ui({
     }
 }).hide();
 
+// создание нового ассессмента
 $$('addAssesButton').attachEvent('onItemClick', () => {
     let asses = {
         Date: $$('date_asses').getValue(),
     }
 
-    AssessmentModel.put(asses).then(res => {
+    AssessmentModel.create(asses).then(res => {
             asses.Id = res
             $$('assessmentTable').add(asses);
             webix.message("Ассессмент добавлен")

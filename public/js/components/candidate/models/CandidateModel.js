@@ -12,8 +12,8 @@ const CandidateModel = {
         return fetch(`/candidate/${Id}`, {method: 'DELETE'}).then(response => response.text());
     },
 
-    update: (Id, item) => {
-        return fetch(`/candidate/${Id}`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(item)})
+    update: (item) => {
+        return fetch(`/candidate`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(item)})
                .then(res => res.text())
     },
 
@@ -22,12 +22,12 @@ const CandidateModel = {
                .then(res => res.json())
     },
 
-    put: (candidate) => {
+    create: (candidate) => {
         return fetch('/candidate', {method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(candidate)})
                .then(res => res.json())
     },
 
-    putInAssessment: (Id, item) => {
+    addInAssessment: (Id, item) => {
         return fetch(`/candidate/${Id}`, {method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(item)})
                .then(res => res.text())
     }

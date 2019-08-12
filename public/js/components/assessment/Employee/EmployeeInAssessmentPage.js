@@ -58,7 +58,7 @@ const EmployeeInAssessmentPage = {
                     }
                 });
 
-                AssessmentModel.putInside(selectITEM.Id, item)
+                AssessmentModel.addInside(selectITEM.Id, item)
 
                 $$('employeeTableAsses').remove($$('employeeTableAsses').getSelectedId());
                 $$('AssessAddEmployee').hide();
@@ -68,13 +68,8 @@ const EmployeeInAssessmentPage = {
                     let index = selectITEM.Employees.findIndex(el => el.Id === deleted.Id);
                     selectITEM.Employees.splice(index, 1);
 
-
-                    console.log(deleted.Id);
-                    console.log($$('employeeTable').serialize());
                     //employee update
                     let idx = ($$('employeeTable').find(el => el.Id === deleted.Id))[0].id;
-
-                    //console.log(idx)
                     let editEmployee = $$('employeeTable').getItem(idx);
                     let idxAssess = editEmployee.ListOfAssessment.findIndex(el => el.Id === selectITEM.Id);
                     editEmployee.ListOfAssessment.splice(idxAssess, 1);

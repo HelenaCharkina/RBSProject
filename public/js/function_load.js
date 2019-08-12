@@ -1,10 +1,11 @@
 function tabbarChangeCell() {
     $$('tabbar').attachEvent("onItemClick", function () {
 
+        selectITEM = null
+
         $$('studentTable').clearSelection();
         $$('assessmentTable').clearSelection();
         $$('employeeTable').clearSelection()
-        selectITEM = null
 
         $$('formInfoCandidate').clear()
         $$('listOfAssessment').clearAll()

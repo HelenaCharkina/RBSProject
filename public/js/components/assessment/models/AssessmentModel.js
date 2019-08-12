@@ -9,8 +9,8 @@ const AssessmentModel = {
         return fetch(`/assessment/${Id}`, {method: 'DELETE',}).then(response => response.text());
     },
 
-    update: (Id, item) => {
-        return fetch(`/assessment/${Id}`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(item)})
+    update: (item) => {
+        return fetch(`/assessment`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(item)})
                .then(res => res.json())
     },
 
@@ -19,12 +19,12 @@ const AssessmentModel = {
                .then(res => res.json())
     },
 
-    put: (asses) => {
+    create: (asses) => {
         return fetch('/assessment', {method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(asses)})
                .then(res => res.json())
     },
 
-    putInside: (Id, item) => {
+    addInside: (Id, item) => {
         return fetch(`/assessment/${Id}`, {method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(item)})
                .then(res => res.text())
     }

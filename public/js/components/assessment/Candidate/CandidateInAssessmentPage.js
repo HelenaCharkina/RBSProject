@@ -56,7 +56,7 @@ const CandidateInAssessmentPage = {
                     }
                 });
 
-                AssessmentModel.putInside(selectITEM.Id, item)
+                AssessmentModel.addInside(selectITEM.Id, item)
 
                 $$('studentTableAsses').remove($$('studentTableAsses').getSelectedId());
                 $$('AssessAddCandidate').hide();

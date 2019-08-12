@@ -41,9 +41,9 @@ func (c *CandidateController) Delete(id int) revel.Result {
 	return c.RenderText("success")
 }
 
-func (c *CandidateController) Update(id int, candidate types.Candidate) revel.Result {
+func (c *CandidateController) Update( candidate types.Candidate) revel.Result {
 
-	err := providers.CandidateUpdate(id, candidate)
+	err := providers.CandidateUpdate(candidate)
 	if err != nil {
 		log.Println(err)
 		return c.RenderError(err)

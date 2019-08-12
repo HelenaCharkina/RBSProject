@@ -5,6 +5,7 @@ const AssessmentPage = {
     },
     init: () => {
 
+        // инициализация таблиц кандидатов и сотрудников на странице ассессмента
         EmployeeInAssessmentPage.init();
         CandidateInAssessmentPage.init();
 
@@ -103,7 +104,7 @@ const AssessmentPage = {
                     item.Candidates.push(newC);
                 });
 
-                AssessmentModel.update(selectITEM.Id, item).then(res => $$('assessmentTable').updateItem(selectITEM.id, res));
+                AssessmentModel.update(item).then(res => $$('assessmentTable').updateItem(selectITEM.id, res));
 
                 webix.message("Изменения сохранены")
             }

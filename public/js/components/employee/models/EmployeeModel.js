@@ -9,8 +9,8 @@ const EmployeeModel = {
         return fetch(`/employee/${Id}`, {method: 'DELETE'}).then(response => response.text());
     },
 
-    update: (Id, item) => {
-        return fetch(`/employee/${selectITEM.Id}`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(item)})
+    update: (item) => {
+        return fetch(`/employee`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(item)})
                .then(res => res.text())
     },
 
@@ -19,12 +19,12 @@ const EmployeeModel = {
                .then(res => res.json())
     },
 
-    put: (employee) => {
+    create: (employee) => {
         return fetch('/employee', {method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(employee)})
                .then(res => res.json())
     },
 
-    putInAssessment: (Id, item) => {
+    addInAssessment: (Id, item) => {
         return fetch(`/employee/${Id}`, {method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(item)})
                .then(res => res.text())
     }

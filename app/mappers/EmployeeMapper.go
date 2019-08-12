@@ -1,18 +1,17 @@
 package mappers
 
 import (
+	"database/sql"
 	_ "github.com/lib/pq"
 	"log"
 	"strings"
 	"ttt/app/types"
-	"ttt/app/util"
 )
 
-func EmployeeGetAll() ([]*types.Employee, error) {
+// получение всех сотрудников
+func EmployeeGetAll(db *sql.DB) ([]*types.Employee, error) {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
-
 
 	var employees []*types.Employee
 	rows, err := db.Query(`
@@ -67,9 +66,9 @@ func EmployeeGetAll() ([]*types.Employee, error) {
 	return employees, err
 }
 
-func EmployeeCreate(employee types.Employee) (int64, error) {
+// создание нового сотрудника
+func EmployeeCreate(db *sql.DB, employee types.Employee) (int64, error) {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var ID int64
@@ -84,9 +83,9 @@ func EmployeeCreate(employee types.Employee) (int64, error) {
 	return ID, err
 }
 
-func EmployeeDelete(id int) error {
+// удаление сотрудника
+func EmployeeDelete(db *sql.DB, id int) error {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
@@ -98,23 +97,23 @@ func EmployeeDelete(id int) error {
 	return err
 }
 
-func EmployeeUpdate(id int, employee types.Employee) error {
+// обновление сотрудника
+func EmployeeUpdate(db *sql.DB, employee types.Employee) error {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	_, err := db.Exec(`
 		update employee set firstname = $2, middlename = $3, lastname = $4, phone = $5, email = $6 
-		where id = $1 `, id, employee.FirstName, employee.MiddleName, employee.LastName, employee.Phone, employee.Email)
+		where id = $1 `, employee.Id, employee.FirstName, employee.MiddleName, employee.LastName, employee.Phone, employee.Email)
 	if err != nil {
 		log.Println(err)
 	}
 	return err
 }
 
-func EmployeeAddInAssess(employee types.Employee) error {
+// добавление ассессментов сотрудника
+func EmployeeAddInAssess(db *sql.DB, employee types.Employee) error {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var err error
@@ -128,9 +127,9 @@ func EmployeeAddInAssess(employee types.Employee) error {
 	return err
 }
 
-func EmployeeSearch(str types.Search) []*types.Employee {
+// поиск сотрудника
+func EmployeeSearch(db *sql.DB, str types.Search) []*types.Employee {
 
-	db := util.DatabaseConnect()
 	defer db.Close()
 
 	var masObjects = strings.Split(str.Str, " ")

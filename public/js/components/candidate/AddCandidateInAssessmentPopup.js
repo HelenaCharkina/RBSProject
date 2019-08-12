@@ -28,6 +28,7 @@ webix.ui({
 }).hide();
 
 
+// добавление кандидата в ассессмент на странице кандидата
 $$('buttonAddCandidateInAssess').attachEvent("onItemClick", function (id) {
 
     if (selectITEM) {
@@ -46,7 +47,7 @@ $$('buttonAddCandidateInAssess').attachEvent("onItemClick", function (id) {
             }
         })
 
-        CandidateModel.putInAssessment(selectITEM.Id, item)
+        CandidateModel.addInAssessment(selectITEM.Id, item)
 
         let newCandidate = selectITEM
         if (newCandidate.ListOfAssessment == null) {

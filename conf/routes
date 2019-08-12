@@ -9,29 +9,29 @@ module:testrunner
 
 GET     /                                       App.Index
 
-GET     /candidate                             CandidateController.GetAll
-DELETE  /candidate/:id                         CandidateController.Delete
-PUT    /candidate                              CandidateController.Create
-POST    /candidate/search                      CandidateController.Search
-POST    /candidate/:id                         CandidateController.Update
-PUT    /candidate/:id                          CandidateController.AddInAssess
+GET     /candidate                              CandidateController.GetAll
+DELETE  /candidate/:id                          CandidateController.Delete
+PUT     /candidate                              CandidateController.Create
+POST    /candidate/search                       CandidateController.Search
+POST    /candidate/                             CandidateController.Update
+PUT     /candidate/:id                          CandidateController.AddInAssess
 
 
-GET     /assessment                          AssessmentController.GetAll
-PUT    /assessment                             AssessmentController.Create
-DELETE  /assessment/:id                       AssessmentController.Delete
+GET     /assessment                             AssessmentController.GetAll
+PUT     /assessment                             AssessmentController.Create
+DELETE  /assessment/:id                         AssessmentController.Delete
 POST    /assessment/search                      AssessmentController.Search
-POST /assessment/:id                       AssessmentController.Update
-PUT /assessment/:id                        AssessmentController.UpdateUsers
+POST    /assessment/                            AssessmentController.Update
+PUT     /assessment/:id                         AssessmentController.UpdateUsers
 
 GET     /employee                               EmployeeController.GetAll
-PUT    /employee                               EmployeeController.Create
-DELETE  /employee/:id                        EmployeeController.Delete
-POST    /employee/search                      EmployeeController.Search
-POST /employee/:id                        EmployeeController.Update
-PUT    /employee/:id                          EmployeeController.AddInAssess
+PUT     /employee                               EmployeeController.Create
+DELETE  /employee/:id                           EmployeeController.Delete
+POST    /employee/search                        EmployeeController.Search
+POST    /employee/                              EmployeeController.Update
+PUT     /employee/:id                           EmployeeController.AddInAssess
 
-POST    /user                               UserController.Post
+POST    /user                                   UserController.Post
 
 
 # Ignore favicon requests

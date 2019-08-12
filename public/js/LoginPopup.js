@@ -48,6 +48,7 @@ webix.ui({
     }
 }).show();
 
+// авторизация
 $$('loginButton').attachEvent('onItemClick', () => {
     let user = {
         Login: $$('loginLog').getValue(),

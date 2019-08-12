@@ -28,7 +28,7 @@ webix.ui({
 }).hide();
 
 
-
+// добавление сотрудника в ассессмент на странице сотрудника
 $$('buttonAddEmployeeInAssess').attachEvent("onItemClick", function (id) {
 
     if (selectITEM) {
@@ -47,7 +47,7 @@ $$('buttonAddEmployeeInAssess').attachEvent("onItemClick", function (id) {
             }
         })
 
-        EmployeeModel.putInAssessment(selectITEM.Id, item)
+        EmployeeModel.addInAssessment(selectITEM.Id, item)
 
         let newEmployee = selectITEM
         if (newEmployee.ListOfAssessment == null) {
