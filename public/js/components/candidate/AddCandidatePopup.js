@@ -26,7 +26,7 @@ webix.ui({
             {
                 view: "button",
                 id: "addStudentButton",
-                value: "Готово",
+                value: "Подтвердить",
                 width: 150,
                 align: "center"
             }

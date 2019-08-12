@@ -5,8 +5,6 @@ const CandidatePage = {
 
     init: () => {
 
-        $$("formInfoCandidate").validate()
-
         // загрузка всех кандидатов
         CandidateModel.getAll().then(items => {
             if (items) {
@@ -25,6 +23,7 @@ const CandidatePage = {
         // окно подробной инфы
         $$('studentTable').attachEvent("onItemClick", function (id) {
 
+            $$("formInfoCandidate").clearValidation()
             $$("SaveStudent").enable();
             $$("deleteStudent").enable();
             $$("infoAsses").enable();
@@ -79,17 +78,20 @@ const CandidatePage = {
         // редактирование
         $$('SaveStudent').attachEvent("onItemClick", function () {
             if (selectITEM) {
-                let item = {
-                    Id: selectITEM.Id,
-                    FirstName: $$('infoFirstName').getValue(),
-                    MiddleName: $$('infoMiddleName').getValue(),
-                    LastName: $$('infoLastName').getValue(),
-                    Phone: $$('infoPhone').getValue(),
-                    Email: $$('infoEmail').getValue(),
 
-                };
-                CandidateModel.update(item).then($$('studentTable').updateItem(selectITEM.id, item));
-                webix.message("Изменения сохранены");
+                if ($$("formInfoCandidate").validate()) {
+                    let item = {
+                        Id: selectITEM.Id,
+                        FirstName: $$('infoFirstName').getValue(),
+                        MiddleName: $$('infoMiddleName').getValue(),
+                        LastName: $$('infoLastName').getValue(),
+                        Phone: $$('infoPhone').getValue(),
+                        Email: $$('infoEmail').getValue(),
+
+                    };
+                    CandidateModel.update(item).then($$('studentTable').updateItem(selectITEM.id, item));
+                    webix.message("Изменения сохранены");
+                }
             }
         });
 

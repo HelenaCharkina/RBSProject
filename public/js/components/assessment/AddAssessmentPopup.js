@@ -6,7 +6,7 @@ webix.ui({
         view: "form",
         elements: [
             { view: "datepicker", timepicker: true, label: "Дата", stringResult: "true", width: 500, id: "date_asses" },
-            { view: "button", id: "addAssesButton", value: "Готово", width: 150, align: "center" }
+            { view: "button", id: "addAssesButton", value: "Подтвердить", width: 150, align: "center" }
         ]
     }
 }).hide();

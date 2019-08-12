@@ -1,21 +1,3 @@
-// const AppPage = {
-//     config: () => {
-//         return AppView()
-//     },
-//
-//     init: () => {
-//
-//         CandidatePage.init();
-//         AssessmentPage.init();
-//         EmployeePage.init();
-//
-//         tabbarChangeCell();
-//     }
-// }
-//
-// AppPage.config();
-// AppPage.init();
-
 
 webix.ready(function () {
     -webix.ui({

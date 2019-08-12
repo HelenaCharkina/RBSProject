@@ -11,8 +11,6 @@ import (
 // получение списка кандидатов
 func CandidateGetAll(db *sql.DB) ([]*types.Candidate, error) {
 
-	defer db.Close()
-
 	var candidates []*types.Candidate
 
 	rows, err := db.Query(`
@@ -67,8 +65,6 @@ func CandidateGetAll(db *sql.DB) ([]*types.Candidate, error) {
 // создание нового кандидата
 func CandidateCreate(db *sql.DB, candidate types.Candidate) (int64, error) {
 
-	defer db.Close()
-
 	var ID int64
 	err := db.QueryRow(`
 		INSERT INTO candidate (firstname, middlename, lastname, phone, email) 
@@ -85,8 +81,6 @@ func CandidateCreate(db *sql.DB, candidate types.Candidate) (int64, error) {
 // удаление кандидата
 func CandidateDelete(db *sql.DB, id int) error {
 
-	defer db.Close()
-
 	_, err := db.Exec(`
 		delete from candidate 
 		where id = $1 `, id)
@@ -100,8 +94,6 @@ func CandidateDelete(db *sql.DB, id int) error {
 // обновление кандидата
 func CandidateUpdate(db *sql.DB, candidate types.Candidate) error {
 
-	defer db.Close()
-
 	_, err := db.Exec(`
 		update candidate set Firstname = $2, Middlename = $3, Lastname = $4, Phone = $5, Email = $6
 		where id = $1 `, candidate.Id, candidate.FirstName, candidate.MiddleName, candidate.LastName, candidate.Phone, candidate.Email)
@@ -114,8 +106,6 @@ func CandidateUpdate(db *sql.DB, candidate types.Candidate) error {
 
 // добавление ассессментов кандидата
 func CandidateAddInAssess(db *sql.DB, candidate types.Candidate) error {
-
-	defer db.Close()
 
 	var err error
 	for i := range candidate.ListOfAssessment {
@@ -131,8 +121,6 @@ func CandidateAddInAssess(db *sql.DB, candidate types.Candidate) error {
 
 // поиск кандидата
 func CandidateSearch(db *sql.DB, str types.Search) ([]*types.Candidate, error) {
-
-	defer db.Close()
 
 	var masObjects = strings.Split(str.Str, " ")
 

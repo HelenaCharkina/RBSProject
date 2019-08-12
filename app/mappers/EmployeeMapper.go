@@ -11,8 +11,6 @@ import (
 // получение всех сотрудников
 func EmployeeGetAll(db *sql.DB) ([]*types.Employee, error) {
 
-	defer db.Close()
-
 	var employees []*types.Employee
 	rows, err := db.Query(`
 		SELECT * 
@@ -69,8 +67,6 @@ func EmployeeGetAll(db *sql.DB) ([]*types.Employee, error) {
 // создание нового сотрудника
 func EmployeeCreate(db *sql.DB, employee types.Employee) (int64, error) {
 
-	defer db.Close()
-
 	var ID int64
 	err := db.QueryRow(`
 		INSERT INTO employee (firstname, middlename, lastname, phone, email) 
@@ -87,8 +83,6 @@ func EmployeeCreate(db *sql.DB, employee types.Employee) (int64, error) {
 // удаление сотрудника
 func EmployeeDelete(db *sql.DB, id int) error {
 
-	defer db.Close()
-
 	_, err := db.Exec(`
 		delete from employee 
 		where id = $1 `, id)
@@ -102,8 +96,6 @@ func EmployeeDelete(db *sql.DB, id int) error {
 // обновление сотрудника
 func EmployeeUpdate(db *sql.DB, employee types.Employee) error {
 
-	defer db.Close()
-
 	_, err := db.Exec(`
 		update employee set firstname = $2, middlename = $3, lastname = $4, phone = $5, email = $6 
 		where id = $1 `, employee.Id, employee.FirstName, employee.MiddleName, employee.LastName, employee.Phone, employee.Email)
@@ -116,8 +108,6 @@ func EmployeeUpdate(db *sql.DB, employee types.Employee) error {
 
 // добавление ассессментов сотрудника
 func EmployeeAddInAssess(db *sql.DB, employee types.Employee) error {
-
-	defer db.Close()
 
 	var err error
 	for i := range employee.ListOfAssessment {
@@ -133,8 +123,6 @@ func EmployeeAddInAssess(db *sql.DB, employee types.Employee) error {
 
 // поиск сотрудника
 func EmployeeSearch(db *sql.DB, str types.Search) ([]*types.Employee, error) {
-
-	defer db.Close()
 
 	var masObjects = strings.Split(str.Str, " ")
 

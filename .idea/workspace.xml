@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd989979-d9cb-4c08-b463-d15d243126dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/mappers/AssessmentMapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/mappers/AssessmentMapper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/mappers/CandidateMapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/mappers/CandidateMapper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/mappers/EmployeeMapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/mappers/EmployeeMapper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/mappers/UserMapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/mappers/UserMapper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/providers/AssessmentProvider.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/providers/AssessmentProvider.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/providers/CandidateProvider.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/providers/CandidateProvider.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/providers/EmployeeProvider.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/providers/EmployeeProvider.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/providers/UserProvider.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/providers/UserProvider.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/App/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/App/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/AppView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/assessment/AddAssessmentPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/assessment/AddAssessmentPopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/candidate/views/CandidateView.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/candidate/views/CandidateView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/employee/AddEmployeePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/employee/AddEmployeePopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/components/employee/EmployeePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/employee/EmployeePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/components/employee/views/EmployeeView.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/components/employee/views/EmployeeView.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,19 +95,76 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/mappers/AssessmentMapper.go">
+        <entry file="file://$PROJECT_DIR$/app/providers/AssessmentProvider.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2686">
-              <caret line="129" column="24" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
+            <state relative-caret-position="340">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/components/employee/AddEmployeeInAssessmentPopup.js">
+        <entry file="file://$PROJECT_DIR$/app/providers/UserProvider.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="47" column="10" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
+            <state relative-caret-position="119">
+              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeePage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1071">
+              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/components/assessment/views/AssessmentView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-255">
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AddAssessmentPopup.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/components/employee/views/EmployeeView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-34">
+              <caret line="115" column="62" selection-start-line="115" selection-start-column="62" selection-end-line="115" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/components/employee/models/EmployeeModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,76 +173,16 @@
         <entry file="file://$PROJECT_DIR$/public/js/components/employee/AddEmployeePopup.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeePage.js">
+        <entry file="file://$PROJECT_DIR$/app/mappers/UserMapper.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="151" column="40" selection-start-line="151" selection-start-column="40" selection-end-line="151" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="57" selection-start-line="57" selection-end-line="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://b82782d8-2c2f-4e8a-a77b-d44576b1cb8d/database/db/schema/public/table/candidate_assessment">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="4e7d9c65-68be-4235-b28d-c59d5903f773">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://b82782d8-2c2f-4e8a-a77b-d44576b1cb8d/database/db/schema/public/table/assessment_employee">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="4e7d9c65-68be-4235-b28d-c59d5903f773">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://b82782d8-2c2f-4e8a-a77b-d44576b1cb8d/database/db/schema/public/table/employee">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="4e7d9c65-68be-4235-b28d-c59d5903f773">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/mappers/EmployeeMapper.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-593">
-              <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+            <state relative-caret-position="68">
+              <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -215,44 +229,44 @@
         <option value="$PROJECT_DIR$/public/script.js" />
         <option value="$PROJECT_DIR$/public/AppView.js" />
         <option value="$PROJECT_DIR$/public/js/data.js" />
-        <option value="$PROJECT_DIR$/public/App.js" />
-        <option value="$PROJECT_DIR$/public/js/components/candidate/views/CandidateView.js" />
-        <option value="$PROJECT_DIR$/public/js/components/employee/views/EmployeeView.js" />
-        <option value="$PROJECT_DIR$/app/views/App/Index.html" />
         <option value="$PROJECT_DIR$/app/DB_CONNECTION.go" />
         <option value="$PROJECT_DIR$/app/mappers/mapperUser.go" />
         <option value="$PROJECT_DIR$/app/util/db_connection.go" />
         <option value="$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js" />
         <option value="$PROJECT_DIR$/public/js/components/assessment/views/AssessmentView.js" />
-        <option value="$PROJECT_DIR$/public/js/function_load.js" />
         <option value="$PROJECT_DIR$/public/js/LoginPopup.js" />
-        <option value="$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js" />
         <option value="$PROJECT_DIR$/public/js/components/candidate/AddCandidateInAssessmentPopup.js" />
         <option value="$PROJECT_DIR$/public/js/components/candidate/models/CandidateModel.js" />
         <option value="$PROJECT_DIR$/public/js/components/employee/models/EmployeeModel.js" />
-        <option value="$PROJECT_DIR$/public/js/components/employee/AddEmployeePopup.js" />
         <option value="$PROJECT_DIR$/public/js/components/employee/AddEmployeeInAssessmentPopup.js" />
         <option value="$PROJECT_DIR$/public/js/components/assessment/models/AssessmentModel.js" />
-        <option value="$PROJECT_DIR$/public/js/components/assessment/AddAssessmentPopup.js" />
         <option value="$PROJECT_DIR$/public/js/components/assessment/Employee/AssessmentAddEmployeePopup.js" />
         <option value="$PROJECT_DIR$/public/js/components/assessment/Candidate/AssessmentAddCandidatePopup.js" />
         <option value="$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js" />
         <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js" />
-        <option value="$PROJECT_DIR$/app/mappers/UserMapper.go" />
         <option value="$PROJECT_DIR$/app/controllers/UserController.go" />
-        <option value="$PROJECT_DIR$/app/providers/UserProvider.go" />
-        <option value="$PROJECT_DIR$/app/providers/CandidateProvider.go" />
         <option value="$PROJECT_DIR$/app/controllers/CandidateController.go" />
         <option value="$PROJECT_DIR$/app/controllers/EmployeeController.go" />
-        <option value="$PROJECT_DIR$/app/providers/EmployeeProvider.go" />
         <option value="$PROJECT_DIR$/app/controllers/AsessmentController.go" />
-        <option value="$PROJECT_DIR$/app/providers/AssessmentProvider.go" />
-        <option value="$PROJECT_DIR$/app/mappers/CandidateMapper.go" />
-        <option value="$PROJECT_DIR$/app/mappers/EmployeeMapper.go" />
-        <option value="$PROJECT_DIR$/app/mappers/AssessmentMapper.go" />
-        <option value="$PROJECT_DIR$/public/js/components/employee/EmployeePage.js" />
         <option value="$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js" />
+        <option value="$PROJECT_DIR$/public/App.js" />
+        <option value="$PROJECT_DIR$/app/views/App/Index.html" />
+        <option value="$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js" />
+        <option value="$PROJECT_DIR$/public/js/components/candidate/views/CandidateView.js" />
+        <option value="$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js" />
+        <option value="$PROJECT_DIR$/public/js/function_load.js" />
+        <option value="$PROJECT_DIR$/public/js/components/employee/EmployeePage.js" />
+        <option value="$PROJECT_DIR$/app/mappers/CandidateMapper.go" />
+        <option value="$PROJECT_DIR$/app/mappers/AssessmentMapper.go" />
+        <option value="$PROJECT_DIR$/app/mappers/EmployeeMapper.go" />
+        <option value="$PROJECT_DIR$/app/mappers/UserMapper.go" />
+        <option value="$PROJECT_DIR$/app/providers/CandidateProvider.go" />
+        <option value="$PROJECT_DIR$/app/providers/EmployeeProvider.go" />
+        <option value="$PROJECT_DIR$/app/providers/AssessmentProvider.go" />
+        <option value="$PROJECT_DIR$/app/providers/UserProvider.go" />
+        <option value="$PROJECT_DIR$/public/js/components/employee/views/EmployeeView.js" />
+        <option value="$PROJECT_DIR$/public/js/components/employee/AddEmployeePopup.js" />
+        <option value="$PROJECT_DIR$/public/js/components/assessment/AddAssessmentPopup.js" />
       </list>
     </option>
   </component>
@@ -307,6 +321,19 @@
             <path>
               <item name="ttt" type="b2602c69:ProjectViewProjectNode" />
               <item name="ttt" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ttt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ttt" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ttt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ttt" type="462c0819:PsiDirectoryNode" />
               <item name="conf" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -341,8 +368,7 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="assessment" type="462c0819:PsiDirectoryNode" />
-              <item name="Candidate" type="462c0819:PsiDirectoryNode" />
+              <item name="employee" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ttt" type="b2602c69:ProjectViewProjectNode" />
@@ -350,16 +376,7 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="assessment" type="462c0819:PsiDirectoryNode" />
-              <item name="Employee" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ttt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ttt" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="assessment" type="462c0819:PsiDirectoryNode" />
+              <item name="employee" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -461,7 +478,7 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18910742" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18910742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -474,7 +491,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" weight="0.3297546" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49621785" visible="true" weight="0.23312883" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49621785" visible="true" weight="0.2898773" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50378215" side_tool="true" weight="0.25920245" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32668713" />
       <window_info anchor="bottom" id="SQL Generator" order="13" weight="0.3297546" />
@@ -482,7 +499,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.20045386" />
+      <window_info anchor="right" id="Database" order="3" weight="0.20045386" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20347957" />
@@ -530,27 +547,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/user/UserPage.js" />
     <entry file="file://$PROJECT_DIR$/public/js/components/user/views/UserView.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/components/employee/views/EmployeeView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="130" column="67" selection-start-line="130" selection-start-column="67" selection-end-line="130" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/views/CandidateView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="140" column="53" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/App/Index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="66" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/views/CandidateInAssessmentView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-510">
@@ -572,24 +568,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/views/AssessmentView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/data.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/function_load.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -607,23 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/candidate/AddCandidateInAssessmentPopup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -638,16 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/employee/models/EmployeeModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/assessment/models/AssessmentModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -655,20 +610,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AddAssessmentPopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -711,20 +652,6 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="138" column="17" lean-forward="true" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mappers/UserMapper.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/UserController.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -746,73 +673,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/providers/AssessmentProvider.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/providers/CandidateProvider.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-279">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/providers/EmployeeProvider.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/providers/UserProvider.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CandidateController.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mappers/CandidateMapper.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-573">
-          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mappers/EmployeeMapper.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-593">
-          <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mappers/AssessmentMapper.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2686">
-          <caret line="129" column="24" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/employee/AddEmployeeInAssessmentPopup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="587">
           <caret line="47" column="10" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/employee/AddEmployeePopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
@@ -843,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="151" column="40" selection-start-line="151" selection-start-column="40" selection-end-line="151" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Candidate/CandidateInAssessmentPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -859,8 +716,165 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/assessment/Employee/EmployeeInAssessmentPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        <state relative-caret-position="251">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/App/Index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/CandidateController.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/AddCandidatePopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/views/CandidateView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="116" column="62" selection-start-line="116" selection-start-column="62" selection-end-line="116" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/candidate/CandidatePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/function_load.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mappers/CandidateMapper.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-457">
+          <caret line="122" column="80" selection-start-line="122" selection-start-column="80" selection-end-line="122" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mappers/AssessmentMapper.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mappers/EmployeeMapper.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/providers/CandidateProvider.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/providers/EmployeeProvider.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="55" column="23" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/providers/AssessmentProvider.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/providers/UserProvider.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mappers/UserMapper.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/employee/views/EmployeeView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="115" column="62" selection-start-line="115" selection-start-column="62" selection-end-line="115" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/employee/models/EmployeeModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/employee/AddEmployeePopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/employee/EmployeePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1071">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AssessmentPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/views/AssessmentView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/assessment/AddAssessmentPopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
         </state>
       </provider>
     </entry>

@@ -12,7 +12,7 @@ webix.ui({
             {
                 view: "button",
                 id: "addEmployeeButton",
-                value: "Готово",
+                value: "Подтвердить",
                 width: 150,
                 align: "center"
             }

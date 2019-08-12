@@ -10,8 +10,6 @@ import (
 // получение всех ассессментов
 func AssessmentGetAll(db *sql.DB) ([]*types.Assessment, error) {
 
-	defer db.Close()
-
 	var assessments []*types.Assessment
 	rows, err := db.Query(`
 		SELECT *
@@ -89,8 +87,6 @@ func AssessmentGetAll(db *sql.DB) ([]*types.Assessment, error) {
 // создание нового ассессмента
 func AssessmentCreate(db *sql.DB, assessment types.Assessment) (int64, error) {
 
-	defer db.Close()
-
 	var ID int64
 	err := db.QueryRow(`
 		INSERT INTO assessment (Date) 
@@ -106,8 +102,6 @@ func AssessmentCreate(db *sql.DB, assessment types.Assessment) (int64, error) {
 // удаление ассессмента
 func AssessmentDelete(db *sql.DB, id int) error {
 
-	defer db.Close()
-
 	_, err := db.Exec(`
 		delete from assessment 
 		where id = $1 `, id)
@@ -120,8 +114,6 @@ func AssessmentDelete(db *sql.DB, id int) error {
 
 // обновление ассессмента
 func AssessmentUpdate(db *sql.DB, assessment *types.Assessment) (*types.Assessment, error) {
-
-	defer db.Close()
 
 	_, err := db.Exec(`
 		update assessment set date = $2
@@ -202,8 +194,6 @@ func AssessmentUpdate(db *sql.DB, assessment *types.Assessment) (*types.Assessme
 // Добавление/удаление из асссессмента кандидатов/сотрудников
 func AssessmentUpdateUsers(db *sql.DB, assessment types.Assessment) error {
 
-	defer db.Close()
-
 	var err error
 	for i := range assessment.Candidates {
 		_, err = db.Exec(`
@@ -232,8 +222,6 @@ func AssessmentUpdateUsers(db *sql.DB, assessment types.Assessment) error {
 
 // поиск ассессмента
 func AssessmentSearch(db *sql.DB, str types.Search) ([]*types.Assessment, error) {
-
-	defer db.Close()
 
 	var assessments []*types.Assessment
 

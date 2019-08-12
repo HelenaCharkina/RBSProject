@@ -7,8 +7,6 @@ import (
 
 func UserPost(db *sql.DB, user *types.User) (*types.Employee, error) {
 
-	defer db.Close()
-
 	var ID int64
 	err := db.QueryRow(`
 		select id from db.public.user where login = $1 and password = $2 

@@ -25,6 +25,7 @@ const EmployeePage = {
         // окно подробной инфы
         $$('employeeTable').attachEvent("onItemClick", function (id) {
 
+            $$("formInfoEmployee").clearValidation()
             $$("SaveEmployee").enable();
             $$("deleteEmployee").enable();
             $$("infoAssesE").enable();
@@ -78,18 +79,20 @@ const EmployeePage = {
         // редактирование
         $$('SaveEmployee').attachEvent("onItemClick", function () {
             if (selectITEM) {
-                let item = {
-                    Id: selectITEM.Id,
-                    FirstNameE: $$('infoFirstNameEmployee').getValue(),
-                    MiddleNameE: $$('infoMiddleNameEmployee').getValue(),
-                    LastNameE: $$('infoLastNameEmployee').getValue(),
-                    PhoneE: $$('infoPhoneEmployee').getValue(),
-                    EmailE: $$('infoEmailEmployee').getValue(),
-                };
+                if ($$("formInfoEmployee").validate()) {
+                    let item = {
+                        Id: selectITEM.Id,
+                        FirstNameE: $$('infoFirstNameEmployee').getValue(),
+                        MiddleNameE: $$('infoMiddleNameEmployee').getValue(),
+                        LastNameE: $$('infoLastNameEmployee').getValue(),
+                        PhoneE: $$('infoPhoneEmployee').getValue(),
+                        EmailE: $$('infoEmailEmployee').getValue(),
+                    };
 
-                EmployeeModel.update(item).then($$('employeeTable').updateItem(selectITEM.id, item));
+                    EmployeeModel.update(item).then($$('employeeTable').updateItem(selectITEM.id, item));
 
-                webix.message("Изменения сохранены")
+                    webix.message("Изменения сохранены")
+                }
             }
         })
 

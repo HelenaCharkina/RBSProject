@@ -77,10 +77,7 @@ function CandidateView() {
                                 invalidMessage: "Введите имя",
                                 validate: webix.rules.isNotEmpty,
                                 name: "fn",
-                                on:{
-                                    "onChange":function(){
-                                        this.validate();
-                                    }},
+
                             },
                             {
                                 view: "text",
@@ -90,10 +87,6 @@ function CandidateView() {
                                 name: "mn",
                                 invalidMessage: "Введите отчество",
                                 validate: webix.rules.isNotEmpty,
-                                on:{
-                                    "onChange":function(){
-                                        this.validate();
-                                    }},
 
                             },
                             {
@@ -104,10 +97,6 @@ function CandidateView() {
                                 invalidMessage: "Введите фамилию",
                                 validate: webix.rules.isNotEmpty,
                                 name:"ln",
-                                on:{
-                                    "onChange":function(){
-                                        this.validate();
-                                    }},
                             },
                             {
                                 view: "text",
@@ -117,10 +106,6 @@ function CandidateView() {
                                 pattern:{ mask:"(###) ###-##-##", allow:/[0-9]/g },
                                 name:"ph",
                                 invalidMessage: "Некорректный номер",
-                                on:{
-                                    "onChange":function(){
-                                        this.validate();
-                                    }}
                             },
                             {
                                 view: "text",
@@ -130,10 +115,6 @@ function CandidateView() {
                                 invalidMessage: "Некорректный email",
                                 name:"em",
                                 validate: webix.rules.isEmail,
-                                on:{
-                                    "onChange":function(){
-                                        this.validate();
-                                    }}
                             },
                             {
                                 view: "list",
