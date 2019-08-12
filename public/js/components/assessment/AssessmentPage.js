@@ -80,6 +80,10 @@ const AssessmentPage = {
                         employee.ListOfAssessment.splice(index, 1);
                     }
                 });
+                $$("SaveAsses").disable();
+                $$("deleteAsses").disable();
+                $$('addCandidate').disable();
+                $$('addEmployeeInA').disable();
             }
         });
 

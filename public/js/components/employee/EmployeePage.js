@@ -73,6 +73,9 @@ const EmployeePage = {
                         assessment.Employees.splice(index, 1);
                     }
                 });
+                $$("SaveEmployee").disable();
+                $$("deleteEmployee").disable();
+                $$("infoAssesE").disable();
             }
         });
 

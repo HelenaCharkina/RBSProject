@@ -72,6 +72,9 @@ const CandidatePage = {
                         assessment.Candidates.splice(index, 1);
                     }
                 });
+                $$("SaveStudent").disable();
+                $$("deleteStudent").disable();
+                $$("infoAsses").disable();
             }
         });
 
