@@ -63,6 +63,10 @@ func (c *CandidateController) AddInAssess(candidate types.Candidate) revel.Resul
 
 func (c *CandidateController) Search(str types.Search) revel.Result {
 
-	candidates := providers.CandidateSearch(str)
+	candidates, err := providers.CandidateSearch(str)
+	if err != nil {
+		log.Println(err)
+		return c.RenderError(err)
+	}
 	return c.RenderJSON(candidates)
 }

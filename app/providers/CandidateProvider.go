@@ -10,17 +10,18 @@ import (
 func CandidateGetAll() ([]*types.Candidate, error) {
 	db, err := util.DatabaseConnect()
 	if err != nil {
-		log.Println(err)
+		return nil, err
 	}
 	return mappers.CandidateGetAll(db)
 
 }
 
-func CandidateSearch(str types.Search) []*types.Candidate {
+func CandidateSearch(str types.Search) ([]*types.Candidate, error) {
 
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return nil, err
 	}
 	return mappers.CandidateSearch(db, str)
 }
@@ -29,6 +30,7 @@ func CandidateCreate(candidate types.Candidate) (int64, error) {
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return 0, err
 	}
 	return mappers.CandidateCreate(db, candidate)
 }

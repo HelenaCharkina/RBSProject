@@ -16,7 +16,6 @@ func (c *UserController) Post(user types.User) revel.Result {
 	ID, err := providers.UserPost(user)
 	if err != nil {
 		log.Println(err)
-		println(err)
 	}
 	return c.RenderJSON(ID)
 }

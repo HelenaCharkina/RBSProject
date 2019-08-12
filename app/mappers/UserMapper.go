@@ -5,7 +5,7 @@ import (
 	"ttt/app/types"
 )
 
-func UserPost(db *sql.DB, user types.User) (types.Employee, error) {
+func UserPost(db *sql.DB, user *types.User) (*types.Employee, error) {
 
 	defer db.Close()
 
@@ -23,5 +23,5 @@ func UserPost(db *sql.DB, user types.User) (types.Employee, error) {
 	if err != nil {
 		println(err)
 	}
-	return employee, err
+	return &employee, err
 }

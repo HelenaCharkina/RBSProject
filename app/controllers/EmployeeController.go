@@ -61,6 +61,10 @@ func (c *EmployeeController) AddInAssess(employee types.Employee) revel.Result {
 
 func (c *EmployeeController) Search(str types.Search) revel.Result {
 
-	Employee := providers.EmployeeSearch(str)
+	Employee, err := providers.EmployeeSearch(str)
+	if err != nil {
+		log.Println(err)
+		return c.RenderError(err)
+	}
 	return c.RenderJSON(Employee)
 }

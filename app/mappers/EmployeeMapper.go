@@ -60,7 +60,7 @@ func EmployeeGetAll(db *sql.DB) ([]*types.Employee, error) {
 	}
 
 	if err = rows.Err(); err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	return employees, err
@@ -78,6 +78,7 @@ func EmployeeCreate(db *sql.DB, employee types.Employee) (int64, error) {
 	`, employee.FirstName, employee.MiddleName, employee.LastName, 0, "").Scan(&ID)
 	if err != nil {
 		log.Println(err)
+		return 0, err
 	}
 
 	return ID, err
@@ -93,6 +94,7 @@ func EmployeeDelete(db *sql.DB, id int) error {
 		where id = $1 `, id)
 	if err != nil {
 		log.Println(err)
+		return err
 	}
 	return err
 }
@@ -107,6 +109,7 @@ func EmployeeUpdate(db *sql.DB, employee types.Employee) error {
 		where id = $1 `, employee.Id, employee.FirstName, employee.MiddleName, employee.LastName, employee.Phone, employee.Email)
 	if err != nil {
 		log.Println(err)
+		return err
 	}
 	return err
 }
@@ -122,13 +125,14 @@ func EmployeeAddInAssess(db *sql.DB, employee types.Employee) error {
 		insert into assessment_employee(id_assessment, id_employee) values($1, $2)`, employee.ListOfAssessment[i].Id, employee.Id)
 		if err != nil {
 			log.Println(err)
+			return err
 		}
 	}
 	return err
 }
 
 // поиск сотрудника
-func EmployeeSearch(db *sql.DB, str types.Search) []*types.Employee {
+func EmployeeSearch(db *sql.DB, str types.Search) ([]*types.Employee, error) {
 
 	defer db.Close()
 
@@ -147,14 +151,16 @@ func EmployeeSearch(db *sql.DB, str types.Search) []*types.Employee {
 				  LOWER(email) LIKE '%' || $1 || '%'
 			`, masObjects[i])
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
+			return nil, err
 		}
 
 		for rows.Next() {
 			c := types.Employee{}
 			err := rows.Scan(&c.Id, &c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
 			if err != nil {
-				log.Fatal(err)
+				log.Println(err)
+				return nil, err
 			}
 			var flag = true
 			for i := range employees {
@@ -169,5 +175,5 @@ func EmployeeSearch(db *sql.DB, str types.Search) []*types.Employee {
 		}
 	}
 
-	return employees
+	return employees, nil
 }

@@ -64,6 +64,10 @@ func (c *AssessmentController) Update(assessment types.Assessment) revel.Result 
 
 func (c *AssessmentController) Search(str types.Search) revel.Result {
 
-	assessments := providers.AssessmentSearch(str)
+	assessments, err := providers.AssessmentSearch(str)
+	if err != nil {
+		log.Println(err)
+		return c.RenderError(err)
+	}
 	return c.RenderJSON(assessments)
 }

@@ -11,6 +11,7 @@ func AssessmentGetAll() ([]*types.Assessment, error) {
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return nil, err
 	}
 	return mappers.AssessmentGetAll(db)
 }
@@ -19,6 +20,7 @@ func AssessmentCreate(assessment types.Assessment) (int64, error) {
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return 0, err
 	}
 	return mappers.AssessmentCreate(db, assessment)
 }
@@ -27,6 +29,7 @@ func AssessmentUpdateUsers(assessment types.Assessment) error {
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return err
 	}
 	return mappers.AssessmentUpdateUsers(db, assessment)
 }
@@ -35,21 +38,24 @@ func AssessmentDelete(id int) error {
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return err
 	}
 	return mappers.AssessmentDelete(db, id)
 }
-func AssessmentUpdate(assessment types.Assessment) (types.Assessment, error) {
+func AssessmentUpdate(assessment types.Assessment) (*types.Assessment, error) {
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return nil, err
 	}
-	return mappers.AssessmentUpdate(db, assessment)
+	return mappers.AssessmentUpdate(db, &assessment)
 }
 
-func AssessmentSearch(str types.Search) []*types.Assessment {
+func AssessmentSearch(str types.Search) ([]*types.Assessment, error) {
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return nil, err
 	}
 	return mappers.AssessmentSearch(db, str)
 }

@@ -76,6 +76,7 @@ func CandidateCreate(db *sql.DB, candidate types.Candidate) (int64, error) {
 	`, candidate.FirstName, candidate.MiddleName, candidate.LastName, 0, "").Scan(&ID)
 	if err != nil {
 		log.Println(err)
+		return 0, err
 	}
 
 	return ID, err
@@ -91,6 +92,7 @@ func CandidateDelete(db *sql.DB, id int) error {
 		where id = $1 `, id)
 	if err != nil {
 		log.Println(err)
+		return err
 	}
 	return err
 }
@@ -105,6 +107,7 @@ func CandidateUpdate(db *sql.DB, candidate types.Candidate) error {
 		where id = $1 `, candidate.Id, candidate.FirstName, candidate.MiddleName, candidate.LastName, candidate.Phone, candidate.Email)
 	if err != nil {
 		log.Println(err)
+		return err
 	}
 	return err
 }
@@ -120,13 +123,14 @@ func CandidateAddInAssess(db *sql.DB, candidate types.Candidate) error {
 		insert into candidate_assessment(id_assessment, id_candidate, status, proof) values($1, $2, $3, $4)`, candidate.ListOfAssessment[i].Id, candidate.Id, "", "")
 		if err != nil {
 			log.Println(err)
+			return err
 		}
 	}
 	return err
 }
 
 // поиск кандидата
-func CandidateSearch(db *sql.DB, str types.Search) []*types.Candidate {
+func CandidateSearch(db *sql.DB, str types.Search) ([]*types.Candidate, error) {
 
 	defer db.Close()
 
@@ -145,14 +149,16 @@ func CandidateSearch(db *sql.DB, str types.Search) []*types.Candidate {
 				  LOWER(email) LIKE '%' || $1 || '%'
 			`, masObjects[i])
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
+			return nil, err
 		}
 
 		for rows.Next() {
 			c := types.Candidate{}
-			err := rows.Scan(&c.Id, &c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
+			err = rows.Scan(&c.Id, &c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
 			if err != nil {
-				log.Fatal(err)
+				log.Println(err)
+				return nil, err
 			}
 			var flag = true
 			for i := range candidates {
@@ -167,5 +173,5 @@ func CandidateSearch(db *sql.DB, str types.Search) []*types.Candidate {
 		}
 	}
 
-	return candidates
+	return candidates, nil
 }

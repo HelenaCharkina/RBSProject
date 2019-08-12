@@ -98,6 +98,7 @@ func AssessmentCreate(db *sql.DB, assessment types.Assessment) (int64, error) {
 	`, assessment.Date).Scan(&ID)
 	if err != nil {
 		log.Println(err)
+		return 0, err
 	}
 	return ID, err
 }
@@ -112,12 +113,13 @@ func AssessmentDelete(db *sql.DB, id int) error {
 		where id = $1 `, id)
 	if err != nil {
 		log.Println(err)
+		return err
 	}
 	return err
 }
 
 // обновление ассессмента
-func AssessmentUpdate(db *sql.DB, assessment types.Assessment) (types.Assessment, error) {
+func AssessmentUpdate(db *sql.DB, assessment *types.Assessment) (*types.Assessment, error) {
 
 	defer db.Close()
 
@@ -194,7 +196,7 @@ func AssessmentUpdate(db *sql.DB, assessment types.Assessment) (types.Assessment
 	/*----------------------------------------*/
 	/*-------------------------------------------------*/
 
-	return c, err
+	return &c, err
 }
 
 // Добавление/удаление из асссессмента кандидатов/сотрудников
@@ -229,7 +231,7 @@ func AssessmentUpdateUsers(db *sql.DB, assessment types.Assessment) error {
 }
 
 // поиск ассессмента
-func AssessmentSearch(db *sql.DB, str types.Search) []*types.Assessment {
+func AssessmentSearch(db *sql.DB, str types.Search) ([]*types.Assessment, error) {
 
 	defer db.Close()
 
@@ -241,13 +243,15 @@ func AssessmentSearch(db *sql.DB, str types.Search) []*types.Assessment {
 			where  date LIKE '%' || $1 || '%' 
 			`, str.Str)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		return nil, err
 	}
 	for rows.Next() {
 		c := types.Assessment{}
 		err := rows.Scan(&c.Id, &c.Date)
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
+			return nil, err
 		}
 
 		/*------------Кандидаты-------------*/
@@ -259,6 +263,7 @@ func AssessmentSearch(db *sql.DB, str types.Search) []*types.Assessment {
 		where a.id = $1`, &c.Id)
 		if err != nil {
 			log.Println(err)
+			return nil, err
 		}
 		defer rowCandidate.Close()
 
@@ -267,6 +272,7 @@ func AssessmentSearch(db *sql.DB, str types.Search) []*types.Assessment {
 			err := rowCandidate.Scan(&itemCandidate.Id, &itemCandidate.FirstName, &itemCandidate.MiddleName, &itemCandidate.LastName, &itemCandidate.S, &itemCandidate.P)
 			if err != nil {
 				log.Println(err)
+				return nil, err
 			}
 			c.Candidates = append(c.Candidates, itemCandidate)
 		}
@@ -289,6 +295,7 @@ func AssessmentSearch(db *sql.DB, str types.Search) []*types.Assessment {
 			err := rowEmployee.Scan(&itemEmployee.Id, &itemEmployee.FirstName, &itemEmployee.MiddleName, &itemEmployee.LastName)
 			if err != nil {
 				log.Println(err)
+				return nil, err
 			}
 			c.Employees = append(c.Employees, itemEmployee)
 		}
@@ -296,5 +303,5 @@ func AssessmentSearch(db *sql.DB, str types.Search) []*types.Assessment {
 
 		assessments = append(assessments, &c)
 	}
-	return assessments
+	return assessments, err
 }

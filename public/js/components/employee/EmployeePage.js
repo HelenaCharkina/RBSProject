@@ -127,7 +127,7 @@ const EmployeePage = {
                     }
                     asses.Employees.push(employee);
 
-                    AssessmentModel.putInside(asses.Id, asses);
+                    AssessmentModel.addInside(asses.Id, asses);
 
                     // assessment update
                     let idx = ($$('assessmentTable').find(el => el.Id === deletedAssessment.Id))[0].id;

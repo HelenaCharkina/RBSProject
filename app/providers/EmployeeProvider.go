@@ -11,6 +11,7 @@ func EmployeeGetAll() ([]*types.Employee, error) {
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return nil, err
 	}
 	return mappers.EmployeeGetAll(db)
 }
@@ -19,6 +20,7 @@ func EmployeeCreate(employee types.Employee) (int64, error) {
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return 0, err
 	}
 	return mappers.EmployeeCreate(db, employee)
 }
@@ -49,10 +51,11 @@ func EmployeeAddInAssess(employee types.Employee) error {
 	return mappers.EmployeeAddInAssess(db, employee)
 }
 
-func EmployeeSearch(str types.Search) []*types.Employee {
+func EmployeeSearch(str types.Search) ([]*types.Employee, error) {
 	db, err := util.DatabaseConnect()
 	if err != nil {
 		log.Println(err)
+		return nil, err
 	}
 	return mappers.EmployeeSearch(db, str)
 }
