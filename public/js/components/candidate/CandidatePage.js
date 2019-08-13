@@ -69,7 +69,9 @@ const CandidatePage = {
                 ($$('assessmentTable').serialize()).forEach(function (assessment) {
                     if (assessment.Candidates) {
                         let index = assessment.Candidates.findIndex(el => el.Id === selectITEM.Id);
-                        assessment.Candidates.splice(index, 1);
+                        if(index !== -1) {
+                            assessment.Candidates.splice(index, 1);
+                        }
                     }
                 });
                 $$("SaveStudent").disable();
@@ -93,6 +95,19 @@ const CandidatePage = {
 
                     };
                     CandidateModel.update(item).then($$('studentTable').updateItem(selectITEM.id, item));
+
+                    $$('assessmentTable').serialize().forEach(function (asses) {
+
+                        asses.Candidates.forEach(function (candidate) {
+
+                            if(candidate.Id === item.Id) {
+                                candidate.FirstName = item.FirstName
+                                candidate.MiddleName = item.MiddleName
+                                candidate.LastName = item.LastName
+                            }
+                        })
+                    })
+
                     webix.message("Изменения сохранены");
                 }
             }
@@ -133,6 +148,11 @@ const CandidatePage = {
                     asses.Candidates.push(candidate);
 
                     AssessmentModel.addInside(asses.Id, asses);
+
+                    let upCandidate = selectITEM
+                    let idxUpCandidate = upCandidate.ListOfAssessment.findIndex(el => el.Id === deletedAssessment.Id);
+                    upCandidate.ListOfAssessment.splice(idxUpCandidate, 1);
+                    ($$('studentTable').updateItem(selectITEM.id, upCandidate))
 
                     // assessment update
                     let idx = ($$('assessmentTable').find(el => el.Id === deletedAssessment.Id))[0].id;

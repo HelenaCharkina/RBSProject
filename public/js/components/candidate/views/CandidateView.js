@@ -103,7 +103,7 @@ function CandidateView() {
                                 label: "Телефон",
                                 labelWidth: 150,
                                 id: "infoPhone",
-                                pattern:{ mask:"(###) ###-##-##", allow:/[0-9]/g },
+                                pattern:{ mask:"####-###-##-##", allow:/[0-9]/g },
                                 name:"ph",
                                 invalidMessage: "Некорректный номер",
                             },
@@ -114,7 +114,7 @@ function CandidateView() {
                                 id: "infoEmail",
                                 invalidMessage: "Некорректный email",
                                 name:"em",
-                                validate: webix.rules.isEmail,
+                                //validate: webix.rules.isEmail,
                             },
                             {
                                 view: "list",
@@ -143,7 +143,7 @@ function CandidateView() {
                                     }
                                     ]
                             }
-                        ],
+                        ]
 
                     }
                 ]

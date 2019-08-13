@@ -17,7 +17,6 @@ func EmployeeGetAll(db *sql.DB) ([]*types.Employee, error) {
 		FROM db.public.employee
 `)
 	if err != nil {
-		log.Fatal(err)
 		return employees, err
 	}
 	defer rows.Close()
@@ -25,7 +24,6 @@ func EmployeeGetAll(db *sql.DB) ([]*types.Employee, error) {
 		c := types.Employee{}
 		err := rows.Scan(&c.Id, &c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
 		if err != nil {
-			log.Fatal(err)
 			return employees, err
 		}
 
@@ -37,7 +35,6 @@ func EmployeeGetAll(db *sql.DB) ([]*types.Employee, error) {
 		join assessment a on ae.id_assessment = a.id
 		where e.id = $1`, &c.Id)
 		if err != nil {
-			log.Println(err)
 			return employees, err
 		}
 		defer rowAssessment.Close()
@@ -46,7 +43,6 @@ func EmployeeGetAll(db *sql.DB) ([]*types.Employee, error) {
 			itemAssessment := types.Assessment{}
 			err := rowAssessment.Scan(&itemAssessment.Id, &itemAssessment.Date)
 			if err != nil {
-				log.Println(err)
 				return employees, err
 			}
 			c.ListOfAssessment = append(c.ListOfAssessment, itemAssessment)
@@ -71,9 +67,8 @@ func EmployeeCreate(db *sql.DB, employee types.Employee) (int64, error) {
 	err := db.QueryRow(`
 		INSERT INTO employee (firstname, middlename, lastname, phone, email) 
 		VALUES ($1, $2, $3, $4, $5) returning id
-	`, employee.FirstName, employee.MiddleName, employee.LastName, 0, "").Scan(&ID)
+	`, employee.FirstName, employee.MiddleName, employee.LastName, "", "").Scan(&ID)
 	if err != nil {
-		log.Println(err)
 		return 0, err
 	}
 
@@ -87,7 +82,6 @@ func EmployeeDelete(db *sql.DB, id int) error {
 		delete from employee 
 		where id = $1 `, id)
 	if err != nil {
-		log.Println(err)
 		return err
 	}
 	return err
@@ -100,7 +94,6 @@ func EmployeeUpdate(db *sql.DB, employee types.Employee) error {
 		update employee set firstname = $2, middlename = $3, lastname = $4, phone = $5, email = $6 
 		where id = $1 `, employee.Id, employee.FirstName, employee.MiddleName, employee.LastName, employee.Phone, employee.Email)
 	if err != nil {
-		log.Println(err)
 		return err
 	}
 	return err
@@ -114,7 +107,6 @@ func EmployeeAddInAssess(db *sql.DB, employee types.Employee) error {
 		_, err = db.Exec(`
 		insert into assessment_employee(id_assessment, id_employee) values($1, $2)`, employee.ListOfAssessment[i].Id, employee.Id)
 		if err != nil {
-			log.Println(err)
 			return err
 		}
 	}
@@ -139,7 +131,6 @@ func EmployeeSearch(db *sql.DB, str types.Search) ([]*types.Employee, error) {
 				  LOWER(email) LIKE '%' || $1 || '%'
 			`, masObjects[i])
 		if err != nil {
-			log.Println(err)
 			return nil, err
 		}
 
@@ -147,7 +138,6 @@ func EmployeeSearch(db *sql.DB, str types.Search) ([]*types.Employee, error) {
 			c := types.Employee{}
 			err := rows.Scan(&c.Id, &c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
 			if err != nil {
-				log.Println(err)
 				return nil, err
 			}
 			var flag = true

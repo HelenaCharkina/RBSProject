@@ -1,7 +1,4 @@
-/**
- * Модель для сущности "candidate"
- * @type {{getAll: (function(): Promise<any>)}}
- */
+// Модель для сущности "candidate"
 const CandidateModel = {
 
     getAll: () => {

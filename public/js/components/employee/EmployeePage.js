@@ -70,7 +70,9 @@ const EmployeePage = {
                 ($$('assessmentTable').serialize()).forEach(function (assessment) {
                     if (assessment.Employees) {
                         let index = assessment.Employees.findIndex(el => el.Id === selectITEM.Id);
-                        assessment.Employees.splice(index, 1);
+                        if(index !== -1) {
+                            assessment.Employees.splice(index, 1);
+                        }
                     }
                 });
                 $$("SaveEmployee").disable();
@@ -94,6 +96,17 @@ const EmployeePage = {
 
                     EmployeeModel.update(item).then($$('employeeTable').updateItem(selectITEM.id, item));
 
+                    $$('assessmentTable').serialize().forEach(function (asses) {
+
+                        asses.Employees.forEach(function (employee) {
+
+                            if(employee.Id === item.Id) {
+                                employee.FirstNameE = item.FirstNameE
+                                employee.MiddleNameE = item.MiddleNameE
+                                employee.LastNameE = item.LastNameE
+                            }
+                        })
+                    })
                     webix.message("Изменения сохранены")
                 }
             }
@@ -134,6 +147,11 @@ const EmployeePage = {
                     asses.Employees.push(employee);
 
                     AssessmentModel.addInside(asses.Id, asses);
+
+                    let upEmployee = selectITEM
+                    let idxUpEmployee = upEmployee.ListOfAssessment.findIndex(el => el.Id === deletedAssessment.Id);
+                    upEmployee.ListOfAssessment.splice(idxUpEmployee, 1);
+                    ($$('employeeTable').updateItem(selectITEM.id, upEmployee))
 
                     // assessment update
                     let idx = ($$('assessmentTable').find(el => el.Id === deletedAssessment.Id))[0].id;

@@ -102,7 +102,7 @@ function EmployeeView() {
                                 label: "Телефон",
                                 labelWidth: 150,
                                 id: "infoPhoneEmployee",
-                                pattern:{ mask:"(###) ###-##-##", allow:/[0-9]/g },
+                                pattern:{ mask:"####-###-##-##", allow:/[0-9]/g },
                                 name:"ph",
                                 invalidMessage: "Некорректный номер",
                             },

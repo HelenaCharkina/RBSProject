@@ -18,7 +18,6 @@ func CandidateGetAll(db *sql.DB) ([]*types.Candidate, error) {
 		FROM db.public.candidate
 `)
 	if err != nil {
-		log.Println(err)
 		return candidates, err
 	}
 
@@ -27,7 +26,6 @@ func CandidateGetAll(db *sql.DB) ([]*types.Candidate, error) {
 		c := types.Candidate{}
 		err := rows.Scan(&c.Id, &c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
 		if err != nil {
-			log.Println(err)
 			return candidates, err
 		}
 		//----------------АССЕССМЕНТЫ-----------------------
@@ -38,7 +36,6 @@ func CandidateGetAll(db *sql.DB) ([]*types.Candidate, error) {
 		join assessment a on ca.id_assessment = a.id
 		where c.id = $1`, &c.Id)
 		if err != nil {
-			log.Println(err)
 			return candidates, err
 		}
 		defer rowAssessment.Close()
@@ -47,7 +44,6 @@ func CandidateGetAll(db *sql.DB) ([]*types.Candidate, error) {
 			itemAssessment := types.Assessment{}
 			err := rowAssessment.Scan(&itemAssessment.Id, &itemAssessment.Date)
 			if err != nil {
-				log.Println(err)
 				return candidates, err
 			}
 			c.ListOfAssessment = append(c.ListOfAssessment, itemAssessment)
@@ -69,9 +65,8 @@ func CandidateCreate(db *sql.DB, candidate types.Candidate) (int64, error) {
 	err := db.QueryRow(`
 		INSERT INTO candidate (firstname, middlename, lastname, phone, email) 
 		VALUES ($1, $2, $3, $4, $5) RETURNING id
-	`, candidate.FirstName, candidate.MiddleName, candidate.LastName, 0, "").Scan(&ID)
+	`, candidate.FirstName, candidate.MiddleName, candidate.LastName, "", "").Scan(&ID)
 	if err != nil {
-		log.Println(err)
 		return 0, err
 	}
 
@@ -85,7 +80,6 @@ func CandidateDelete(db *sql.DB, id int) error {
 		delete from candidate 
 		where id = $1 `, id)
 	if err != nil {
-		log.Println(err)
 		return err
 	}
 	return err
@@ -98,7 +92,6 @@ func CandidateUpdate(db *sql.DB, candidate types.Candidate) error {
 		update candidate set Firstname = $2, Middlename = $3, Lastname = $4, Phone = $5, Email = $6
 		where id = $1 `, candidate.Id, candidate.FirstName, candidate.MiddleName, candidate.LastName, candidate.Phone, candidate.Email)
 	if err != nil {
-		log.Println(err)
 		return err
 	}
 	return err
@@ -112,7 +105,6 @@ func CandidateAddInAssess(db *sql.DB, candidate types.Candidate) error {
 		_, err = db.Exec(`
 		insert into candidate_assessment(id_assessment, id_candidate, status, proof) values($1, $2, $3, $4)`, candidate.ListOfAssessment[i].Id, candidate.Id, "", "")
 		if err != nil {
-			log.Println(err)
 			return err
 		}
 	}
@@ -137,7 +129,6 @@ func CandidateSearch(db *sql.DB, str types.Search) ([]*types.Candidate, error) {
 				  LOWER(email) LIKE '%' || $1 || '%'
 			`, masObjects[i])
 		if err != nil {
-			log.Println(err)
 			return nil, err
 		}
 
@@ -145,7 +136,6 @@ func CandidateSearch(db *sql.DB, str types.Search) ([]*types.Candidate, error) {
 			c := types.Candidate{}
 			err = rows.Scan(&c.Id, &c.FirstName, &c.MiddleName, &c.LastName, &c.Phone, &c.Email)
 			if err != nil {
-				log.Println(err)
 				return nil, err
 			}
 			var flag = true

@@ -16,7 +16,6 @@ func AssessmentGetAll(db *sql.DB) ([]*types.Assessment, error) {
 		FROM db.public.assessment
 `)
 	if err != nil {
-		log.Println(err)
 		return assessments, err
 	}
 	defer rows.Close()
@@ -25,7 +24,6 @@ func AssessmentGetAll(db *sql.DB) ([]*types.Assessment, error) {
 		c := types.Assessment{}
 		err := rows.Scan(&c.Id, &c.Date)
 		if err != nil {
-			log.Println(err)
 			return assessments, err
 		}
 		/*------------Кандидаты-------------*/
@@ -36,7 +34,6 @@ func AssessmentGetAll(db *sql.DB) ([]*types.Assessment, error) {
 		join candidate c on ca.id_candidate = c.id
 		where a.id = $1`, &c.Id)
 		if err != nil {
-			log.Println(err)
 			return assessments, err
 		}
 		defer rowCandidate.Close()
@@ -45,7 +42,6 @@ func AssessmentGetAll(db *sql.DB) ([]*types.Assessment, error) {
 			itemCandidate := types.Candidate{}
 			err := rowCandidate.Scan(&itemCandidate.Id, &itemCandidate.FirstName, &itemCandidate.MiddleName, &itemCandidate.LastName, &itemCandidate.S, &itemCandidate.P, &itemCandidate.Id)
 			if err != nil {
-				log.Println(err)
 				return assessments, err
 			}
 			c.Candidates = append(c.Candidates, itemCandidate)
@@ -60,7 +56,6 @@ func AssessmentGetAll(db *sql.DB) ([]*types.Assessment, error) {
 		join employee e on ae.id_employee = e.id
 		where a.id = $1`, &c.Id)
 		if err != nil {
-			log.Println(err)
 			return assessments, err
 		}
 		defer rowEmployee.Close()
@@ -69,7 +64,6 @@ func AssessmentGetAll(db *sql.DB) ([]*types.Assessment, error) {
 			itemEmployee := types.Employee{}
 			err := rowEmployee.Scan(&itemEmployee.Id, &itemEmployee.FirstName, &itemEmployee.MiddleName, &itemEmployee.LastName)
 			if err != nil {
-				log.Println(err)
 				return assessments, err
 			}
 			c.Employees = append(c.Employees, itemEmployee)
@@ -93,7 +87,6 @@ func AssessmentCreate(db *sql.DB, assessment types.Assessment) (int64, error) {
 		VALUES ($1) returning id
 	`, assessment.Date).Scan(&ID)
 	if err != nil {
-		log.Println(err)
 		return 0, err
 	}
 	return ID, err
@@ -106,7 +99,6 @@ func AssessmentDelete(db *sql.DB, id int) error {
 		delete from assessment 
 		where id = $1 `, id)
 	if err != nil {
-		log.Println(err)
 		return err
 	}
 	return err
