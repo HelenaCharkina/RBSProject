@@ -96,17 +96,19 @@ const EmployeePage = {
 
                     EmployeeModel.update(item).then($$('employeeTable').updateItem(selectITEM.id, item));
 
-                    $$('assessmentTable').serialize().forEach(function (asses) {
-
-                        asses.Employees.forEach(function (employee) {
-
-                            if(employee.Id === item.Id) {
-                                employee.FirstNameE = item.FirstNameE
-                                employee.MiddleNameE = item.MiddleNameE
-                                employee.LastNameE = item.LastNameE
+                    if(selectITEM.ListOfAssessment) {
+                        $$('assessmentTable').serialize().forEach(function (asses) {
+                            if(asses.Employees) {
+                                asses.Employees.forEach(function (employee) {
+                                    if (employee.Id === item.Id) {
+                                        employee.FirstNameE = item.FirstNameE
+                                        employee.MiddleNameE = item.MiddleNameE
+                                        employee.LastNameE = item.LastNameE
+                                    }
+                                })
                             }
                         })
-                    })
+                    }
                     webix.message("Изменения сохранены")
                 }
             }
@@ -150,15 +152,19 @@ const EmployeePage = {
 
                     let upEmployee = selectITEM
                     let idxUpEmployee = upEmployee.ListOfAssessment.findIndex(el => el.Id === deletedAssessment.Id);
-                    upEmployee.ListOfAssessment.splice(idxUpEmployee, 1);
-                    ($$('employeeTable').updateItem(selectITEM.id, upEmployee))
+                    if(idxUpEmployee !== -1) {
+                        upEmployee.ListOfAssessment.splice(idxUpEmployee, 1);
+                        ($$('employeeTable').updateItem(selectITEM.id, upEmployee))
+                    }
 
                     // assessment update
                     let idx = ($$('assessmentTable').find(el => el.Id === deletedAssessment.Id))[0].id;
                     let editAssessment = $$('assessmentTable').getItem(idx);
                     let idxEmployee = editAssessment.Employees.findIndex(el => el.Id === selectITEM.Id);
-                    editAssessment.Employees.splice(idxEmployee, 1);
-                    ($$('assessmentTable').updateItem(editAssessment.id, editAssessment))
+                    if(idxEmployee !== -1) {
+                        editAssessment.Employees.splice(idxEmployee, 1);
+                        ($$('assessmentTable').updateItem(editAssessment.id, editAssessment))
+                    }
 
                 }
             }

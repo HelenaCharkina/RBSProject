@@ -66,14 +66,18 @@ const EmployeeInAssessmentPage = {
                 masDelIdE.forEach(function (deleted) {
 
                     let index = selectITEM.Employees.findIndex(el => el.Id === deleted.Id);
-                    selectITEM.Employees.splice(index, 1);
+                    if(index !== -1) {
+                        selectITEM.Employees.splice(index, 1);
+                    }
 
                     //employee update
                     let idx = ($$('employeeTable').find(el => el.Id === deleted.Id))[0].id;
                     let editEmployee = $$('employeeTable').getItem(idx);
                     let idxAssess = editEmployee.ListOfAssessment.findIndex(el => el.Id === selectITEM.Id);
-                    editEmployee.ListOfAssessment.splice(idxAssess, 1);
-                    ($$('employeeTable').updateItem(editEmployee.id, editEmployee))
+                    if(idxAssess !== -1) {
+                        editEmployee.ListOfAssessment.splice(idxAssess, 1);
+                        ($$('employeeTable').updateItem(editEmployee.id, editEmployee))
+                    }
                 });
 
                 webix.message("Сотрудники удалены")

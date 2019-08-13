@@ -70,14 +70,18 @@ const AssessmentPage = {
                 ($$('studentTable').serialize()).forEach(function (candidate) {
                     if (candidate.ListOfAssessment) {
                         let index = candidate.ListOfAssessment.findIndex(el => el.Id === selectITEM.Id);
-                        candidate.ListOfAssessment.splice(index, 1);
+                        if(index !== -1) {
+                            candidate.ListOfAssessment.splice(index, 1);
+                        }
                     }
                 });
                 //employee update
                 ($$('employeeTable').serialize()).forEach(function (employee) {
                     if (employee.ListOfAssessment) {
                         let index = employee.ListOfAssessment.findIndex(el => el.Id === selectITEM.Id);
-                        employee.ListOfAssessment.splice(index, 1);
+                        if(index !== -1) {
+                            employee.ListOfAssessment.splice(index, 1);
+                        }
                     }
                 });
                 $$("SaveAsses").disable();

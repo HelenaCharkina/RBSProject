@@ -3,10 +3,10 @@ webix.ui({
     id: "loginPopup",
     modal: true,
     fullscreen: true,
-    position:"center",
-    width:400,
-    height:300,
-    head:"Вход",
+    position: "center",
+    width: 400,
+    height: 300,
+    head: "Вход",
     body: {
         rows: [
             {},
@@ -19,17 +19,17 @@ webix.ui({
 
                     {
                         view: "text",
-                        label:"Логин",
-                        placeholder:"Логин",
+                        label: "Логин",
+                        placeholder: "Логин",
                         id: "loginLog",
                         width: 300,
                         align: "center"
                     },
                     {
                         view: "text",
-                        type:"password",
-                        label:"Пароль",
-                        placeholder:"Пароль",
+                        type: "password",
+                        label: "Пароль",
+                        placeholder: "Пароль",
                         id: "loginPass",
                         width: 300,
                         align: "center"
@@ -53,24 +53,25 @@ $$('loginButton').attachEvent('onItemClick', () => {
     let user = {
         Login: $$('loginLog').getValue(),
         Pass: $$('loginPass').getValue()
-    }
+    };
 
     fetch('/user', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(user)})
+        body: JSON.stringify(user)
+    })
         .then(res => res.json())
         .then(res => {
-            if(res.Id !== 0) {
-                $$('loginPopup').hide()
-                webix.message("Вход произведен")
-                currentEmployee = res
-                let fio = currentEmployee.LastNameE + " " + currentEmployee.FirstNameE + " " + currentEmployee.MiddleNameE
+            if (res.Id !== 0) {
+                $$('loginPopup').hide();
+                webix.message("Вход произведен");
+                currentEmployee = res;
+                let fio = currentEmployee.LastNameE + " " + currentEmployee.FirstNameE + " " + currentEmployee.MiddleNameE;
                 $$('currentUserLabel').setValue(fio)
-            }else{
+            } else {
                 webix.message("Неправильные данные")
             }
         })
-})
+});

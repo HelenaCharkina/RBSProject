@@ -95,19 +95,19 @@ const CandidatePage = {
 
                     };
                     CandidateModel.update(item).then($$('studentTable').updateItem(selectITEM.id, item));
-
-                    $$('assessmentTable').serialize().forEach(function (asses) {
-
-                        asses.Candidates.forEach(function (candidate) {
-
-                            if(candidate.Id === item.Id) {
-                                candidate.FirstName = item.FirstName
-                                candidate.MiddleName = item.MiddleName
-                                candidate.LastName = item.LastName
+                    if(selectITEM.ListOfAssessment) {
+                        $$('assessmentTable').serialize().forEach(function (asses) {
+                            if(asses.Candidates) {
+                                asses.Candidates.forEach(function (candidate) {
+                                    if (candidate.Id === item.Id) {
+                                        candidate.FirstName = item.FirstName
+                                        candidate.MiddleName = item.MiddleName
+                                        candidate.LastName = item.LastName
+                                    }
+                                })
                             }
                         })
-                    })
-
+                    }
                     webix.message("Изменения сохранены");
                 }
             }
@@ -151,16 +151,19 @@ const CandidatePage = {
 
                     let upCandidate = selectITEM
                     let idxUpCandidate = upCandidate.ListOfAssessment.findIndex(el => el.Id === deletedAssessment.Id);
-                    upCandidate.ListOfAssessment.splice(idxUpCandidate, 1);
-                    ($$('studentTable').updateItem(selectITEM.id, upCandidate))
+                    if(idxUpCandidate !== -1) {
+                        upCandidate.ListOfAssessment.splice(idxUpCandidate, 1);
+                        ($$('studentTable').updateItem(selectITEM.id, upCandidate))
+                    }
 
                     // assessment update
                     let idx = ($$('assessmentTable').find(el => el.Id === deletedAssessment.Id))[0].id;
                     let editAssessment = $$('assessmentTable').getItem(idx);
                     let idxCandidate = editAssessment.Candidates.findIndex(el => el.Id === selectITEM.Id);
-                    editAssessment.Candidates.splice(idxCandidate, 1);
-                    ($$('assessmentTable').updateItem(editAssessment.id, editAssessment))
-
+                        if(idxCandidate !== -1) {
+                            editAssessment.Candidates.splice(idxCandidate, 1);
+                            ($$('assessmentTable').updateItem(editAssessment.id, editAssessment))
+                        }
                 }
             }
         });

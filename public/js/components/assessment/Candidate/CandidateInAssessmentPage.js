@@ -63,14 +63,18 @@ const CandidateInAssessmentPage = {
 
                 masDelId.forEach(function (deleted) {
                     let index = selectITEM.Candidates.findIndex(el => el.Id === deleted.Id);
-                    selectITEM.Candidates.splice(index, 1);
+                    if(index !== -1) {
+                        selectITEM.Candidates.splice(index, 1);
+                    }
 
                     //candidate update
                     let idx = ($$('studentTable').find(el => el.Id === deleted.Id))[0].id;
                     let editCandidate = $$('studentTable').getItem(idx);
                     let idxAssess = editCandidate.ListOfAssessment.findIndex(el => el.Id === selectITEM.Id);
-                    editCandidate.ListOfAssessment.splice(idxAssess, 1);
-                    ($$('studentTable').updateItem(editCandidate.id, editCandidate))
+                    if(idxAssess !== -1) {
+                        editCandidate.ListOfAssessment.splice(idxAssess, 1);
+                        ($$('studentTable').updateItem(editCandidate.id, editCandidate))
+                    }
                 });
                 webix.message("Кандидаты удалены")
             }
